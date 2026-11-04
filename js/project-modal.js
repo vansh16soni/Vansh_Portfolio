@@ -168,3 +168,4 @@ document.addEventListener('keydown', (e) => {
     window.closeResumeModal();
   }
 });
+

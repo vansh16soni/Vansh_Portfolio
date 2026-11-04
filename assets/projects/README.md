@@ -15,3 +15,4 @@ When you add your actual screenshot, replace the `.editorial-blueprint-placehold
 ```
 
 Or leave the blueprint placeholder active as an architectural drawing until your screenshots are ready!
+

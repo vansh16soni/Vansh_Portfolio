@@ -49,10 +49,14 @@
           <a href="#notebook" class="nav-link">LAB NOTES</a>
           <a href="#journal" class="nav-link">JOURNAL</a>
           <a href="#inquiries" class="nav-link">CONTACT</a>
-          <button type="button" class="nav-resume-btn" onclick="openResumeModal()">
+          <button type="button" class="nav-resume-btn" onclick="openResumeModal()" title="View Official Resume PDF">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>RESUME</span>
+            <span>VIEW RESUME</span>
           </button>
+          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="nav-resume-btn" style="background: var(--accent-spring); color: var(--bg-charcoal); border-color: var(--accent-spring);" title="Download Official Resume PDF">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>DOWNLOAD PDF</span>
+          </a>
         </nav>
       </div>
     </div>
@@ -105,8 +109,12 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
             <button type="button" class="btn-secondary-editorial" onclick="openResumeModal()">
-              <span>READ CURRICULUM VITAE</span>
+              <span>VIEW RESUME</span>
             </button>
+            <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-secondary-editorial" style="border-color: var(--accent-spring-border); color: var(--accent-spring);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>DOWNLOAD RESUME (.PDF)</span>
+            </a>
             <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="btn-link-editorial">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               <span>GITHUB PROFILE ↗</span>
@@ -1000,6 +1008,11 @@ class DependencyGraph {
             <button type="button" class="btn-secondary-editorial" onclick="openResumeModal()">
               <span>VIEW RESUME</span>
             </button>
+
+            <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-primary-editorial">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>DOWNLOAD RESUME (.PDF)</span>
+            </a>
           </div>
 
           <span id="copy-toast" class="copy-feedback-toast">COPIED TO CLIPBOARD</span>
@@ -1085,151 +1098,41 @@ class DependencyGraph {
   </div>
 
   <!-- ========================================================================
-       MODAL: INTERACTIVE RESUME DOSSIER (PDF-VERIFIED, PRIVACY-SAFE)
+       MODAL: ORIGINAL RESUME VIEWER (ACTUAL PDF EMBEDDED & DOWNLOADABLE)
        ======================================================================== -->
   <div id="resume-modal-backdrop" class="editorial-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-resume-title">
-    <div class="editorial-modal-window" style="max-width: 860px;">
+    <div class="editorial-modal-window pdf-modal-window">
       <div class="modal-header-bar">
-        <span class="modal-title-stamp">CURRICULUM VITAE // VERIFIED DOCUMENT</span>
-        <div style="display: flex; gap: 8px; align-items: center;">
-          <button type="button" class="btn-secondary-editorial" style="padding: 4px 10px; font-size: 0.75rem;" onclick="window.print()">
-            <span>PRINT / SAVE PDF</span>
-          </button>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="modal-title-stamp" id="modal-resume-title">OFFICIAL RESUME // VANSH KUMAR SONI</span>
+          <span class="tech-stamp stamp-spring" style="font-size: 0.6875rem;">ORIGINAL PDF</span>
+        </div>
+        <div class="modal-header-actions">
+          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-primary-editorial" style="padding: 6px 14px; font-size: 0.75rem;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>DOWNLOAD RESUME (.PDF)</span>
+          </a>
+          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial" style="padding: 6px 12px; font-size: 0.75rem;">
+            <span>OPEN FULLSCREEN ↗</span>
+          </a>
           <button type="button" class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close Resume">✕</button>
         </div>
       </div>
 
-      <div class="modal-body-content" style="background: #0d120d;">
-        
-        <!-- Resume Header -->
-        <div style="border-bottom: 2px solid var(--accent-spring); padding-bottom: 16px;">
-          <h2 id="modal-resume-title" class="display-title" style="font-size: clamp(1.75rem, 3.5vw, 2.5rem);">VANSH KUMAR SONI</h2>
-          <div style="display: flex; flex-wrap: wrap; gap: 14px; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-secondary); margin-top: 8px;">
-            <a href="https://github.com/vansh16soni" target="_blank" class="mono-accent-spring">github.com/vansh16soni ↗</a>
-            <span>•</span>
-            <span class="mono-accent-spring">vansh16tanay@gmail.com</span>
-            <span>•</span>
-            <span>Jabalpur, Madhya Pradesh, India</span>
-          </div>
-        </div>
-
-        <!-- Professional Summary -->
-        <div>
-          <span class="mono-label" style="color: var(--accent-spring);">PROFESSIONAL SUMMARY</span>
-          <p class="editorial-body" style="margin-top: 6px;">
-            Computer Engineering student (2027) and Full-Stack Developer with hands-on experience in the MERN stack and Java ecosystem, including Spring Boot, Spring Security, and Spring AI. Experienced in building RESTful applications, secure backend systems, and AI-powered platforms using LLMs, machine learning, and computer vision. Strong foundation in DSA, OOP, and software development, with experience developing and deploying end-to-end applications.
-          </p>
-        </div>
-
-        <!-- Technical Skills -->
-        <div>
-          <span class="mono-label" style="color: var(--accent-spring);">TECHNICAL SKILLS</span>
-          <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; font-size: 0.875rem; margin-top: 8px;">
-            <span class="mono-label">Languages:</span>
-            <span>Java, C, C++, Python, JavaScript</span>
-
-            <span class="mono-label">MERN Stack:</span>
-            <span>MongoDB, Express.js, React.js, Node.js</span>
-
-            <span class="mono-label">Java Backend:</span>
-            <span style="color: var(--accent-java);">Spring Boot, Spring Security, Spring AI, REST APIs, JWT, GitHub OAuth</span>
-
-            <span class="mono-label">Frontend:</span>
-            <span>Next.js, Three.js, HTML5, CSS3, Canvas API</span>
-
-            <span class="mono-label">AI, ML & CV:</span>
-            <span>Gemini, Groq, OpenAI, LLM Integration, MediaPipe, WebAssembly</span>
-
-            <span class="mono-label">Core CSE:</span>
-            <span>Data Structures & Algorithms, OOP, AST Parsing, System Design, Agile, SDLC</span>
-
-            <span class="mono-label">Databases:</span>
-            <span>MySQL, MongoDB, Git, GitHub, VS Code, Render</span>
-          </div>
-        </div>
-
-        <!-- Experience -->
-        <div>
-          <span class="mono-label" style="color: var(--accent-spring);">EXPERIENCE</span>
-          
-          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 12px;">
-            <div>
-              <div style="display: flex; justify-content: space-between; font-family: var(--font-heading); font-weight: 600;">
-                <span>Cisco — AI Intern</span>
-                <span class="mono-label">June – August 2026</span>
-              </div>
-              <div class="mono-accent-spring" style="font-size: 0.8125rem;">NetSage AI – AI-Powered Network Troubleshooting Assistant</div>
-              <p class="editorial-body" style="font-size: 0.875rem; margin-top: 4px;">
-                • Developed an AI-assisted network troubleshooting platform for Cisco Packet Tracer labs, analyzing network symptoms, topology details, and diagnostic command outputs.<br>
-                • Integrated AI-powered diagnosis to identify root causes, OSI layers, confidence scores, recommended diagnostic commands, and actionable fixes with human-in-the-loop review.
-              </p>
+      <!-- Actual Embedded PDF Document Viewport -->
+      <div class="resume-pdf-container">
+        <object data="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1&navpanes=0&view=FitH" type="application/pdf" class="resume-pdf-object">
+          <iframe src="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1" class="resume-pdf-iframe" title="Original Curriculum Vitae of Vansh Kumar Soni">
+            <div class="resume-fallback-notice">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--accent-spring);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <h3 class="display-subtitle">Vansh Kumar Soni — Official Resume</h3>
+              <p class="editorial-body">Your browser does not display direct PDF embeds. You can directly view or download the complete PDF below.</p>
+              <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-primary-editorial">
+                <span>DOWNLOAD ORIGINAL RESUME (.PDF)</span>
+              </a>
             </div>
-
-            <div>
-              <div style="display: flex; justify-content: space-between; font-family: var(--font-heading); font-weight: 600;">
-                <span>BSNL — Government Data Analytics Intern</span>
-                <span class="mono-label">February 2026</span>
-              </div>
-              <div class="mono-accent-spring" style="font-size: 0.8125rem;">Telecom Data Analytics – Network Quality & Revenue Optimization</div>
-              <p class="editorial-body" style="font-size: 0.875rem; margin-top: 4px;">
-                • Analyzed 10,000+ simulated telecom records using Python, Pandas, and NumPy, identifying a 0.7 correlation between QoS degradation and ARPU loss.<br>
-                • Applied Scikit-learn linear regression to model revenue risks and developed Power BI dashboards, projecting INR 2 Lakhs/month in at-risk regional revenue.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Featured Projects in Resume -->
-        <div>
-          <span class="mono-label" style="color: var(--accent-spring);">KEY PROJECTS</span>
-          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem;">
-            <div>
-              <strong>Repo City — 3D Codebase Visualization & AI Learning Platform</strong>
-              <p class="editorial-body" style="font-size: 0.875rem;">React, Three.js, Node.js, Express, MongoDB platform transforming Git repositories into interactive 3D cities with multi-language AST parsing, DAG algorithms, and AI tutoring studio.</p>
-            </div>
-            <div>
-              <strong>GYAN.AI — AI-Powered Technical Notes & Knowledge Platform</strong>
-              <p class="editorial-body" style="font-size: 0.875rem;">Transforms YouTube lectures into structured study notes using Gemini and Groq LLMs with automated fallback, timestamped chunking, React Flow graphs, and multi-format exports.</p>
-            </div>
-            <div>
-              <strong>ShadowPlay — Real-Time Hand Gesture & Shadow Puppet Studio</strong>
-              <p class="editorial-body" style="font-size: 0.875rem;">Browser shadow puppet studio using MediaPipe Hands, WebAssembly, and Canvas API with 21 3D hand landmarks and privacy-first client-side processing.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div>
-          <span class="mono-label" style="color: var(--accent-spring);">EDUCATION</span>
-          <div style="margin-top: 8px; display: flex; justify-content: space-between; align-items: baseline;">
-            <div>
-              <strong>B.Tech in Computer Engineering</strong> — Shri Ram Institute of Technology
-              <div class="mono-label">2023–2027</div>
-            </div>
-            <span class="tech-stamp stamp-spring">GPA: 8.2 / 10</span>
-          </div>
-          <div style="margin-top: 6px; display: flex; justify-content: space-between; align-items: baseline;">
-            <div>
-              <strong>Class XII (Higher Secondary)</strong> — MP Board
-              <div class="mono-label">2022</div>
-            </div>
-            <span class="tech-stamp">75%</span>
-          </div>
-        </div>
-
-        <!-- Achievements -->
-        <div>
-          <span class="mono-label" style="color: var(--accent-spring);">ACHIEVEMENTS & CERTIFICATIONS</span>
-          <ul class="timeline-bullets" style="margin-top: 6px; font-size: 0.875rem;">
-            <li class="timeline-bullet-item">Smart India Hackathon '25 — National Runner-up (Top 40 Finalist Teams) [2025]</li>
-            <li class="timeline-bullet-item">Hack SRIT '24 & Technogenesis '24 — Top 30 Finalist [2024]</li>
-            <li class="timeline-bullet-item">AWS Academy Machine Learning Foundations [Aug 2026]</li>
-            <li class="timeline-bullet-item">AWS Academy ML for Natural Language Processing [Jul 2026]</li>
-            <li class="timeline-bullet-item">AWS Academy Cloud Foundations [2025]</li>
-            <li class="timeline-bullet-item">Introduction to Java — SoloLearn [Apr 2024]</li>
-          </ul>
-        </div>
-
+          </iframe>
+        </object>
       </div>
     </div>
   </div>
@@ -1263,3 +1166,4 @@ class DependencyGraph {
   <script src="js/main.js"></script>
 </body>
 </html>
+

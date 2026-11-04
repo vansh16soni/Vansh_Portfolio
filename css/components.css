@@ -1011,14 +1011,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 14, 10, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(10, 14, 10, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: clamp(12px, 2.5vw, 28px);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--duration-normal) var(--ease-editorial);
@@ -1033,29 +1033,39 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-mid);
   width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
+  max-width: 960px;
+  max-height: 94vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
   transform: translateY(20px);
   transition: transform var(--duration-normal) var(--ease-editorial);
+  display: flex;
+  flex-direction: column;
 }
 
 .editorial-modal-backdrop.active .editorial-modal-window {
   transform: translateY(0);
 }
 
+/* Modal Window specifically for PDF view */
+.editorial-modal-window.pdf-modal-window {
+  max-width: 1020px;
+  height: 94vh;
+  overflow: hidden;
+}
+
 .modal-header-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 14px 20px;
   background: var(--bg-surface-elevated);
   border-bottom: 1px solid var(--border-hairline);
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 .modal-title-stamp {
@@ -1065,21 +1075,62 @@
   color: var(--accent-spring);
 }
 
+.modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .modal-close-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border: 1px solid var(--border-hairline);
   color: var(--text-secondary);
   transition: all var(--duration-fast) ease;
+  background: transparent;
 }
 
 .modal-close-btn:hover {
   background: var(--bg-charcoal);
   color: var(--text-primary);
   border-color: var(--border-mid);
+}
+
+/* PDF Embedded Viewer Styles */
+.resume-pdf-container {
+  width: 100%;
+  flex: 1;
+  height: calc(94vh - 65px);
+  min-height: 550px;
+  background: #121812;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-pdf-object,
+.resume-pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  flex: 1;
+  background: #ffffff;
+}
+
+.resume-fallback-notice {
+  padding: 40px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 100%;
+  color: var(--text-secondary);
 }
 
 .modal-body-content {
