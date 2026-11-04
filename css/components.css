@@ -1,0 +1,1182 @@
+/* ==========================================================================
+   COMPONENTS & LAYOUTS
+   Editorial compositions, asymmetric grids, technical plates
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Masthead / Navigation
+   -------------------------------------------------------------------------- */
+.site-masthead {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(16, 21, 16, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 16px 0;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.brand-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-mid);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--accent-spring);
+  font-weight: 600;
+}
+
+.live-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent-spring);
+  border-radius: 1px;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--accent-spring-border);
+  animation: pulse-gentle 2.4s infinite ease-in-out;
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.masthead-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 32px);
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+  transition: color var(--duration-fast) ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-spring);
+  transition: width var(--duration-fast) var(--ease-editorial);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid var(--accent-spring-border);
+  color: var(--accent-spring);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all var(--duration-fast) ease;
+}
+
+.nav-resume-btn:hover {
+  background: var(--accent-spring);
+  color: var(--bg-charcoal);
+  border-color: var(--accent-spring);
+}
+
+/* --------------------------------------------------------------------------
+   2. Hero Section — Asymmetrical Editorial Composition
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: clamp(48px, 6vw, 96px);
+  padding-bottom: clamp(64px, 8vw, 112px);
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-intro-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero-index-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.hero-index-bar .highlight {
+  color: var(--accent-spring);
+}
+
+.hero-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6.2vw, 5.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.hero-role {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 1.8vw, 1.625rem);
+  font-weight: 500;
+  color: var(--accent-spring);
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+.hero-statement-box {
+  margin-top: var(--space-xs);
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--accent-spring);
+}
+
+.hero-editorial-quote {
+  font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.hero-sub-text {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* Technical Specification Bar */
+.hero-tech-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  margin-top: var(--space-xs);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.btn-primary-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--text-primary);
+  color: var(--bg-charcoal);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all var(--duration-fast) ease;
+  border: 1px solid var(--text-primary);
+}
+
+.btn-primary-editorial:hover {
+  background: var(--accent-spring);
+  border-color: var(--accent-spring);
+  color: var(--bg-charcoal);
+  transform: translateY(-1px);
+}
+
+.btn-secondary-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-mid);
+  transition: all var(--duration-fast) ease;
+}
+
+.btn-secondary-editorial:hover {
+  border-color: var(--accent-spring);
+  color: var(--accent-spring);
+  background: var(--accent-spring-muted);
+}
+
+.btn-link-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  padding: 10px 14px;
+  transition: color var(--duration-fast) ease;
+}
+
+.btn-link-editorial:hover {
+  color: var(--accent-spring);
+}
+
+/* Hero Visual Anchor — Generative AST Graph Canvas */
+.hero-visual-anchor {
+  position: relative;
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.visual-anchor-mast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--bg-surface-elevated);
+}
+
+.canvas-container {
+  width: 100%;
+  height: clamp(340px, 38vw, 440px);
+  position: relative;
+  overflow: hidden;
+  background: #0d120d;
+}
+
+#hero-anchor-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvas-overlay-data {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  background: rgba(16, 21, 16, 0.7);
+  padding: 6px 10px;
+  border: 1px solid var(--border-hairline);
+}
+
+/* --------------------------------------------------------------------------
+   3. Featured Projects — Editorial Case Study Layouts
+   -------------------------------------------------------------------------- */
+.projects-editorial-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(64px, 8vw, 100px);
+}
+
+/* Full-Width Master Case Study (Repo City) */
+.project-plate-full {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(28px, 4vw, 56px);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: clamp(28px, 4vw, 48px);
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .project-plate-full {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.project-index-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 10px;
+}
+
+.project-num {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--accent-spring);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.project-category-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.project-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  color: var(--accent-spring);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.project-narrative {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.project-spec-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  font-size: 0.8125rem;
+}
+
+.spec-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-entry .label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+}
+
+.spec-entry .value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.project-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--space-xs);
+}
+
+/* Project Visual Viewport / Screen Placeholder Plate */
+.project-visual-viewport {
+  position: relative;
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewport-mast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: var(--bg-surface-elevated);
+  border-bottom: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.viewport-mast .window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.viewport-mast .window-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-mid);
+}
+
+.project-screenshot-frame {
+  position: relative;
+  min-height: 340px;
+  width: 100%;
+  background: #0f140f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-img-cover {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform var(--duration-normal) var(--ease-editorial);
+}
+
+.project-visual-viewport:hover .project-img-cover {
+  transform: scale(1.02);
+}
+
+/* Editorial Placeholder Graphic for screenshots */
+.editorial-blueprint-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 1px dashed var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(109, 179, 63, 0.04) 0%, transparent 70%);
+}
+
+.blueprint-diagram {
+  margin-bottom: 16px;
+  color: var(--accent-spring);
+  opacity: 0.85;
+}
+
+.blueprint-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.blueprint-desc {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  max-width: 44ch;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.blueprint-prompt-note {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--accent-spring);
+  background: var(--accent-spring-muted);
+  border: 1px solid var(--accent-spring-border);
+  padding: 4px 10px;
+}
+
+/* Asymmetric 2-Column Alternate Project Plate */
+.project-plate-asymmetric {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(28px, 4vw, 56px);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: clamp(28px, 4vw, 48px);
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .project-plate-asymmetric {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Technical Profile & Architecture (Skills & Ethos)
+   -------------------------------------------------------------------------- */
+.skills-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.skill-category-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  padding: clamp(20px, 2.5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  position: relative;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.skill-category-card:hover {
+  border-color: var(--border-strong);
+}
+
+.skill-cat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 12px;
+}
+
+.skill-cat-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-spring);
+  letter-spacing: 0.05em;
+}
+
+.skill-cat-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.skill-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9375rem;
+  border-bottom: 1px dashed rgba(234, 233, 225, 0.08);
+  padding-bottom: 6px;
+}
+
+.skill-name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.skill-context {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   5. Experience Timeline — Editorial & Metric Driven
+   -------------------------------------------------------------------------- */
+.timeline-editorial-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 56px);
+  position: relative;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: clamp(24px, 3.5vw, 48px);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: clamp(20px, 3vw, 36px);
+}
+
+@media (max-width: 768px) {
+  .timeline-entry {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timeline-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline-date-range {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--accent-spring);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.timeline-org {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.timeline-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.timeline-body-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.timeline-project-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.timeline-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-bullet-item {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.timeline-bullet-item::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent-spring);
+}
+
+.timeline-metric-callout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  margin-top: 6px;
+  width: fit-content;
+}
+
+/* --------------------------------------------------------------------------
+   6. Coding Practice — Technical Notebook
+   -------------------------------------------------------------------------- */
+.notebook-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(24px, 3.5vw, 48px);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+}
+
+@media (max-width: 900px) {
+  .notebook-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.notebook-sidebar {
+  border-right: 1px solid var(--border-hairline);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--bg-surface-elevated);
+}
+
+@media (max-width: 900px) {
+  .notebook-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-hairline);
+  }
+}
+
+.notebook-tab-btn {
+  text-align: left;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all var(--duration-fast) ease;
+}
+
+.notebook-tab-btn:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-hairline);
+}
+
+.notebook-tab-btn.active {
+  background: var(--bg-charcoal);
+  border-color: var(--accent-spring-border);
+}
+
+.notebook-tab-btn .tab-num {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--accent-spring);
+  letter-spacing: 0.05em;
+}
+
+.notebook-tab-btn .tab-title {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.notebook-content-panel {
+  padding: clamp(20px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.notebook-code-block {
+  background: #0b0f0b;
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  padding: 18px;
+  overflow-x: auto;
+  color: #c9d1d9;
+}
+
+.code-keyword { color: #ff7b72; }
+.code-class { color: var(--accent-java); }
+.code-func { color: #d2a8ff; }
+.code-str { color: #a5d6ff; }
+.code-comment { color: var(--text-tertiary); font-style: italic; }
+.code-annotation { color: var(--accent-spring); }
+
+/* --------------------------------------------------------------------------
+   7. Ongoing Projects — Development Journal
+   -------------------------------------------------------------------------- */
+.journal-entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.journal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.journal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.journal-status-tag {
+  padding: 2px 6px;
+  background: var(--accent-spring-muted);
+  border: 1px solid var(--accent-spring-border);
+  color: var(--accent-spring);
+  font-weight: 500;
+}
+
+.journal-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.journal-notes {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   8. Certificates & Accolades — Document-Inspired Gallery
+   -------------------------------------------------------------------------- */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.cert-document-plate {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--duration-fast) ease;
+  position: relative;
+}
+
+.cert-document-plate:hover {
+  border-color: var(--border-mid);
+  transform: translateY(-2px);
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 12px;
+}
+
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-spring);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cert-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.cert-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.cert-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.cert-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-spring);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-hairline);
+  transition: gap var(--duration-fast) ease;
+}
+
+.cert-view-btn:hover {
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Interactive Case Study & Resume Modals
+   -------------------------------------------------------------------------- */
+.editorial-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 14, 10, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-editorial);
+}
+
+.editorial-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.editorial-modal-window {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-mid);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+  transform: translateY(20px);
+  transition: transform var(--duration-normal) var(--ease-editorial);
+}
+
+.editorial-modal-backdrop.active .editorial-modal-window {
+  transform: translateY(0);
+}
+
+.modal-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--bg-surface-elevated);
+  border-bottom: 1px solid var(--border-hairline);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modal-title-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  color: var(--accent-spring);
+}
+
+.modal-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--bg-charcoal);
+  color: var(--text-primary);
+  border-color: var(--border-mid);
+}
+
+.modal-body-content {
+  padding: clamp(24px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   10. Colophon & Direct Inquiries
+   -------------------------------------------------------------------------- */
+.inquiries-section {
+  border-top: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+  padding: clamp(64px, 8vw, 100px) 0;
+}
+
+.inquiries-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+@media (max-width: 768px) {
+  .inquiries-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-action-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.copy-feedback-toast {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-spring);
+  opacity: 0;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.copy-feedback-toast.show {
+  opacity: 1;
+}
+
+.colophon-meta-box {
+  border-left: 1px solid var(--border-hairline);
+  padding-left: clamp(20px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .colophon-meta-box {
+    border-left: none;
+    border-top: 1px solid var(--border-hairline);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+}
+
+.colophon-meta-box .colophon-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border-hairline);
+  padding: 24px 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}

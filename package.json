@@ -1,0 +1,19 @@
+{
+  "name": "vansh-soni-portfolio",
+  "version": "1.0.0",
+  "description": "Human-Art-Directed Editorial Portfolio for Vansh Kumar Soni",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "creative-developer",
+    "java",
+    "spring-boot",
+    "threejs",
+    "editorial-design"
+  ],
+  "author": "Vansh Kumar Soni",
+  "license": "MIT"
+}

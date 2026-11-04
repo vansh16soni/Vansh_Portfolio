@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vansh Kumar Soni — Full-Stack Developer & Java Ecosystem Engineer</title>
+  <meta name="description" content="Editorial portfolio of Vansh Kumar Soni. Full-stack developer with hands-on experience in MERN, Java, Spring Boot, Spring AI, Three.js, and computer vision systems.">
+  <meta name="author" content="Vansh Kumar Soni">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Vansh Kumar Soni — Creative Developer & Java Engineer">
+  <meta property="og:description" content="Human-art-directed portfolio featuring 3D codebase visualizers, AI platforms, and systems engineering.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Typography: Space Grotesk, Inter, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. EDITORIAL MASTHEAD / NAVIGATION
+       ======================================================================== -->
+  <header class="site-masthead">
+    <div class="site-container">
+      <div class="masthead-inner">
+        <a href="#hero" class="brand-mark" aria-label="Home">
+          <span class="brand-initials">VS</span>
+          <span>VANSH KUMAR SONI</span>
+        </a>
+
+        <div class="live-status-indicator" title="Current Availability Status">
+          <span class="pulse-dot"></span>
+          <span>STATUS: OPEN TO SDE INTERNSHIPS</span>
+        </div>
+
+        <nav class="masthead-nav" aria-label="Primary Navigation">
+          <a href="#projects" class="nav-link">WORKS</a>
+          <a href="#architecture" class="nav-link">SKILLS</a>
+          <a href="#experience" class="nav-link">EXPERIENCE</a>
+          <a href="#notebook" class="nav-link">LAB NOTES</a>
+          <a href="#journal" class="nav-link">JOURNAL</a>
+          <a href="#inquiries" class="nav-link">CONTACT</a>
+          <button type="button" class="nav-resume-btn" onclick="openResumeModal()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>RESUME</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. HERO SECTION — ASYMMETRICAL EDITORIAL COMPOSITION
+       ======================================================================== -->
+  <section id="hero" class="hero-section">
+    <div class="site-container">
+      <div class="hero-grid">
+        
+        <!-- Left Column: Editorial Dossier -->
+        <div class="hero-intro-dossier reveal-on-scroll">
+          <div class="hero-index-bar">
+            <span>[VOL. 2026 // ED. 01]</span>
+            <span>—</span>
+            <span class="highlight">FOLIO: SYSTEMS & GRAPHICS</span>
+            <span>—</span>
+            <span id="ist-clock">JABALPUR, IN // --:--:-- IST</span>
+          </div>
+
+          <div class="hero-title-group">
+            <h1 class="hero-name">VANSH KUMAR SONI</h1>
+            <p class="hero-role">Full-Stack Developer & Java Ecosystem Engineer</p>
+          </div>
+
+          <div class="hero-statement-box">
+            <blockquote class="hero-editorial-quote">
+              “Bridging deterministic systems with generative intelligence — from AST dependency graph parsing and 3D architectural engines to resilient Spring Boot microservices.”
+            </blockquote>
+            <p class="hero-sub-text">
+              Computer Engineering undergraduate (2027) focused on end-to-end full-stack architectures, high-performance Java backends, and spatial computing applications. National Runner-up at Smart India Hackathon '25.
+            </p>
+          </div>
+
+          <!-- Technical Stamp Strip -->
+          <div class="hero-tech-strip">
+            <span class="tech-stamp stamp-java">JVM 21 / Spring Boot 3</span>
+            <span class="tech-stamp stamp-spring">Spring Security & AI</span>
+            <span class="tech-stamp">React & Three.js 3D</span>
+            <span class="tech-stamp">MediaPipe WASM</span>
+            <span class="tech-stamp">AST Graph Algorithms</span>
+          </div>
+
+          <!-- Action Row -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary-editorial">
+              <span>EXPLORE WORKS</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <button type="button" class="btn-secondary-editorial" onclick="openResumeModal()">
+              <span>READ CURRICULUM VITAE</span>
+            </button>
+            <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="btn-link-editorial">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GITHUB PROFILE ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Anchor (Generative AST Dependency Graph) -->
+        <div class="hero-visual-anchor reveal-on-scroll delay-1">
+          <div class="visual-anchor-mast">
+            <span>[SCHEMATIC: AST_DEPENDENCY_NETWORK]</span>
+            <span id="canvas-nodes">11 NODES // 12 EDGES</span>
+          </div>
+
+          <div class="canvas-container">
+            <canvas id="hero-anchor-canvas"></canvas>
+            <div class="canvas-overlay-data">
+              <span id="canvas-coords">LOC: [IDLE_STANDBY]</span>
+              <span>RENDER: RETINA_DPI // SPRING_GRAPH</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
+       3. SELECTED WORKS (PROJECTS) — EDITORIAL CASE STUDIES
+       ======================================================================== -->
+  <section id="projects" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 01</span>
+          <span>CURATED CASE STUDIES // CODEBASE ARCHITECTURE</span>
+        </div>
+        <h2 class="section-title">ENGINEERED PLATFORMS</h2>
+        <p class="section-subtitle">
+          Independent systems combining algorithmic parsing, spatial 3D interfaces, and machine learning pipelines. Each project represents an end-to-end solution built with intentional engineering constraints.
+        </p>
+      </header>
+
+      <div class="projects-editorial-list">
+
+        <!-- PROJECT 01: REPO CITY (Full-Width Grand Layout) -->
+        <article class="project-plate-full reveal-on-scroll">
+          <div class="project-info-column">
+            <div class="project-index-header">
+              <span class="project-num">PLATE 01 // FEATURED</span>
+              <span class="project-category-tag">SOLO / 3D GRAPHICS & SYSTEMS</span>
+            </div>
+
+            <div>
+              <h3 class="project-title">REPO CITY</h3>
+              <p class="project-subtitle">3D Codebase Visualization & AI Learning Platform</p>
+            </div>
+
+            <p class="project-narrative">
+              Transforms raw Git repositories into procedural, interactive 3D cities. Visualizes code directory structures, module couplings, and commit velocities as volumetric architectural geometry. Features an embedded AI learning studio powered by AST parsing and Directed Acyclic Graph (DAG) algorithms.
+            </p>
+
+            <div class="project-spec-table">
+              <div class="spec-entry">
+                <span class="label">CORE ARCHITECTURE</span>
+                <span class="value">Three.js, AST Parsing, DAGs</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">BACKEND & STREAM</span>
+                <span class="value">Node.js, Express, SSE, MongoDB</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">AI CAPABILITY</span>
+                <span class="value">Gemini / OpenAI Quizzes & Insights</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">AUTHENTICATION</span>
+                <span class="value">GitHub OAuth 2.0 Flow</span>
+              </div>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-stamp">React.js</span>
+              <span class="tech-stamp">Three.js / WebGL</span>
+              <span class="tech-stamp">AST Parsing</span>
+              <span class="tech-stamp">DAG Algorithms</span>
+              <span class="tech-stamp">Server-Sent Events</span>
+              <span class="tech-stamp">MongoDB</span>
+            </div>
+
+            <div class="project-action-row">
+              <button type="button" class="btn-primary-editorial" onclick="openProjectModal('repocity')">
+                <span>VIEW CASE STUDY</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <a href="https://github.com/vansh16soni/RepoCity" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial">
+                <span>GITHUB REPO ↗</span>
+              </a>
+              <!-- Live Demo Slot: Space reserved for future live deployment link -->
+              <span class="tech-stamp" title="Live demo link configured upon production deployment">
+                [DEMO: LIVE PREVIEW READY]
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Visual Viewport (Screenshot / Blueprint Space) -->
+          <div class="project-visual-viewport">
+            <div class="viewport-mast">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span>VIEWPORT // REPOCITY_3D_URBAN_CANVAS</span>
+            </div>
+            <div class="project-screenshot-frame">
+              <!-- Editorial Blueprint Frame reserved for user's screenshot -->
+              <div class="editorial-blueprint-placeholder">
+                <svg class="blueprint-diagram" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <div class="blueprint-title">PROCEDURAL CODE URBANISM</div>
+                <div class="blueprint-desc">
+                  Interactive WebGL canvas mapping directory depth to urban blocks, cyclomatic complexity to building height, and module dependencies to spatial transit highways.
+                </div>
+                <span class="blueprint-prompt-note">[SCREENSHOT FRAME: assets/projects/repocity.png]</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02: GYAN.AI (Asymmetric 2-Column Split) -->
+        <article class="project-plate-asymmetric reveal-on-scroll">
+          <!-- Visual Viewport on the Left for Variation -->
+          <div class="project-visual-viewport">
+            <div class="viewport-mast">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span>VIEWPORT // GYAN_KNOWLEDGE_PIPELINE</span>
+            </div>
+            <div class="project-screenshot-frame">
+              <div class="editorial-blueprint-placeholder">
+                <svg class="blueprint-diagram" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <div class="blueprint-title">DUAL LLM FALLBACK PIPELINE</div>
+                <div class="blueprint-desc">
+                  Transcript ingestion → Semantic chunking → Gemini 1.5 Pro synthesis ⇄ Groq Cloud failover → React Flow knowledge graph generation.
+                </div>
+                <span class="blueprint-prompt-note">[SCREENSHOT FRAME: assets/projects/gyanai.png]</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-column">
+            <div class="project-index-header">
+              <span class="project-num">PLATE 02</span>
+              <span class="project-category-tag">SOLO / KNOWLEDGE ENGINEERING</span>
+            </div>
+
+            <div>
+              <h3 class="project-title">GYAN.AI</h3>
+              <p class="project-subtitle">AI-Powered Technical Notes & Knowledge Platform</p>
+            </div>
+
+            <p class="project-narrative">
+              Converts complex YouTube engineering lectures and multi-modal sources into structured, searchable study notes. Implements timestamp-based transcript chunking with an automated dual-LLM fallback architecture (Gemini & Groq), dynamic React Flow concept graphs, and exportable Markdown/PDF dossiers.
+            </p>
+
+            <div class="project-spec-table">
+              <div class="spec-entry">
+                <span class="label">FALLBACK ORCHESTRATION</span>
+                <span class="value">Gemini 1.5 Pro ⇄ Groq Cloud</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">VISUAL GRAPH ENGINE</span>
+                <span class="value">React Flow Dynamic DAGs</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">SECURITY & SESSIONS</span>
+                <span class="value">JWT, Salted Hashing</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">EXPORT FORMATS</span>
+                <span class="value">PDF, DOCX, Markdown, LaTeX</span>
+              </div>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-stamp">React.js</span>
+              <span class="tech-stamp">Node.js</span>
+              <span class="tech-stamp">Express.js</span>
+              <span class="tech-stamp">MongoDB</span>
+              <span class="tech-stamp">Gemini API</span>
+              <span class="tech-stamp">Groq LLMs</span>
+              <span class="tech-stamp">React Flow</span>
+            </div>
+
+            <div class="project-action-row">
+              <button type="button" class="btn-primary-editorial" onclick="openProjectModal('gyanai')">
+                <span>VIEW CASE STUDY</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <a href="https://github.com/vansh16soni/GYAN.AI" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial">
+                <span>GITHUB REPO ↗</span>
+              </a>
+              <span class="tech-stamp" title="Live demo link configured upon production deployment">
+                [DEMO: LIVE PREVIEW READY]
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: SHADOWPLAY (Studio Plate) -->
+        <article class="project-plate-full reveal-on-scroll">
+          <div class="project-info-column">
+            <div class="project-index-header">
+              <span class="project-num">PLATE 03</span>
+              <span class="project-category-tag">SOLO / VISION & WEB-GRAPHICS</span>
+            </div>
+
+            <div>
+              <h3 class="project-title">SHADOWPLAY</h3>
+              <p class="project-subtitle">Real-Time Hand Gesture & Shadow Puppet Studio</p>
+            </div>
+
+            <p class="project-narrative">
+              An interactive web shadow theatre utilizing client-side WebAssembly to track 21 3D hand landmarks in real time. Employs HTML5 Canvas API and Three.js lighting models to deform virtual shadow puppets without uploading raw video streams to any cloud server, preserving total user privacy.
+            </p>
+
+            <div class="project-spec-table">
+              <div class="spec-entry">
+                <span class="label">INFERENCE RUNTIME</span>
+                <span class="value">MediaPipe Hands (WASM, 60 FPS)</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">PRIVACY MODEL</span>
+                <span class="value">Client-Side Memory (Zero Cloud Stream)</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">RENDERING PIPELINE</span>
+                <span class="value">Canvas API 2D + Three.js Lighting</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">GESTURE TRACKING</span>
+                <span class="value">21 3D Skeletal Landmark Coordinates</span>
+              </div>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-stamp">React.js</span>
+              <span class="tech-stamp">MediaPipe Hands</span>
+              <span class="tech-stamp">WebAssembly</span>
+              <span class="tech-stamp">Canvas API</span>
+              <span class="tech-stamp">Three.js</span>
+              <span class="tech-stamp">Node.js / Express</span>
+            </div>
+
+            <div class="project-action-row">
+              <button type="button" class="btn-primary-editorial" onclick="openProjectModal('shadowplay')">
+                <span>VIEW CASE STUDY</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <a href="https://github.com/vansh16soni/ShadowPlay" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial">
+                <span>GITHUB REPO ↗</span>
+              </a>
+              <span class="tech-stamp" title="Live demo link configured upon production deployment">
+                [DEMO: LIVE PREVIEW READY]
+              </span>
+            </div>
+          </div>
+
+          <div class="project-visual-viewport">
+            <div class="viewport-mast">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span>VIEWPORT // SHADOWPLAY_KINEMATICS</span>
+            </div>
+            <div class="project-screenshot-frame">
+              <div class="editorial-blueprint-placeholder">
+                <svg class="blueprint-diagram" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                  <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                  <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+                </svg>
+                <div class="blueprint-title">21-LANDMARK SKELETAL RIGGING</div>
+                <div class="blueprint-desc">
+                  Real-time vector calculations mapping wrist, knuckle, and fingertip coordinates into live shadow silhouettes with dynamic aperture physics.
+                </div>
+                <span class="blueprint-prompt-note">[SCREENSHOT FRAME: assets/projects/shadowplay.png]</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
+       4. TECHNICAL PROFILE & ARCHITECTURE (SKILLS & ETHOS)
+       ======================================================================== -->
+  <section id="architecture" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 02</span>
+          <span>COMPUTATIONAL FOUNDATIONS // TECHNICAL STACK</span>
+        </div>
+        <h2 class="section-title">TECHNICAL PROFILE & ARCHITECTURE</h2>
+        <p class="section-subtitle">
+          No artificial percentage ratings or arbitrary proficiency bars. A transparent inventory of core engineering disciplines, runtime ecosystems, and frameworks backed by deployed codebases and production projects.
+        </p>
+      </header>
+
+      <div class="skills-editorial-grid reveal-on-scroll">
+        
+        <!-- Category 01: Java & Backend Architecture -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <h3 class="skill-cat-title">Java Ecosystem & Backend</h3>
+            <span class="skill-cat-index">[JVM 21]</span>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item-row">
+              <span class="skill-name">Java (Core & OOP)</span>
+              <span class="skill-context">Multithreading, Collections, Generics</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Spring Boot 3</span>
+              <span class="skill-context">RESTful Microservices, Dependency Injection</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Spring Security</span>
+              <span class="skill-context">JWT Tokens, GitHub OAuth 2.0</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Spring AI</span>
+              <span class="skill-context">Multi-LLM Clients, Vector Stores</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Virtual Threads</span>
+              <span class="skill-context">Project Loom High-Concurrency Tasks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 02: Full-Stack & Graphics -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <h3 class="skill-cat-title">Full-Stack & WebGL</h3>
+            <span class="skill-cat-index">[MERN / GRAPHICS]</span>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item-row">
+              <span class="skill-name">React.js & Next.js</span>
+              <span class="skill-context">Custom Hooks, State Primitives, SSR</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Three.js / WebGL</span>
+              <span class="skill-context">Procedural Meshes, Camera Frustums, Shaders</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Node.js & Express.js</span>
+              <span class="skill-context">High-Throughput Middleware & REST APIs</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">HTML5 Canvas API</span>
+              <span class="skill-context">Real-Time Vector Kinematics & Shading</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">WebAssembly (WASM)</span>
+              <span class="skill-context">Client-Side High-Speed Compute</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 03: Applied AI & Computer Vision -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <h3 class="skill-cat-title">Intelligence & Vision</h3>
+            <span class="skill-cat-index">[AI / CV RUNTIMES]</span>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item-row">
+              <span class="skill-name">MediaPipe Hands</span>
+              <span class="skill-context">21 3D Landmarks, Sub-20ms Tracking</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Google Gemini API</span>
+              <span class="skill-context">Multimodal Reasoning, Semantic Chunks</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Groq Cloud LLMs</span>
+              <span class="skill-context">Ultra-Low-Latency Inference Fallback</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">OpenAI API</span>
+              <span class="skill-context">Streaming Completions, Embeddings</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Scikit-Learn & NumPy</span>
+              <span class="skill-context">Linear Regression, Data Pipelines</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 04: Systems & Core CSE -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <h3 class="skill-cat-title">Systems & Core CSE</h3>
+            <span class="skill-cat-index">[ALGORITHMIC]</span>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item-row">
+              <span class="skill-name">Data Structures & Algos</span>
+              <span class="skill-context">Graph Traversal, Dynamic Programming</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">AST Parsing & Compilers</span>
+              <span class="skill-context">Syntax Trees, Module Resolution</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">DAG Algorithms</span>
+              <span class="skill-context">Topological Sorting, Cycle Detection</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Object-Oriented Design</span>
+              <span class="skill-context">SOLID Principles, Design Patterns</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">C & C++</span>
+              <span class="skill-context">Memory Fundamentals, Low-Level Logic</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 05: Data & Cloud Infrastructure -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <h3 class="skill-cat-title">Persistence & Tooling</h3>
+            <span class="skill-cat-index">[INFRASTRUCTURE]</span>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item-row">
+              <span class="skill-name">MongoDB</span>
+              <span class="skill-context">Aggregation Pipelines, Document Models</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">MySQL</span>
+              <span class="skill-context">Relational Schema Design, Foreign Keys</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Git & GitHub</span>
+              <span class="skill-context">Branch Workflows, CI/CD Actions</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Cloud Deployments</span>
+              <span class="skill-context">Render, Vercel, GitHub Pages</span>
+            </div>
+            <div class="skill-item-row">
+              <span class="skill-name">Linux & VS Code</span>
+              <span class="skill-context">Shell Scripting, Debugging Tooling</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
+       5. EDITORIAL EXPERIENCE TIMELINE
+       ======================================================================== -->
+  <section id="experience" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 03</span>
+          <span>PRACTICE RECORD // INDUSTRY & GOVERNMENT INTERNSHIPS</span>
+        </div>
+        <h2 class="section-title">ENGINEERING EXPERIENCE</h2>
+        <p class="section-subtitle">
+          Structured roles across artificial intelligence and enterprise data analytics, solving real-world routing and telemetry challenges.
+        </p>
+      </header>
+
+      <div class="timeline-editorial-list">
+
+        <!-- Entry 01: Cisco AI Intern -->
+        <div class="timeline-entry reveal-on-scroll">
+          <div class="timeline-meta-col">
+            <span class="timeline-date-range">JUNE – AUGUST 2026</span>
+            <h3 class="timeline-org">CISCO</h3>
+            <span class="timeline-badge">AI ENGINEERING INTERN</span>
+          </div>
+
+          <div class="timeline-body-col">
+            <h4 class="timeline-project-title">NetSage AI — AI-Powered Network Troubleshooting Assistant</h4>
+            
+            <div class="timeline-bullets">
+              <p class="timeline-bullet-item">
+                Developed an AI-assisted network troubleshooting platform for Cisco Packet Tracer labs, ingesting network topology parameters, symptoms, and CLI command outputs.
+              </p>
+              <p class="timeline-bullet-item">
+                Integrated an intelligent diagnostic pipeline to identify root causes, categorize issues across the 7 OSI layers, calculate confidence scores, and recommend precise remediation commands.
+              </p>
+              <p class="timeline-bullet-item">
+                Engineered a human-in-the-loop review workflow ensuring network engineers validate automated configuration fixes before execution.
+              </p>
+            </div>
+
+            <div class="timeline-metric-callout">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>FOCUS: PACKET TRACER TELEMETRY & OSI LAYER ROOT CAUSE SYNTHESIS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 02: BSNL Government Data Analytics Intern -->
+        <div class="timeline-entry reveal-on-scroll">
+          <div class="timeline-meta-col">
+            <span class="timeline-date-range">FEBRUARY 2026</span>
+            <h3 class="timeline-org">BSNL</h3>
+            <span class="timeline-badge">GOVT. DATA ANALYTICS INTERN</span>
+          </div>
+
+          <div class="timeline-body-col">
+            <h4 class="timeline-project-title">Telecom Data Analytics — Network Quality & Revenue Optimization</h4>
+            
+            <div class="timeline-bullets">
+              <p class="timeline-bullet-item">
+                Processed and modeled 10,000+ simulated telecom telemetry records using Python, Pandas, and NumPy, systematically analyzing customer churn triggers.
+              </p>
+              <p class="timeline-bullet-item">
+                Discovered an empirical 0.7 Pearson correlation between Quality of Service (QoS) degradation (packet latency, call drops) and Average Revenue Per User (ARPU) contraction.
+              </p>
+              <p class="timeline-bullet-item">
+                Applied Scikit-learn linear regression modeling to forecast revenue vulnerabilities and constructed Power BI dashboards projecting INR 2 Lakhs/month in at-risk regional revenue.
+              </p>
+            </div>
+
+            <div class="timeline-metric-callout">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <span>RESULT: 0.7 CORRELATION DISCOVERED // INR 2 LAKH/MO RISK PROJECTED</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
+       6. CODING PRACTICE — TECHNICAL NOTEBOOK
+       ======================================================================== -->
+  <section id="notebook" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 04</span>
+          <span>ENGINEERING LAB NOTEBOOK // CODE EXCERPTS</span>
+        </div>
+        <h2 class="section-title">CODING PRACTICE & PATTERNS</h2>
+        <p class="section-subtitle">
+          Excerpts from production algorithms, custom Spring AI controllers, and client-side WebAssembly vectors. An authentic workspace record of engineering logic.
+        </p>
+      </header>
+
+      <div class="notebook-container reveal-on-scroll">
+        
+        <!-- Left: Index / Tabs -->
+        <aside class="notebook-sidebar">
+          <button type="button" class="notebook-tab-btn active">
+            <span class="tab-num">LOG 01 // COMPILERS</span>
+            <span class="tab-title">AST Dependency Graph & DAGs</span>
+          </button>
+          <button type="button" class="notebook-tab-btn">
+            <span class="tab-num">LOG 02 // SPRING 3</span>
+            <span class="tab-title">Spring AI Multi-Model Resilience</span>
+          </button>
+          <button type="button" class="notebook-tab-btn">
+            <span class="tab-num">LOG 03 // VISION</span>
+            <span class="tab-title">21-Landmark WASM Kinematics</span>
+          </button>
+          <button type="button" class="notebook-tab-btn">
+            <span class="tab-num">LOG 04 // DATA</span>
+            <span class="tab-title">Telecom QoS Linear Regression</span>
+          </button>
+        </aside>
+
+        <!-- Right: Code Viewer -->
+        <div class="notebook-content-panel">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+              <h3 id="notebook-entry-title" class="display-subtitle">Multi-Language AST Dependency Graph & Topological Sorting</h3>
+              <span id="notebook-entry-lang" class="tech-stamp stamp-spring">TypeScript / Node.js & Java</span>
+            </div>
+            <p id="notebook-entry-desc" class="editorial-body">
+              Algorithm deployed in Repo City to recursively visit file import statements, generate an adjacency list representation of software modules, and execute Kahn's algorithm to compute topological execution order and detect cyclic dependencies.
+            </p>
+          </div>
+
+          <pre class="notebook-code-block"><code id="notebook-code-display">// AST Module Dependency Walker & Cycle Detection
+class DependencyGraph {
+    private adjacencyList: Map&lt;string, Set&lt;string&gt;&gt; = new Map();
+    private inDegree: Map&lt;string, number&gt; = new Map();
+
+    public addDependency(fromModule: string, toModule: string): void {
+        if (!this.adjacencyList.has(fromModule)) {
+            this.adjacencyList.set(fromModule, new Set());
+            this.inDegree.set(fromModule, 0);
+        }
+        if (!this.adjacencyList.has(toModule)) {
+            this.adjacencyList.set(toModule, new Set());
+            this.inDegree.set(toModule, 0);
+        }
+        if (!this.adjacencyList.get(fromModule)!.has(toModule)) {
+            this.adjacencyList.get(fromModule)!.add(toModule);
+            this.inDegree.set(toModule, (this.inDegree.get(toModule) || 0) + 1);
+        }
+    }
+
+    public computeTopologicalOrder(): { order: string[], cycles: string[] } {
+        const queue: string[] = [];
+        const order: string[] = [];
+        const inDegreeCopy = new Map(this.inDegree);
+
+        for (const [node, degree] of inDegreeCopy.entries()) {
+            if (degree === 0) queue.push(node);
+        }
+
+        while (queue.length > 0) {
+            const current = queue.shift()!;
+            order.push(current);
+
+            for (const neighbor of this.adjacencyList.get(current) || []) {
+                const updated = inDegreeCopy.get(neighbor)! - 1;
+                inDegreeCopy.set(neighbor, updated);
+                if (updated === 0) queue.push(neighbor);
+            }
+        }
+
+        const cycles = Array.from(inDegreeCopy.entries())
+            .filter(([_, degree]) => degree > 0)
+            .map(([node]) => node);
+
+        return { order, cycles };
+    }
+}</code></pre>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a id="notebook-entry-repo" href="https://github.com/vansh16soni/RepoCity" target="_blank" rel="noopener noreferrer" class="btn-link-editorial">
+              <span>EXPLORE FULL SOURCE ON GITHUB ↗</span>
+            </a>
+            <span class="mono-label">REPRESENTATIVE ALGORITHMIC LOGIC</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
+       7. ONGOING PROJECTS — DEVELOPMENT JOURNAL
+       ======================================================================== -->
+  <section id="journal" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 05</span>
+          <span>RESEARCH & PIPELINES // ACTIVE EXPERIMENTATION</span>
+        </div>
+        <h2 class="section-title">DEVELOPMENT JOURNAL</h2>
+        <p class="section-subtitle">
+          Curated notes on ongoing technical explorations, architectural benchmarks, and active prototypes.
+        </p>
+      </header>
+
+      <div class="journal-entries-grid reveal-on-scroll">
+        
+        <!-- Journal Entry 01 -->
+        <div class="journal-card">
+          <div class="journal-top">
+            <span class="mono-label">LOG #084 // NOV 2026</span>
+            <span class="journal-status-tag">ACTIVE BENCHMARK</span>
+          </div>
+          <h3 class="journal-title">Spring Boot Virtual Threads vs. Reactive Streams</h3>
+          <p class="journal-notes">
+            Benchmarking throughput of Java 21 Project Loom virtual threads against Spring WebFlux reactive models for I/O-bound LLM token streaming. Observing significant reduction in thread context-switch overhead while retaining straightforward imperative syntax.
+          </p>
+          <div class="tech-stamp stamp-java">JVM 21 / Loom / Spring Boot 3</div>
+        </div>
+
+        <!-- Journal Entry 02 -->
+        <div class="journal-card">
+          <div class="journal-top">
+            <span class="mono-label">LOG #085 // NOV 2026</span>
+            <span class="journal-status-tag">PHASE II ARCHITECTURE</span>
+          </div>
+          <h3 class="journal-title">Repo City WebGL Instanced Mesh Optimization</h3>
+          <p class="journal-notes">
+            Refactoring Repo City's Three.js building geometry into GPU InstancedMesh buffers to render 10,000+ files in enterprise monorepos smoothly at 60 FPS. Mapping file commit frequency directly to custom fragment shader pulse rates.
+          </p>
+          <div class="tech-stamp">Three.js / GLSL / AST Walkers</div>
+        </div>
+
+        <!-- Journal Entry 03 -->
+        <div class="journal-card">
+          <div class="journal-top">
+            <span class="mono-label">LOG #086 // OCT 2026</span>
+            <span class="journal-status-tag">EXPLORATORY</span>
+          </div>
+          <h3 class="journal-title">Edge-Side Hand Gesture Physics in Canvas</h3>
+          <p class="journal-notes">
+            Exploring verlet integration for cloth-like shadow deformations in ShadowPlay. Calculating finger joint acceleration vectors directly in client WASM memory to allow tactile interaction with simulated stage curtains and movable props.
+          </p>
+          <div class="tech-stamp">WebAssembly / MediaPipe / Canvas</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
+       8. CERTIFICATES & ACCOLADES — DOCUMENT GALLERY
+       ======================================================================== -->
+  <section id="certificates" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 06</span>
+          <span>VERIFIED CREDENTIALS // COMPETITIVE ACCOLADES</span>
+        </div>
+        <h2 class="section-title">CERTIFICATES & ACHIEVEMENTS</h2>
+        <p class="section-subtitle">
+          National hackathon recognitions, Amazon Web Services technical credentials, and verified computer science accreditations.
+        </p>
+      </header>
+
+      <div class="certificates-grid reveal-on-scroll">
+        
+        <!-- Plate 01: Smart India Hackathon -->
+        <div class="cert-document-plate">
+          <div class="cert-header">
+            <span class="cert-issuer">AICTE & GOVT. OF INDIA</span>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-title">Smart India Hackathon '25</h3>
+          <p class="cert-desc">
+            National Runner-up, ranked among the top 40 national finalist teams nationwide in India's premier government-sponsored technical innovation hackathon.
+          </p>
+          <button type="button" class="cert-view-btn" onclick="openCertModal('sih')">
+            <span>INSPECT CREDENTIAL ↗</span>
+          </button>
+        </div>
+
+        <!-- Plate 02: Hack SRIT -->
+        <div class="cert-document-plate">
+          <div class="cert-header">
+            <span class="cert-issuer">SRIT JABALPUR</span>
+            <span class="cert-year">2024</span>
+          </div>
+          <h3 class="cert-title">Hack SRIT '24 & Technogenesis '24</h3>
+          <p class="cert-desc">
+            Top 30 Finalist in regional multi-college hackathon, recognized for rapid prototyping and full-stack architecture design.
+          </p>
+          <button type="button" class="cert-view-btn" onclick="openCertModal('srit')">
+            <span>INSPECT CREDENTIAL ↗</span>
+          </button>
+        </div>
+
+        <!-- Plate 03: AWS Academy ML Foundations -->
+        <div class="cert-document-plate">
+          <div class="cert-header">
+            <span class="cert-issuer">AMAZON WEB SERVICES</span>
+            <span class="cert-year">AUG 2026</span>
+          </div>
+          <h3 class="cert-title">AWS Machine Learning Foundations</h3>
+          <p class="cert-desc">
+            Certified foundation in data engineering, machine learning pipelines, model training workflows, and deployment on AWS cloud infrastructure.
+          </p>
+          <button type="button" class="cert-view-btn" onclick="openCertModal('aws_ml')">
+            <span>INSPECT CREDENTIAL ↗</span>
+          </button>
+        </div>
+
+        <!-- Plate 04: AWS Academy NLP -->
+        <div class="cert-document-plate">
+          <div class="cert-header">
+            <span class="cert-issuer">AMAZON WEB SERVICES</span>
+            <span class="cert-year">JUL 2026</span>
+          </div>
+          <h3 class="cert-title">AWS ML for Natural Language Processing</h3>
+          <p class="cert-desc">
+            Specialized credential in text preprocessing, transformer architectures, tokenization strategies, and LLM fine-tuning methodologies.
+          </p>
+          <button type="button" class="cert-view-btn" onclick="openCertModal('aws_nlp')">
+            <span>INSPECT CREDENTIAL ↗</span>
+          </button>
+        </div>
+
+        <!-- Plate 05: AWS Cloud Foundations -->
+        <div class="cert-document-plate">
+          <div class="cert-header">
+            <span class="cert-issuer">AMAZON WEB SERVICES</span>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-title">AWS Cloud Foundations</h3>
+          <p class="cert-desc">
+            Comprehensive foundation covering cloud security, IAM architecture, compute services (EC2, Lambda), storage (S3), and networking (VPC).
+          </p>
+          <button type="button" class="cert-view-btn" onclick="openCertModal('aws_cloud')">
+            <span>INSPECT CREDENTIAL ↗</span>
+          </button>
+        </div>
+
+        <!-- Plate 06: SoloLearn Java -->
+        <div class="cert-document-plate">
+          <div class="cert-header">
+            <span class="cert-issuer">SOLOLEARN</span>
+            <span class="cert-year">APR 2024</span>
+          </div>
+          <h3 class="cert-title">Introduction to Java</h3>
+          <p class="cert-desc">
+            Verified mastery in Java syntax, Object-Oriented Programming (OOP) paradigms, abstraction, multi-threading, and exception handling.
+          </p>
+          <button type="button" class="cert-view-btn" onclick="openCertModal('sololearn_java')">
+            <span>INSPECT CREDENTIAL ↗</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
+       9. INQUIRIES & COLOPHON
+       ======================================================================== -->
+  <section id="inquiries" class="inquiries-section">
+    <div class="site-container">
+      <div class="inquiries-grid reveal-on-scroll">
+        
+        <!-- Contact Actions -->
+        <div class="contact-action-box">
+          <div class="section-meta">
+            <span class="index-pill">SECTION 07</span>
+            <span>DIRECT INQUIRIES // COLLABORATION</span>
+          </div>
+          
+          <h2 class="display-title" style="font-size: clamp(2rem, 3.8vw, 3.25rem);">INITIATE DIALOGUE</h2>
+          
+          <p class="editorial-body">
+            Currently seeking Software Engineering Internships (SDE), full-stack development opportunities, and technical collaborations in the Java / Spring Boot and AI systems space.
+          </p>
+
+          <div class="contact-btn-row">
+            <button type="button" class="btn-primary-editorial" onclick="copyEmail()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>COPY EMAIL ADDRESS</span>
+            </button>
+            
+            <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial">
+              <span>GITHUB PROFILE ↗</span>
+            </a>
+
+            <button type="button" class="btn-secondary-editorial" onclick="openResumeModal()">
+              <span>VIEW RESUME</span>
+            </button>
+          </div>
+
+          <span id="copy-toast" class="copy-feedback-toast">COPIED TO CLIPBOARD</span>
+        </div>
+
+        <!-- Colophon & Design Manifesto -->
+        <div class="colophon-meta-box">
+          <span class="colophon-title">COLOPHON & DESIGN ETHOS</span>
+          <p>
+            Conceptualized and art-directed as an authentic creative developer's personal website. Built with zero generic templates, no AI UI kit cards, and no excessive gradient neon.
+          </p>
+          <p>
+            <strong>Typography:</strong> Space Grotesk (Editorial Display), Inter (Body Copy), IBM Plex Mono (Technical Annotations).<br>
+            <strong>Palette:</strong> Charcoal (#101510), Spring Green (#6DB33F), Java Orange (#F89820), Warm Off-White (#EAE9E1), Muted Grey (#858B83).<br>
+            <strong>Origin:</strong> Jabalpur, Madhya Pradesh, India.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. SITE FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-inner">
+        <span>© 2026 VANSH KUMAR SONI // ALL RIGHTS RESERVED</span>
+        <span>DEPLOYED ON GITHUB PAGES // CONCISE STATIC ARCHITECTURE</span>
+        <a href="#hero" class="mono-accent-spring">BACK TO APEX ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL: CASE STUDY DOSSIER
+       ======================================================================== -->
+  <div id="project-modal-backdrop" class="editorial-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="editorial-modal-window">
+      <div class="modal-header-bar">
+        <span id="modal-project-num" class="modal-title-stamp">CASE STUDY // 01</span>
+        <button type="button" class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close Case Study">✕</button>
+      </div>
+
+      <div class="modal-body-content">
+        <div>
+          <span id="modal-project-tag" class="mono-label">SOLO / SYSTEMS ARCHITECTURE</span>
+          <h2 id="modal-project-title" class="display-subtitle" style="font-size: 1.875rem; margin-top: 4px;">Repo City</h2>
+          <p id="modal-project-subtitle" class="editorial-lead" style="color: var(--accent-spring); font-size: 1.0625rem; margin-top: 4px;">3D Codebase Visualization</p>
+        </div>
+
+        <div>
+          <span class="mono-label">TECHNOLOGY STACK</span>
+          <div id="modal-project-tech" class="project-tech-pills" style="margin-top: 8px;"></div>
+        </div>
+
+        <div>
+          <span class="mono-label">THE PROBLEM STATEMENT</span>
+          <p id="modal-project-problem" class="editorial-body" style="margin-top: 6px;"></p>
+        </div>
+
+        <div>
+          <span class="mono-label">ARCHITECTURAL IMPLEMENTATION</span>
+          <ul id="modal-project-arch" class="timeline-bullets" style="margin-top: 8px;"></ul>
+        </div>
+
+        <div>
+          <span class="mono-label">ENGINEERING OUTCOME</span>
+          <p id="modal-project-outcome" class="editorial-body" style="margin-top: 6px;"></p>
+        </div>
+
+        <div class="project-action-row" style="margin-top: 12px; border-top: 1px solid var(--border-hairline); padding-top: 16px;">
+          <a id="modal-project-github" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary-editorial">
+            <span>VIEW REPOSITORY ON GITHUB ↗</span>
+          </a>
+          <a id="modal-project-demo" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial" style="display: none;">
+            <span>LAUNCH LIVE DEMO ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL: INTERACTIVE RESUME DOSSIER (PDF-VERIFIED, PRIVACY-SAFE)
+       ======================================================================== -->
+  <div id="resume-modal-backdrop" class="editorial-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-resume-title">
+    <div class="editorial-modal-window" style="max-width: 860px;">
+      <div class="modal-header-bar">
+        <span class="modal-title-stamp">CURRICULUM VITAE // VERIFIED DOCUMENT</span>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button type="button" class="btn-secondary-editorial" style="padding: 4px 10px; font-size: 0.75rem;" onclick="window.print()">
+            <span>PRINT / SAVE PDF</span>
+          </button>
+          <button type="button" class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close Resume">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body-content" style="background: #0d120d;">
+        
+        <!-- Resume Header -->
+        <div style="border-bottom: 2px solid var(--accent-spring); padding-bottom: 16px;">
+          <h2 id="modal-resume-title" class="display-title" style="font-size: clamp(1.75rem, 3.5vw, 2.5rem);">VANSH KUMAR SONI</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-secondary); margin-top: 8px;">
+            <a href="https://github.com/vansh16soni" target="_blank" class="mono-accent-spring">github.com/vansh16soni ↗</a>
+            <span>•</span>
+            <span class="mono-accent-spring">vansh16tanay@gmail.com</span>
+            <span>•</span>
+            <span>Jabalpur, Madhya Pradesh, India</span>
+          </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div>
+          <span class="mono-label" style="color: var(--accent-spring);">PROFESSIONAL SUMMARY</span>
+          <p class="editorial-body" style="margin-top: 6px;">
+            Computer Engineering student (2027) and Full-Stack Developer with hands-on experience in the MERN stack and Java ecosystem, including Spring Boot, Spring Security, and Spring AI. Experienced in building RESTful applications, secure backend systems, and AI-powered platforms using LLMs, machine learning, and computer vision. Strong foundation in DSA, OOP, and software development, with experience developing and deploying end-to-end applications.
+          </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div>
+          <span class="mono-label" style="color: var(--accent-spring);">TECHNICAL SKILLS</span>
+          <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; font-size: 0.875rem; margin-top: 8px;">
+            <span class="mono-label">Languages:</span>
+            <span>Java, C, C++, Python, JavaScript</span>
+
+            <span class="mono-label">MERN Stack:</span>
+            <span>MongoDB, Express.js, React.js, Node.js</span>
+
+            <span class="mono-label">Java Backend:</span>
+            <span style="color: var(--accent-java);">Spring Boot, Spring Security, Spring AI, REST APIs, JWT, GitHub OAuth</span>
+
+            <span class="mono-label">Frontend:</span>
+            <span>Next.js, Three.js, HTML5, CSS3, Canvas API</span>
+
+            <span class="mono-label">AI, ML & CV:</span>
+            <span>Gemini, Groq, OpenAI, LLM Integration, MediaPipe, WebAssembly</span>
+
+            <span class="mono-label">Core CSE:</span>
+            <span>Data Structures & Algorithms, OOP, AST Parsing, System Design, Agile, SDLC</span>
+
+            <span class="mono-label">Databases:</span>
+            <span>MySQL, MongoDB, Git, GitHub, VS Code, Render</span>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div>
+          <span class="mono-label" style="color: var(--accent-spring);">EXPERIENCE</span>
+          
+          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-heading); font-weight: 600;">
+                <span>Cisco — AI Intern</span>
+                <span class="mono-label">June – August 2026</span>
+              </div>
+              <div class="mono-accent-spring" style="font-size: 0.8125rem;">NetSage AI – AI-Powered Network Troubleshooting Assistant</div>
+              <p class="editorial-body" style="font-size: 0.875rem; margin-top: 4px;">
+                • Developed an AI-assisted network troubleshooting platform for Cisco Packet Tracer labs, analyzing network symptoms, topology details, and diagnostic command outputs.<br>
+                • Integrated AI-powered diagnosis to identify root causes, OSI layers, confidence scores, recommended diagnostic commands, and actionable fixes with human-in-the-loop review.
+              </p>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-heading); font-weight: 600;">
+                <span>BSNL — Government Data Analytics Intern</span>
+                <span class="mono-label">February 2026</span>
+              </div>
+              <div class="mono-accent-spring" style="font-size: 0.8125rem;">Telecom Data Analytics – Network Quality & Revenue Optimization</div>
+              <p class="editorial-body" style="font-size: 0.875rem; margin-top: 4px;">
+                • Analyzed 10,000+ simulated telecom records using Python, Pandas, and NumPy, identifying a 0.7 correlation between QoS degradation and ARPU loss.<br>
+                • Applied Scikit-learn linear regression to model revenue risks and developed Power BI dashboards, projecting INR 2 Lakhs/month in at-risk regional revenue.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Projects in Resume -->
+        <div>
+          <span class="mono-label" style="color: var(--accent-spring);">KEY PROJECTS</span>
+          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem;">
+            <div>
+              <strong>Repo City — 3D Codebase Visualization & AI Learning Platform</strong>
+              <p class="editorial-body" style="font-size: 0.875rem;">React, Three.js, Node.js, Express, MongoDB platform transforming Git repositories into interactive 3D cities with multi-language AST parsing, DAG algorithms, and AI tutoring studio.</p>
+            </div>
+            <div>
+              <strong>GYAN.AI — AI-Powered Technical Notes & Knowledge Platform</strong>
+              <p class="editorial-body" style="font-size: 0.875rem;">Transforms YouTube lectures into structured study notes using Gemini and Groq LLMs with automated fallback, timestamped chunking, React Flow graphs, and multi-format exports.</p>
+            </div>
+            <div>
+              <strong>ShadowPlay — Real-Time Hand Gesture & Shadow Puppet Studio</strong>
+              <p class="editorial-body" style="font-size: 0.875rem;">Browser shadow puppet studio using MediaPipe Hands, WebAssembly, and Canvas API with 21 3D hand landmarks and privacy-first client-side processing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <span class="mono-label" style="color: var(--accent-spring);">EDUCATION</span>
+          <div style="margin-top: 8px; display: flex; justify-content: space-between; align-items: baseline;">
+            <div>
+              <strong>B.Tech in Computer Engineering</strong> — Shri Ram Institute of Technology
+              <div class="mono-label">2023–2027</div>
+            </div>
+            <span class="tech-stamp stamp-spring">GPA: 8.2 / 10</span>
+          </div>
+          <div style="margin-top: 6px; display: flex; justify-content: space-between; align-items: baseline;">
+            <div>
+              <strong>Class XII (Higher Secondary)</strong> — MP Board
+              <div class="mono-label">2022</div>
+            </div>
+            <span class="tech-stamp">75%</span>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div>
+          <span class="mono-label" style="color: var(--accent-spring);">ACHIEVEMENTS & CERTIFICATIONS</span>
+          <ul class="timeline-bullets" style="margin-top: 6px; font-size: 0.875rem;">
+            <li class="timeline-bullet-item">Smart India Hackathon '25 — National Runner-up (Top 40 Finalist Teams) [2025]</li>
+            <li class="timeline-bullet-item">Hack SRIT '24 & Technogenesis '24 — Top 30 Finalist [2024]</li>
+            <li class="timeline-bullet-item">AWS Academy Machine Learning Foundations [Aug 2026]</li>
+            <li class="timeline-bullet-item">AWS Academy ML for Natural Language Processing [Jul 2026]</li>
+            <li class="timeline-bullet-item">AWS Academy Cloud Foundations [2025]</li>
+            <li class="timeline-bullet-item">Introduction to Java — SoloLearn [Apr 2024]</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL: CERTIFICATE VIEWER
+       ======================================================================== -->
+  <div id="cert-modal-backdrop" class="editorial-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-cert-title">
+    <div class="editorial-modal-window" style="max-width: 600px;">
+      <div class="modal-header-bar">
+        <span id="modal-cert-issuer" class="modal-title-stamp">ISSUING BODY</span>
+        <button type="button" class="modal-close-btn" onclick="closeCertModal()" aria-label="Close Credential">✕</button>
+      </div>
+
+      <div class="modal-body-content">
+        <h3 id="modal-cert-title" class="display-subtitle">Certificate Title</h3>
+        <span id="modal-cert-date" class="mono-label" style="color: var(--accent-spring);">ISSUED: 2025</span>
+        <p id="modal-cert-desc" class="editorial-body"></p>
+        
+        <div style="margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--border-hairline); display: flex; justify-content: space-between; align-items: center;">
+          <span class="mono-label">DOCUMENT STATUS: VERIFIED</span>
+          <button type="button" class="btn-secondary-editorial" onclick="closeCertModal()">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/canvas-graph.js"></script>
+  <script src="js/project-modal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

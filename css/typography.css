@@ -1,0 +1,110 @@
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM
+   Space Grotesk (Editorial Headings) + Inter (Crisp Body) + IBM Plex Mono
+   ========================================================================== */
+
+/* Editorial Display Heading */
+.display-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.display-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.2vw, 1.875rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+/* Monospace Technical Notation */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.mono-accent-spring {
+  font-family: var(--font-mono);
+  color: var(--accent-spring);
+}
+
+.mono-accent-java {
+  font-family: var(--font-mono);
+  color: var(--accent-java);
+}
+
+/* Editorial Lead & Paragraphs */
+.editorial-lead {
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.55;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.editorial-body {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.editorial-statement {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  line-height: 1.35;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  border-left: 2px solid var(--accent-spring);
+  padding-left: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+/* Technical JVM/Spring Badges & Annotation Stamps */
+.tech-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tech-stamp.stamp-java {
+  border-color: var(--accent-java-border);
+  color: var(--accent-java);
+  background: var(--accent-java-muted);
+}
+
+.tech-stamp.stamp-spring {
+  border-color: var(--accent-spring-border);
+  color: var(--accent-spring);
+  background: var(--accent-spring-muted);
+}
+
+.tech-stamp.stamp-highlight {
+  border-color: var(--accent-spring-border);
+  color: var(--text-primary);
+}
+
+/* Coordinates & Index stamps */
+.coord-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,57 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   Philosophy: Editorial Swiss Design + Java / Spring Technical Aesthetics
+   ========================================================================== */
+
+:root {
+  /* Color Palette — Restrained, Human-Art-Directed */
+  --bg-charcoal: #101510;
+  --bg-surface: #141a14;
+  --bg-surface-elevated: #1a221a;
+  --bg-surface-subtle: #121812;
+  
+  --accent-spring: #6DB33F;       /* Spring Green — highlights, active states, numbers */
+  --accent-spring-muted: rgba(109, 179, 63, 0.15);
+  --accent-spring-border: rgba(109, 179, 63, 0.35);
+  
+  --accent-java: #F89820;         /* Java Orange — technical JVM/Spring stamps */
+  --accent-java-muted: rgba(248, 152, 32, 0.12);
+  --accent-java-border: rgba(248, 152, 32, 0.3);
+  
+  --text-primary: #EAE9E1;        /* Warm Off-White */
+  --text-secondary: #858B83;      /* Muted Grey */
+  --text-tertiary: #575D55;       /* Darker Muted Grey for subtle coordinates */
+  
+  --border-hairline: rgba(234, 233, 225, 0.12);
+  --border-mid: rgba(234, 233, 225, 0.22);
+  --border-strong: rgba(234, 233, 225, 0.45);
+  
+  /* Typography System */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Editorial Spacing Units */
+  --space-unit: 8px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+  
+  /* Grid & Layout System */
+  --max-content-width: 1400px;
+  --page-gutter: clamp(20px, 4vw, 56px);
+  --column-gap: clamp(16px, 2.5vw, 36px);
+  
+  /* Animation Timings — Restrained & Purposeful */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 320ms;
+  --duration-deliberate: 550ms;
+}
