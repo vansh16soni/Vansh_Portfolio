@@ -11,26 +11,42 @@ pids
 *.seed
 *.pid.lock
 
-# Directory for instrumented code
-lib-cov
-
-# Coverage directory used by tools like istanbul
-coverage
-
 # Dependency directories
 node_modules/
-
-# Optional npm cache directory
 .npm
 
-# Optional eslint cache
-.eslintcache
+# Environment & Secrets (Personal details protection)
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*credential*
+*credentials*
+secret*
+secrets/
+private/
+personal/
+*.private.*
+contacts.*
+personal_info.*
+*phone*
+*address*
+*id_rsa*
+*id_ed25519*
 
-# Output of 'npm pack'
+# Coverage directory
+coverage/
+lib-cov/
+.eslintcache
 *.tgz
 
-# OS Files
+# OS & Editor Files
 .DS_Store
 Thumbs.db
 desktop.ini
-
+.vscode/
+.idea/
+*.swp
+*.swo

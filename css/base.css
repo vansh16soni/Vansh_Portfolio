@@ -1,6 +1,6 @@
 /* ==========================================================================
-   BASE & RESET STYLES
-   Minimalist technical aesthetics, crisp Swiss rules, tactile grain
+   BASE & ATMOSPHERIC ALPINE BACKDROP STYLES
+   Layered mountain ridges, natural sky gradients, tactile frosted glass
    ========================================================================== */
 
 *, *::before, *::after {
@@ -11,7 +11,7 @@
 
 html {
   font-size: 16px;
-  background-color: var(--bg-charcoal);
+  background-color: var(--bg-alpine-deep);
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -22,56 +22,200 @@ html {
 }
 
 body {
-  background-color: var(--bg-charcoal);
+  background-color: var(--bg-alpine-deep);
   color: var(--text-primary);
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
 }
 
-/* Subtle Film / Print Paper Grain Overlay */
+/* --------------------------------------------------------------------------
+   Fixed Natural Mountain & Sky Atmospheric Canvas
+   -------------------------------------------------------------------------- */
+.alpine-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(130% 95% at 50% 0%, #152b22 0%, #0d1a15 48%, #08120e 100%);
+}
+
+/* Soft Sky Atmosphere & Mountain Pine Diffusion (Scroll-animated via GSAP) */
+.sky-atmosphere {
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(54% 46% at 22% 16%, rgba(126, 174, 199, 0.28) 0%, transparent 72%),
+    radial-gradient(48% 42% at 76% 26%, rgba(87, 140, 102, 0.24) 0%, transparent 74%),
+    radial-gradient(58% 52% at 50% 68%, rgba(31, 66, 79, 0.26) 0%, transparent 76%);
+  filter: blur(52px);
+  will-change: transform, opacity;
+}
+
+/* Ambient Liquid Aurora Fluid Underlay (Slow, Harmonic Morphing) */
+.liquid-aurora-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.liquid-aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.65;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+.blob-pine {
+  width: clamp(340px, 45vw, 620px);
+  height: clamp(340px, 45vw, 620px);
+  top: 10%;
+  left: 8%;
+  background: radial-gradient(circle, rgba(58, 104, 76, 0.36) 0%, rgba(35, 71, 52, 0.18) 60%, transparent 80%);
+  animation: aurora-drift-1 26s ease-in-out infinite alternate;
+}
+
+.blob-sky {
+  width: clamp(380px, 50vw, 700px);
+  height: clamp(380px, 50vw, 700px);
+  top: 22%;
+  right: 5%;
+  background: radial-gradient(circle, rgba(126, 174, 199, 0.32) 0%, rgba(79, 120, 142, 0.16) 60%, transparent 80%);
+  animation: aurora-drift-2 32s ease-in-out infinite alternate;
+}
+
+.blob-lake {
+  width: clamp(320px, 42vw, 580px);
+  height: clamp(320px, 42vw, 580px);
+  bottom: 12%;
+  left: 32%;
+  background: radial-gradient(circle, rgba(31, 66, 79, 0.34) 0%, rgba(22, 44, 32, 0.20) 65%, transparent 80%);
+  animation: aurora-drift-3 30s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift-1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(40px, 30px, 0) scale(1.08); }
+  100% { transform: translate3d(-30px, 50px, 0) scale(0.94); }
+}
+
+@keyframes aurora-drift-2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-50px, -30px, 0) scale(0.92); }
+  100% { transform: translate3d(30px, -45px, 0) scale(1.06); }
+}
+
+@keyframes aurora-drift-3 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(45px, -35px, 0) scale(1.06); }
+  100% { transform: translate3d(-40px, 25px, 0) scale(0.96); }
+}
+
+/* Layered Mountain Ridge SVG Planes */
+.mountain-layer {
+  position: absolute;
+  left: -4%;
+  width: 108%;
+  bottom: -6%;
+  will-change: transform;
+}
+
+.mountain-layer svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mountain-far {
+  opacity: 0.42;
+  bottom: 12vh;
+  filter: blur(1px);
+}
+
+.mountain-mid {
+  opacity: 0.68;
+  bottom: 2vh;
+}
+
+.mountain-near {
+  opacity: 0.94;
+  bottom: -6vh;
+}
+
+/* Valley Mist Layer */
+.mist-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44vh;
+  background: linear-gradient(
+    to top,
+    rgba(9, 16, 21, 0.96) 0%,
+    rgba(16, 30, 39, 0.55) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Subtle Natural Film Grain Overlay */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Restrained Custom Scrollbar */
+/* Top Viewport Scroll Progress Hairline */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--sky-glacial), var(--alpenglow));
+  z-index: 9000;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(138, 182, 204, 0.55);
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-charcoal);
-  border-left: 1px solid var(--border-hairline);
+  background: var(--bg-alpine-deep);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-tertiary);
-  border-radius: 0px;
+  background: rgba(138, 182, 204, 0.3);
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-spring);
+  background: var(--sky-glacial);
 }
 
 /* Selection Highlight */
 ::selection {
-  background: var(--accent-spring);
-  color: var(--bg-charcoal);
+  background: var(--sky-glacial);
+  color: var(--bg-alpine-deep);
 }
 
 ::-moz-selection {
-  background: var(--accent-spring);
-  color: var(--bg-charcoal);
+  background: var(--sky-glacial);
+  color: var(--bg-alpine-deep);
 }
 
 img, svg, picture {
@@ -98,7 +242,18 @@ ul, ol {
   list-style: none;
 }
 
-/* Global Container Rules */
+/* Core Optical Glass Surface Primitive */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-specular);
+  border-radius: var(--radius-card);
+  position: relative;
+}
+
+/* Global Container & Sections */
 .site-container {
   max-width: var(--max-content-width);
   margin-left: auto;
@@ -108,26 +263,27 @@ ul, ol {
   width: 100%;
 }
 
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: var(--border-hairline);
-  margin: 0;
-  border: none;
-}
-
 .section-wrapper {
-  padding-top: clamp(64px, 8vw, 120px);
-  padding-bottom: clamp(64px, 8vw, 120px);
+  padding-top: clamp(64px, 7.5vw, 112px);
+  padding-bottom: clamp(64px, 7.5vw, 112px);
   position: relative;
 }
 
-/* Section Header Motif — Editorial Number & Subject Title */
+.section-divider {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(194, 220, 232, 0.16), transparent);
+  border: none;
+}
+
+/* Editorial Section Header inside Glass Architecture */
 .editorial-section-header {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-  margin-bottom: clamp(36px, 5vw, 64px);
+  margin-bottom: clamp(32px, 4.5vw, 56px);
   position: relative;
 }
 
@@ -136,20 +292,23 @@ ul, ol {
   align-items: center;
   gap: var(--space-sm);
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-spring);
+  color: var(--sky-glacial);
 }
 
 .editorial-section-header .section-meta .index-pill {
-  display: inline-block;
-  padding: 2px 6px;
-  background: var(--accent-spring-muted);
-  border: 1px solid var(--accent-spring-border);
-  color: var(--accent-spring);
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(138, 182, 204, 0.12);
+  border: 1px solid var(--glass-border-sky);
+  border-radius: var(--radius-pill);
+  color: var(--sky-mist);
+  font-size: 0.72rem;
   font-weight: 500;
+  backdrop-filter: blur(12px);
 }
 
 .editorial-section-header .section-title {
@@ -157,15 +316,14 @@ ul, ol {
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.08;
   color: var(--text-primary);
 }
 
 .editorial-section-header .section-subtitle {
-  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  font-size: clamp(0.98rem, 1.25vw, 1.1rem);
   color: var(--text-secondary);
-  max-width: 68ch;
-  line-height: 1.6;
+  max-width: 66ch;
+  line-height: 1.65;
   margin-top: var(--space-xs);
 }
-

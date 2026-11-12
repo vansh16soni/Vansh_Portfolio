@@ -2,15 +2,18 @@
   "name": "vansh-soni-portfolio",
   "version": "1.0.0",
   "description": "Human-Art-Directed Editorial Portfolio for Vansh Kumar Soni",
+  "main": "server.js",
   "scripts": {
-    "dev": "npx serve . -l 3000",
-    "start": "npx serve . -l 3000"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js"
   },
   "keywords": [
     "portfolio",
     "creative-developer",
-    "java",
-    "spring-boot",
+    "node",
+    "react",
+    "javascript",
     "threejs",
     "editorial-design"
   ],

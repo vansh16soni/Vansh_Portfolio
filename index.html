@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vansh Kumar Soni — Full-Stack Developer & Java Ecosystem Engineer</title>
-  <meta name="description" content="Editorial portfolio of Vansh Kumar Soni. Full-stack developer with hands-on experience in MERN, Java, Spring Boot, Spring AI, Three.js, and computer vision systems.">
+  <meta name="description" content="Alpine glass editorial portfolio of Vansh Kumar Soni. Full-stack developer specializing in MERN, Java, Spring Boot, Spring AI, Three.js, and computer vision systems.">
   <meta name="author" content="Vansh Kumar Soni">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Vansh Kumar Soni — Creative Developer & Java Engineer">
-  <meta property="og:description" content="Human-art-directed portfolio featuring 3D codebase visualizers, AI platforms, and systems engineering.">
+  <meta property="og:description" content="Editorial alpine glass portfolio featuring 3D codebase visualizers, AI platforms, and Spring Boot systems engineering.">
   <meta property="og:type" content="website">
 
   <!-- Google Typography: Space Grotesk, Inter, IBM Plex Mono -->
@@ -26,8 +26,88 @@
 </head>
 <body>
 
+  <!-- SVG Liquid Glass Refraction Filter Definition -->
+  <svg class="liquid-glass-svg-defs" aria-hidden="true" style="position:absolute; width:0; height:0; pointer-events:none;">
+    <defs>
+      <filter id="liquid-refraction" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.015 0.02" numOctaves="2" result="noise" seed="5">
+          <animate attributeName="baseFrequency" dur="14s" values="0.012 0.018; 0.02 0.026; 0.012 0.018" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+        <feGaussianBlur in="displaced" stdDeviation="0.4" result="blurred" />
+        <feBlend in="SourceGraphic" in2="blurred" mode="screen" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Scroll Progress Hairline -->
+  <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
+
   <!-- ========================================================================
-       1. EDITORIAL MASTHEAD / NAVIGATION
+       NATURAL MOUNTAIN & HIGH-ALTITUDE SKY ATMOSPHERIC BACKDROP
+       ======================================================================== -->
+  <div class="alpine-backdrop" aria-hidden="true">
+    <div class="sky-atmosphere"></div>
+
+    <!-- Ambient Liquid Aurora Fluid Underlay (Organic Mountain Pine & Sky Glacial Glow) -->
+    <div class="liquid-aurora-container">
+      <div class="liquid-aurora-blob blob-pine" id="aurora-blob-1"></div>
+      <div class="liquid-aurora-blob blob-sky" id="aurora-blob-2"></div>
+      <div class="liquid-aurora-blob blob-lake" id="aurora-blob-3"></div>
+    </div>
+
+    <!-- Far Glacial Mountain Range -->
+    <div id="mountain-far" class="mountain-layer mountain-far">
+      <svg viewBox="0 0 1600 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="farPeakGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6B92A8" stop-opacity="0.55" />
+            <stop offset="55%" stop-color="#294454" stop-opacity="0.72" />
+            <stop offset="100%" stop-color="#0D1922" stop-opacity="0.95" />
+          </linearGradient>
+        </defs>
+        <path d="M0,420 L110,310 L215,355 L340,210 L455,290 L590,145 L725,265 L845,170 L980,255 L1120,115 L1275,240 L1410,165 L1525,245 L1600,205 L1600,520 L0,520 Z" fill="url(#farPeakGrad)" />
+      </svg>
+    </div>
+
+    <!-- Mid Alpine Ridge (Subtle Dawn Alpenglow Rim) -->
+    <div id="mountain-mid" class="mountain-layer mountain-mid">
+      <svg viewBox="0 0 1600 480" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="midRidgeGrad" x1="0.2" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#355566" stop-opacity="0.88" />
+            <stop offset="48%" stop-color="#1A2E39" stop-opacity="0.94" />
+            <stop offset="100%" stop-color="#0B151C" stop-opacity="0.98" />
+          </linearGradient>
+          <linearGradient id="alpenglowRim" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#8AB6CC" stop-opacity="0.35" />
+            <stop offset="55%" stop-color="#D8A482" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#8AB6CC" stop-opacity="0.2" />
+          </linearGradient>
+        </defs>
+        <path d="M0,380 L165,245 L285,310 L440,175 L575,275 L730,130 L895,250 L1035,160 L1190,260 L1355,155 L1495,250 L1600,195 L1600,480 L0,480 Z" fill="url(#midRidgeGrad)" />
+        <path d="M0,380 L165,245 L285,310 L440,175 L575,275 L730,130 L895,250 L1035,160 L1190,260 L1355,155 L1495,250 L1600,195" fill="none" stroke="url(#alpenglowRim)" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <!-- Near Evergreen & Slate Foreground Slope -->
+    <div id="mountain-near" class="mountain-layer mountain-near">
+      <svg viewBox="0 0 1600 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nearSlopeGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#14242B" stop-opacity="0.94" />
+            <stop offset="100%" stop-color="#080F14" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <path d="M0,295 L195,185 L370,255 L540,170 L710,265 L915,185 L1095,250 L1295,165 L1470,245 L1600,190 L1600,400 L0,400 Z" fill="url(#nearSlopeGrad)" />
+      </svg>
+    </div>
+
+    <div class="mist-band"></div>
+  </div>
+
+  <!-- ========================================================================
+       1. FROSTED GLASS MASTHEAD / NAVIGATION
        ======================================================================== -->
   <header class="site-masthead">
     <div class="site-container">
@@ -39,113 +119,205 @@
 
         <div class="live-status-indicator" title="Current Availability Status">
           <span class="pulse-dot"></span>
-          <span>STATUS: OPEN TO SDE INTERNSHIPS</span>
+          <span>OPEN TO SDE INTERNSHIPS</span>
         </div>
 
         <nav class="masthead-nav" aria-label="Primary Navigation">
           <a href="#projects" class="nav-link">WORKS</a>
           <a href="#architecture" class="nav-link">SKILLS</a>
           <a href="#experience" class="nav-link">EXPERIENCE</a>
-          <a href="#notebook" class="nav-link">LAB NOTES</a>
-          <a href="#journal" class="nav-link">JOURNAL</a>
+          <a href="#certificates" class="nav-link">ACCOLADES</a>
           <a href="#inquiries" class="nav-link">CONTACT</a>
-          <button type="button" class="nav-resume-btn" onclick="openResumeModal()" title="View Official Resume PDF">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>VIEW RESUME</span>
-          </button>
-          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="nav-resume-btn" style="background: var(--accent-spring); color: var(--bg-charcoal); border-color: var(--accent-spring);" title="Download Official Resume PDF">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span>DOWNLOAD PDF</span>
-          </a>
+
+          <div class="nav-pill-group">
+            <button type="button" class="nav-pill-btn pill-primary" onclick="openResumeModal()" title="View Official Resume PDF">
+              <span>VIEW RESUME</span>
+            </button>
+            <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="nav-pill-btn pill-ghost" title="Download Official Resume PDF">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>PDF</span>
+            </a>
+          </div>
         </nav>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================
-       2. HERO SECTION — ASYMMETRICAL EDITORIAL COMPOSITION
+       2. HERO SECTION — FRAMED SCULPTURAL ALPINE GLASS STAGE
        ======================================================================== -->
   <section id="hero" class="hero-section">
     <div class="site-container">
-      <div class="hero-grid">
-        
-        <!-- Left Column: Editorial Dossier -->
-        <div class="hero-intro-dossier reveal-on-scroll">
-          <div class="hero-index-bar">
-            <span>[VOL. 2026 // ED. 01]</span>
-            <span>—</span>
-            <span class="highlight">FOLIO: SYSTEMS & GRAPHICS</span>
-            <span>—</span>
+      
+      <div class="hero-glass-stage">
+        <!-- Top Telemetry Row with Status Indicator & Live IST Clock -->
+        <div class="hero-stage-top">
+          <div class="hero-coord-pill">
+            <span>FOLIO // 01</span>
+            <span>•</span>
+            <span>SYSTEMS &amp; SPATIAL WEB</span>
+          </div>
+
+          <div class="hero-status-pill">
+            <span class="status-live-dot"></span>
+            <span>OPEN TO ENGINEERING ROLES (2026/2027)</span>
+          </div>
+
+          <div class="hero-coord-pill">
             <span id="ist-clock">JABALPUR, IN // --:--:-- IST</span>
           </div>
-
-          <div class="hero-title-group">
-            <h1 class="hero-name">VANSH KUMAR SONI</h1>
-            <p class="hero-role">Full-Stack Developer & Java Ecosystem Engineer</p>
-          </div>
-
-          <div class="hero-statement-box">
-            <blockquote class="hero-editorial-quote">
-              “Bridging deterministic systems with generative intelligence — from AST dependency graph parsing and 3D architectural engines to resilient Spring Boot microservices.”
-            </blockquote>
-            <p class="hero-sub-text">
-              Computer Engineering undergraduate (2027) focused on end-to-end full-stack architectures, high-performance Java backends, and spatial computing applications. National Runner-up at Smart India Hackathon '25.
-            </p>
-          </div>
-
-          <!-- Technical Stamp Strip -->
-          <div class="hero-tech-strip">
-            <span class="tech-stamp stamp-java">JVM 21 / Spring Boot 3</span>
-            <span class="tech-stamp stamp-spring">Spring Security & AI</span>
-            <span class="tech-stamp">React & Three.js 3D</span>
-            <span class="tech-stamp">MediaPipe WASM</span>
-            <span class="tech-stamp">AST Graph Algorithms</span>
-          </div>
-
-          <!-- Action Row -->
-          <div class="hero-actions">
-            <a href="#projects" class="btn-primary-editorial">
-              <span>EXPLORE WORKS</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-            <button type="button" class="btn-secondary-editorial" onclick="openResumeModal()">
-              <span>VIEW RESUME</span>
-            </button>
-            <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-secondary-editorial" style="border-color: var(--accent-spring-border); color: var(--accent-spring);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span>DOWNLOAD RESUME (.PDF)</span>
-            </a>
-            <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="btn-link-editorial">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              <span>GITHUB PROFILE ↗</span>
-            </a>
-          </div>
         </div>
 
-        <!-- Right Column: Visual Anchor (Generative AST Dependency Graph) -->
-        <div class="hero-visual-anchor reveal-on-scroll delay-1">
-          <div class="visual-anchor-mast">
-            <span>[SCHEMATIC: AST_DEPENDENCY_NETWORK]</span>
-            <span id="canvas-nodes">11 NODES // 12 EDGES</span>
-          </div>
+        <!-- Main Hero Composition: 2-Column Asymmetric Recruiter-Focused Split -->
+        <div class="hero-stage-main">
+          
+          <!-- LEFT COLUMN: Typographic Identity, Engineering Narrative & Recruiter Actions -->
+          <div class="hero-intro-column">
+            <div class="hero-role-badge">
+              <span class="chip-dot-green"></span>
+              <span>FULL-STACK &amp; JAVA ECOSYSTEM ENGINEER</span>
+            </div>
 
-          <div class="canvas-container">
-            <canvas id="hero-anchor-canvas"></canvas>
-            <div class="canvas-overlay-data">
-              <span id="canvas-coords">LOC: [IDLE_STANDBY]</span>
-              <span>RENDER: RETINA_DPI // SPRING_GRAPH</span>
+            <h1 class="hero-editorial-name" aria-label="Vansh Kumar Soni">
+              <span class="word-letter">V</span><span class="word-letter">A</span><span class="word-letter">N</span><span class="word-letter">S</span><span class="word-letter">H</span><span class="word-split-gap"></span><span class="word-letter">K</span><span class="word-letter">U</span><span class="word-letter">M</span><span class="word-letter">A</span><span class="word-letter">R</span><span class="word-split-gap"></span><span class="word-letter">S</span><span class="word-letter">O</span><span class="word-letter">N</span><span class="word-letter">I</span>
+            </h1>
+
+            <h2 class="hero-editorial-sub">
+              Bridging deterministic Spring Boot microservices with spatial 3D interfaces &amp; applied AI.
+            </h2>
+
+            <p class="hero-editorial-bio">
+              Computer Engineering undergraduate (2027) at Jabalpur Engineering College. Smart India Hackathon '25 National Runner-up (selected among top 40 nationwide collegiate teams). Ex-AI Intern at Cisco &amp; Telecom Data Analytics Intern at BSNL.
+            </p>
+
+            <!-- Recruiter Fast-Proof Chips -->
+            <div class="hero-chips-row">
+              <span class="hero-proof-chip">
+                <span class="chip-dot-green"></span>
+                <span>SIH '25 National Runner-up</span>
+              </span>
+              <span class="hero-proof-chip">
+                <span class="chip-dot-sky"></span>
+                <span>Cisco AI Intern (NetSage)</span>
+              </span>
+              <span class="hero-proof-chip">
+                <span class="chip-dot-sky"></span>
+                <span>BSNL Govt. Analytics Intern</span>
+              </span>
+              <span class="hero-proof-chip">
+                <span class="chip-dot-alpen"></span>
+                <span>Spring Boot • React • Node • Three.js</span>
+              </span>
+            </div>
+
+            <!-- Recruiter & Hiring Manager Action Row -->
+            <div class="hero-cta-group">
+              <button type="button" class="btn-primary-editorial" onclick="openResumeModal()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                <span>VIEW OFFICIAL RESUME</span>
+              </button>
+
+              <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-secondary-editorial">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>DOWNLOAD PDF</span>
+              </a>
+
+              <a href="#projects" class="btn-glass-cta">
+                <span>Explore Case Studies</span>
+                <span class="cta-circle-icon">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+                </span>
+              </a>
             </div>
           </div>
+
+          <!-- RIGHT COLUMN: Dedicated 3D Interactive LEGO Ferrari Showcase Panel -->
+          <div class="hero-sculpture-chamber" title="Interactive 3D LEGO Ferrari — Drag with mouse to orbit 360°">
+            <div class="chamber-header">
+              <div class="chamber-stamp">
+                <span class="chamber-pulse-dot" style="background: #ffd700; box-shadow: 0 0 8px #ffd700;"></span>
+                <span>LEGO® FERRARI // SPEED CHAMPIONS</span>
+              </div>
+              <div class="chamber-controls">
+                <button type="button" class="hero-liquid-trigger" id="btn-car-headlights" title="Toggle Headlights">
+                  <span class="liquid-drop-icon">💡</span>
+                  <span id="car-headlights-label">LIGHTS: ON</span>
+                </button>
+                <button type="button" class="hero-liquid-mode" id="btn-car-color" title="Cycle Ferrari Livery">
+                  <span class="mode-dot" style="background: #d4001a; box-shadow: 0 0 8px #d4001a;"></span>
+                  <span id="car-color-label">LIVERY: ROSSO CORSA</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="chamber-canvas-box">
+              <canvas id="hero-sculpture-canvas"></canvas>
+            </div>
+
+            <div class="chamber-footer">
+              <span class="chamber-footer-note">DRAG TO ORBIT 360° // BRICK-BUILT SPEED CHAMPION</span>
+              <div class="hero-social-mini-rail" aria-label="Quick Links">
+                <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="rail-icon-link" title="GitHub Profile" aria-label="GitHub Profile">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <button type="button" class="rail-icon-link" onclick="copyEmail()" title="Copy Email Address" aria-label="Copy Email Address">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </button>
+                <button type="button" class="rail-icon-link" onclick="openResumeModal()" title="View Official Resume" aria-label="View Official Resume">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
 
+        <!-- Bottom Competency & Interviewer Quick-Scan Telemetry -->
+        <div class="hero-stage-bottom">
+          <div class="hero-bottom-telemetry">
+            <span class="telemetry-tag">KEY SPECIALIZATIONS</span>
+            <div class="telemetry-items">
+              <span class="telemetry-item">Java &amp; Spring Boot</span>
+              <span class="telemetry-sep">•</span>
+              <span class="telemetry-item">Microservices &amp; REST</span>
+              <span class="telemetry-sep">•</span>
+              <span class="telemetry-item">Node.js Streaming Pipelines</span>
+              <span class="telemetry-sep">•</span>
+              <span class="telemetry-item">React &amp; Three.js</span>
+              <span class="telemetry-sep">•</span>
+              <span class="telemetry-item">Applied AI &amp; Vision</span>
+            </div>
+          </div>
+
+          <div class="hero-bottom-quickstat">
+            <span class="quickstat-badge">NATIONAL RUNNER-UP</span>
+            <span class="quickstat-label">Smart India Hackathon '25</span>
+          </div>
+        </div>
       </div>
+      </div>
+
+      <!-- Lower Spec Glass Ribbon -->
+      <div class="hero-tech-ribbon">
+        <div class="hero-tech-tags">
+          <span class="tech-stamp stamp-java">JVM 21 / Spring Boot 3</span>
+          <span class="tech-stamp stamp-sky">Spring Security &amp; AI</span>
+          <span class="tech-stamp">React &amp; Three.js 3D</span>
+          <span class="tech-stamp stamp-moss">MediaPipe WASM</span>
+          <span class="tech-stamp">AST Graph Algorithms</span>
+        </div>
+        <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="btn-link-editorial">
+          <span>GITHUB.COM/VANSH16SONI ↗</span>
+        </a>
+      </div>
+
     </div>
   </section>
 
   <hr class="section-divider">
 
   <!-- ========================================================================
-       3. SELECTED WORKS (PROJECTS) — EDITORIAL CASE STUDIES
+       3. SELECTED WORKS (PROJECTS) — FROSTED GLASS EXHIBITION PLATES
        ======================================================================== -->
   <section id="projects" class="section-wrapper">
     <div class="site-container">
@@ -163,17 +335,17 @@
 
       <div class="projects-editorial-list">
 
-        <!-- PROJECT 01: REPO CITY (Full-Width Grand Layout) -->
-        <article class="project-plate-full reveal-on-scroll">
+        <!-- PROJECT 01: REPO CITY -->
+        <article class="project-plate-full glass-sheen reveal-on-scroll">
           <div class="project-info-column">
             <div class="project-index-header">
               <span class="project-num">PLATE 01 // FEATURED</span>
-              <span class="project-category-tag">SOLO / 3D GRAPHICS & SYSTEMS</span>
+              <span class="project-category-tag">SOLO / 3D GRAPHICS &amp; SYSTEMS</span>
             </div>
 
             <div>
               <h3 class="project-title">REPO CITY</h3>
-              <p class="project-subtitle">3D Codebase Visualization & AI Learning Platform</p>
+              <p class="project-subtitle">3D Codebase Visualization &amp; AI Learning Platform</p>
             </div>
 
             <p class="project-narrative">
@@ -186,12 +358,12 @@
                 <span class="value">Three.js, AST Parsing, DAGs</span>
               </div>
               <div class="spec-entry">
-                <span class="label">BACKEND & STREAM</span>
+                <span class="label">BACKEND &amp; STREAM</span>
                 <span class="value">Node.js, Express, SSE, MongoDB</span>
               </div>
               <div class="spec-entry">
                 <span class="label">AI CAPABILITY</span>
-                <span class="value">Gemini / OpenAI Quizzes & Insights</span>
+                <span class="value">Gemini / OpenAI Quizzes &amp; Insights</span>
               </div>
               <div class="spec-entry">
                 <span class="label">AUTHENTICATION</span>
@@ -200,7 +372,7 @@
             </div>
 
             <div class="project-tech-pills">
-              <span class="tech-stamp">React.js</span>
+              <span class="tech-stamp stamp-sky">React.js</span>
               <span class="tech-stamp">Three.js / WebGL</span>
               <span class="tech-stamp">AST Parsing</span>
               <span class="tech-stamp">DAG Algorithms</span>
@@ -216,14 +388,12 @@
               <a href="https://github.com/vansh16soni/RepoCity" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial">
                 <span>GITHUB REPO ↗</span>
               </a>
-              <!-- Live Demo Slot: Space reserved for future live deployment link -->
               <span class="tech-stamp" title="Live demo link configured upon production deployment">
                 [DEMO: LIVE PREVIEW READY]
               </span>
             </div>
           </div>
 
-          <!-- Project Visual Viewport (Screenshot / Blueprint Space) -->
           <div class="project-visual-viewport">
             <div class="viewport-mast">
               <div class="window-dots">
@@ -232,9 +402,8 @@
               <span>VIEWPORT // REPOCITY_3D_URBAN_CANVAS</span>
             </div>
             <div class="project-screenshot-frame">
-              <!-- Editorial Blueprint Frame reserved for user's screenshot -->
               <div class="editorial-blueprint-placeholder">
-                <svg class="blueprint-diagram" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <svg class="blueprint-diagram" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
                   <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                   <polyline points="2 17 12 22 22 17"></polyline>
                   <polyline points="2 12 12 17 22 12"></polyline>
@@ -249,9 +418,8 @@
           </div>
         </article>
 
-        <!-- PROJECT 02: GYAN.AI (Asymmetric 2-Column Split) -->
-        <article class="project-plate-asymmetric reveal-on-scroll">
-          <!-- Visual Viewport on the Left for Variation -->
+        <!-- PROJECT 02: GYAN.AI (Asymmetric Layout) -->
+        <article class="project-plate-asymmetric glass-sheen reveal-on-scroll">
           <div class="project-visual-viewport">
             <div class="viewport-mast">
               <div class="window-dots">
@@ -261,7 +429,7 @@
             </div>
             <div class="project-screenshot-frame">
               <div class="editorial-blueprint-placeholder">
-                <svg class="blueprint-diagram" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <svg class="blueprint-diagram" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
                   <circle cx="12" cy="12" r="3"></circle>
                   <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                 </svg>
@@ -282,11 +450,11 @@
 
             <div>
               <h3 class="project-title">GYAN.AI</h3>
-              <p class="project-subtitle">AI-Powered Technical Notes & Knowledge Platform</p>
+              <p class="project-subtitle">AI-Powered Technical Notes &amp; Knowledge Platform</p>
             </div>
 
             <p class="project-narrative">
-              Converts complex YouTube engineering lectures and multi-modal sources into structured, searchable study notes. Implements timestamp-based transcript chunking with an automated dual-LLM fallback architecture (Gemini & Groq), dynamic React Flow concept graphs, and exportable Markdown/PDF dossiers.
+              Converts complex YouTube engineering lectures and multi-modal sources into structured, searchable study notes. Implements timestamp-based transcript chunking with an automated dual-LLM fallback architecture (Gemini &amp; Groq), dynamic React Flow concept graphs, and exportable Markdown/PDF dossiers.
             </p>
 
             <div class="project-spec-table">
@@ -299,7 +467,7 @@
                 <span class="value">React Flow Dynamic DAGs</span>
               </div>
               <div class="spec-entry">
-                <span class="label">SECURITY & SESSIONS</span>
+                <span class="label">SECURITY &amp; SESSIONS</span>
                 <span class="value">JWT, Salted Hashing</span>
               </div>
               <div class="spec-entry">
@@ -309,7 +477,7 @@
             </div>
 
             <div class="project-tech-pills">
-              <span class="tech-stamp">React.js</span>
+              <span class="tech-stamp stamp-sky">React.js</span>
               <span class="tech-stamp">Node.js</span>
               <span class="tech-stamp">Express.js</span>
               <span class="tech-stamp">MongoDB</span>
@@ -333,17 +501,17 @@
           </div>
         </article>
 
-        <!-- PROJECT 03: SHADOWPLAY (Studio Plate) -->
-        <article class="project-plate-full reveal-on-scroll">
+        <!-- PROJECT 03: SHADOWPLAY -->
+        <article class="project-plate-full glass-sheen reveal-on-scroll">
           <div class="project-info-column">
             <div class="project-index-header">
               <span class="project-num">PLATE 03</span>
-              <span class="project-category-tag">SOLO / VISION & WEB-GRAPHICS</span>
+              <span class="project-category-tag">SOLO / VISION &amp; WEB-GRAPHICS</span>
             </div>
 
             <div>
               <h3 class="project-title">SHADOWPLAY</h3>
-              <p class="project-subtitle">Real-Time Hand Gesture & Shadow Puppet Studio</p>
+              <p class="project-subtitle">Real-Time Hand Gesture &amp; Shadow Puppet Studio</p>
             </div>
 
             <p class="project-narrative">
@@ -370,8 +538,8 @@
             </div>
 
             <div class="project-tech-pills">
-              <span class="tech-stamp">React.js</span>
-              <span class="tech-stamp">MediaPipe Hands</span>
+              <span class="tech-stamp stamp-sky">React.js</span>
+              <span class="tech-stamp stamp-moss">MediaPipe Hands</span>
               <span class="tech-stamp">WebAssembly</span>
               <span class="tech-stamp">Canvas API</span>
               <span class="tech-stamp">Three.js</span>
@@ -401,7 +569,7 @@
             </div>
             <div class="project-screenshot-frame">
               <div class="editorial-blueprint-placeholder">
-                <svg class="blueprint-diagram" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <svg class="blueprint-diagram" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
                   <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
                   <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
                   <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
@@ -434,7 +602,7 @@
           <span class="index-pill">SECTION 02</span>
           <span>COMPUTATIONAL FOUNDATIONS // TECHNICAL STACK</span>
         </div>
-        <h2 class="section-title">TECHNICAL PROFILE & ARCHITECTURE</h2>
+        <h2 class="section-title">TECHNICAL PROFILE &amp; ARCHITECTURE</h2>
         <p class="section-subtitle">
           No artificial percentage ratings or arbitrary proficiency bars. A transparent inventory of core engineering disciplines, runtime ecosystems, and frameworks backed by deployed codebases and production projects.
         </p>
@@ -442,20 +610,19 @@
 
       <div class="skills-editorial-grid reveal-on-scroll">
         
-        <!-- Category 01: Java & Backend Architecture -->
-        <div class="skill-category-card">
+        <div class="skill-category-card glass-sheen">
           <div class="skill-cat-header">
-            <h3 class="skill-cat-title">Java Ecosystem & Backend</h3>
-            <span class="skill-cat-index">[JVM 21]</span>
+            <h3 class="skill-cat-title">Java Ecosystem &amp; Backend</h3>
+            <span class="skill-cat-index alpenglow-tag">[JVM 21]</span>
           </div>
           <div class="skill-items-list">
             <div class="skill-item-row">
-              <span class="skill-name">Java (Core & OOP)</span>
+              <span class="skill-name">Java (Core &amp; OOP)</span>
               <span class="skill-context">Multithreading, Collections, Generics</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">Spring Boot 3</span>
-              <span class="skill-context">RESTful Microservices, Dependency Injection</span>
+              <span class="skill-context">RESTful Microservices, DI</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">Spring Security</span>
@@ -467,33 +634,32 @@
             </div>
             <div class="skill-item-row">
               <span class="skill-name">Virtual Threads</span>
-              <span class="skill-context">Project Loom High-Concurrency Tasks</span>
+              <span class="skill-context">Project Loom High-Concurrency</span>
             </div>
           </div>
         </div>
 
-        <!-- Category 02: Full-Stack & Graphics -->
-        <div class="skill-category-card">
+        <div class="skill-category-card glass-sheen">
           <div class="skill-cat-header">
-            <h3 class="skill-cat-title">Full-Stack & WebGL</h3>
+            <h3 class="skill-cat-title">Full-Stack &amp; WebGL</h3>
             <span class="skill-cat-index">[MERN / GRAPHICS]</span>
           </div>
           <div class="skill-items-list">
             <div class="skill-item-row">
-              <span class="skill-name">React.js & Next.js</span>
-              <span class="skill-context">Custom Hooks, State Primitives, SSR</span>
+              <span class="skill-name">React.js &amp; Next.js</span>
+              <span class="skill-context">Custom Hooks, State, SSR</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">Three.js / WebGL</span>
-              <span class="skill-context">Procedural Meshes, Camera Frustums, Shaders</span>
+              <span class="skill-context">Procedural Meshes, Shaders</span>
             </div>
             <div class="skill-item-row">
-              <span class="skill-name">Node.js & Express.js</span>
-              <span class="skill-context">High-Throughput Middleware & REST APIs</span>
+              <span class="skill-name">Node.js &amp; Express.js</span>
+              <span class="skill-context">Middleware &amp; REST APIs</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">HTML5 Canvas API</span>
-              <span class="skill-context">Real-Time Vector Kinematics & Shading</span>
+              <span class="skill-context">Real-Time Vector Kinematics</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">WebAssembly (WASM)</span>
@@ -502,83 +668,80 @@
           </div>
         </div>
 
-        <!-- Category 03: Applied AI & Computer Vision -->
-        <div class="skill-category-card">
+        <div class="skill-category-card glass-sheen">
           <div class="skill-cat-header">
-            <h3 class="skill-cat-title">Intelligence & Vision</h3>
+            <h3 class="skill-cat-title">Intelligence &amp; Vision</h3>
             <span class="skill-cat-index">[AI / CV RUNTIMES]</span>
           </div>
           <div class="skill-items-list">
             <div class="skill-item-row">
               <span class="skill-name">MediaPipe Hands</span>
-              <span class="skill-context">21 3D Landmarks, Sub-20ms Tracking</span>
+              <span class="skill-context">21 3D Landmarks, Sub-20ms</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">Google Gemini API</span>
-              <span class="skill-context">Multimodal Reasoning, Semantic Chunks</span>
+              <span class="skill-context">Multimodal Reasoning, Chunks</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">Groq Cloud LLMs</span>
-              <span class="skill-context">Ultra-Low-Latency Inference Fallback</span>
+              <span class="skill-context">Low-Latency Inference Fallback</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">OpenAI API</span>
               <span class="skill-context">Streaming Completions, Embeddings</span>
             </div>
             <div class="skill-item-row">
-              <span class="skill-name">Scikit-Learn & NumPy</span>
-              <span class="skill-context">Linear Regression, Data Pipelines</span>
+              <span class="skill-name">Node.js AI &amp; LangChain</span>
+              <span class="skill-context">Streaming Pipelines, RAG</span>
             </div>
           </div>
         </div>
 
-        <!-- Category 04: Systems & Core CSE -->
-        <div class="skill-category-card">
+        <div class="skill-category-card glass-sheen">
           <div class="skill-cat-header">
-            <h3 class="skill-cat-title">Systems & Core CSE</h3>
+            <h3 class="skill-cat-title">Systems &amp; Core CSE</h3>
             <span class="skill-cat-index">[ALGORITHMIC]</span>
           </div>
           <div class="skill-items-list">
             <div class="skill-item-row">
-              <span class="skill-name">Data Structures & Algos</span>
-              <span class="skill-context">Graph Traversal, Dynamic Programming</span>
+              <span class="skill-name">Data Structures &amp; Algos</span>
+              <span class="skill-context">Graph Traversal, Dynamic Prog</span>
             </div>
             <div class="skill-item-row">
-              <span class="skill-name">AST Parsing & Compilers</span>
+              <span class="skill-name">AST Parsing &amp; Compilers</span>
               <span class="skill-context">Syntax Trees, Module Resolution</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">DAG Algorithms</span>
-              <span class="skill-context">Topological Sorting, Cycle Detection</span>
+              <span class="skill-context">Topological Sorting, Cycles</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">Object-Oriented Design</span>
-              <span class="skill-context">SOLID Principles, Design Patterns</span>
+              <span class="skill-context">SOLID Principles, Patterns</span>
             </div>
             <div class="skill-item-row">
-              <span class="skill-name">C & C++</span>
-              <span class="skill-context">Memory Fundamentals, Low-Level Logic</span>
+              <span class="skill-name">C &amp; C++</span>
+              <span class="skill-context">Memory Fundamentals, Logic</span>
             </div>
           </div>
         </div>
 
-        <!-- Category 05: Data & Cloud Infrastructure -->
-        <div class="skill-category-card">
+        <div class="skill-category-card glass-sheen">
           <div class="skill-cat-header">
-            <h3 class="skill-cat-title">Persistence & Tooling</h3>
+            <h3 class="skill-cat-title">Persistence &amp; Tooling</h3>
             <span class="skill-cat-index">[INFRASTRUCTURE]</span>
           </div>
           <div class="skill-items-list">
             <div class="skill-item-row">
               <span class="skill-name">MongoDB</span>
-              <span class="skill-context">Aggregation Pipelines, Document Models</span>
+              <span class="skill-context">Aggregation Pipelines, Models</span>
             </div>
             <div class="skill-item-row">
               <span class="skill-name">MySQL</span>
-              <span class="skill-context">Relational Schema Design, Foreign Keys</span>
+              <span class="skill-context">Relational Schema Design</span>
             </div>
             <div class="skill-item-row">
-              <span class="skill-name">Git & GitHub</span>
+              <span class="skill-name">Git &amp; GitHub</span>
               <span class="skill-context">Branch Workflows, CI/CD Actions</span>
             </div>
             <div class="skill-item-row">
@@ -586,8 +749,8 @@
               <span class="skill-context">Render, Vercel, GitHub Pages</span>
             </div>
             <div class="skill-item-row">
-              <span class="skill-name">Linux & VS Code</span>
-              <span class="skill-context">Shell Scripting, Debugging Tooling</span>
+              <span class="skill-name">Linux &amp; VS Code</span>
+              <span class="skill-context">Shell Scripting, Debugging</span>
             </div>
           </div>
         </div>
@@ -607,7 +770,7 @@
       <header class="editorial-section-header reveal-on-scroll">
         <div class="section-meta">
           <span class="index-pill">SECTION 03</span>
-          <span>PRACTICE RECORD // INDUSTRY & GOVERNMENT INTERNSHIPS</span>
+          <span>PRACTICE RECORD // INDUSTRY &amp; GOVERNMENT INTERNSHIPS</span>
         </div>
         <h2 class="section-title">ENGINEERING EXPERIENCE</h2>
         <p class="section-subtitle">
@@ -617,8 +780,7 @@
 
       <div class="timeline-editorial-list">
 
-        <!-- Entry 01: Cisco AI Intern -->
-        <div class="timeline-entry reveal-on-scroll">
+        <div class="timeline-entry glass-sheen reveal-on-scroll">
           <div class="timeline-meta-col">
             <span class="timeline-date-range">JUNE – AUGUST 2026</span>
             <h3 class="timeline-org">CISCO</h3>
@@ -642,13 +804,12 @@
 
             <div class="timeline-metric-callout">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              <span>FOCUS: PACKET TRACER TELEMETRY & OSI LAYER ROOT CAUSE SYNTHESIS</span>
+              <span>FOCUS: PACKET TRACER TELEMETRY &amp; OSI LAYER ROOT CAUSE SYNTHESIS</span>
             </div>
           </div>
         </div>
 
-        <!-- Entry 02: BSNL Government Data Analytics Intern -->
-        <div class="timeline-entry reveal-on-scroll">
+        <div class="timeline-entry glass-sheen reveal-on-scroll">
           <div class="timeline-meta-col">
             <span class="timeline-date-range">FEBRUARY 2026</span>
             <h3 class="timeline-org">BSNL</h3>
@@ -656,17 +817,17 @@
           </div>
 
           <div class="timeline-body-col">
-            <h4 class="timeline-project-title">Telecom Data Analytics — Network Quality & Revenue Optimization</h4>
+            <h4 class="timeline-project-title">Telecom Data Analytics — Network Quality &amp; Revenue Optimization</h4>
             
             <div class="timeline-bullets">
               <p class="timeline-bullet-item">
-                Processed and modeled 10,000+ simulated telecom telemetry records using Python, Pandas, and NumPy, systematically analyzing customer churn triggers.
+                Processed and modeled 10,000+ simulated telecom telemetry records using Node.js streaming data pipelines, systematically analyzing customer churn triggers.
               </p>
               <p class="timeline-bullet-item">
                 Discovered an empirical 0.7 Pearson correlation between Quality of Service (QoS) degradation (packet latency, call drops) and Average Revenue Per User (ARPU) contraction.
               </p>
               <p class="timeline-bullet-item">
-                Applied Scikit-learn linear regression modeling to forecast revenue vulnerabilities and constructed Power BI dashboards projecting INR 2 Lakhs/month in at-risk regional revenue.
+                Applied regularized linear regression modeling to forecast revenue vulnerabilities and constructed Power BI dashboards projecting INR 2 Lakhs/month in at-risk regional revenue.
               </p>
             </div>
 
@@ -684,194 +845,17 @@
   <hr class="section-divider">
 
   <!-- ========================================================================
-       6. CODING PRACTICE — TECHNICAL NOTEBOOK
-       ======================================================================== -->
-  <section id="notebook" class="section-wrapper">
-    <div class="site-container">
-      
-      <header class="editorial-section-header reveal-on-scroll">
-        <div class="section-meta">
-          <span class="index-pill">SECTION 04</span>
-          <span>ENGINEERING LAB NOTEBOOK // CODE EXCERPTS</span>
-        </div>
-        <h2 class="section-title">CODING PRACTICE & PATTERNS</h2>
-        <p class="section-subtitle">
-          Excerpts from production algorithms, custom Spring AI controllers, and client-side WebAssembly vectors. An authentic workspace record of engineering logic.
-        </p>
-      </header>
-
-      <div class="notebook-container reveal-on-scroll">
-        
-        <!-- Left: Index / Tabs -->
-        <aside class="notebook-sidebar">
-          <button type="button" class="notebook-tab-btn active">
-            <span class="tab-num">LOG 01 // COMPILERS</span>
-            <span class="tab-title">AST Dependency Graph & DAGs</span>
-          </button>
-          <button type="button" class="notebook-tab-btn">
-            <span class="tab-num">LOG 02 // SPRING 3</span>
-            <span class="tab-title">Spring AI Multi-Model Resilience</span>
-          </button>
-          <button type="button" class="notebook-tab-btn">
-            <span class="tab-num">LOG 03 // VISION</span>
-            <span class="tab-title">21-Landmark WASM Kinematics</span>
-          </button>
-          <button type="button" class="notebook-tab-btn">
-            <span class="tab-num">LOG 04 // DATA</span>
-            <span class="tab-title">Telecom QoS Linear Regression</span>
-          </button>
-        </aside>
-
-        <!-- Right: Code Viewer -->
-        <div class="notebook-content-panel">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
-              <h3 id="notebook-entry-title" class="display-subtitle">Multi-Language AST Dependency Graph & Topological Sorting</h3>
-              <span id="notebook-entry-lang" class="tech-stamp stamp-spring">TypeScript / Node.js & Java</span>
-            </div>
-            <p id="notebook-entry-desc" class="editorial-body">
-              Algorithm deployed in Repo City to recursively visit file import statements, generate an adjacency list representation of software modules, and execute Kahn's algorithm to compute topological execution order and detect cyclic dependencies.
-            </p>
-          </div>
-
-          <pre class="notebook-code-block"><code id="notebook-code-display">// AST Module Dependency Walker & Cycle Detection
-class DependencyGraph {
-    private adjacencyList: Map&lt;string, Set&lt;string&gt;&gt; = new Map();
-    private inDegree: Map&lt;string, number&gt; = new Map();
-
-    public addDependency(fromModule: string, toModule: string): void {
-        if (!this.adjacencyList.has(fromModule)) {
-            this.adjacencyList.set(fromModule, new Set());
-            this.inDegree.set(fromModule, 0);
-        }
-        if (!this.adjacencyList.has(toModule)) {
-            this.adjacencyList.set(toModule, new Set());
-            this.inDegree.set(toModule, 0);
-        }
-        if (!this.adjacencyList.get(fromModule)!.has(toModule)) {
-            this.adjacencyList.get(fromModule)!.add(toModule);
-            this.inDegree.set(toModule, (this.inDegree.get(toModule) || 0) + 1);
-        }
-    }
-
-    public computeTopologicalOrder(): { order: string[], cycles: string[] } {
-        const queue: string[] = [];
-        const order: string[] = [];
-        const inDegreeCopy = new Map(this.inDegree);
-
-        for (const [node, degree] of inDegreeCopy.entries()) {
-            if (degree === 0) queue.push(node);
-        }
-
-        while (queue.length > 0) {
-            const current = queue.shift()!;
-            order.push(current);
-
-            for (const neighbor of this.adjacencyList.get(current) || []) {
-                const updated = inDegreeCopy.get(neighbor)! - 1;
-                inDegreeCopy.set(neighbor, updated);
-                if (updated === 0) queue.push(neighbor);
-            }
-        }
-
-        const cycles = Array.from(inDegreeCopy.entries())
-            .filter(([_, degree]) => degree > 0)
-            .map(([node]) => node);
-
-        return { order, cycles };
-    }
-}</code></pre>
-
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <a id="notebook-entry-repo" href="https://github.com/vansh16soni/RepoCity" target="_blank" rel="noopener noreferrer" class="btn-link-editorial">
-              <span>EXPLORE FULL SOURCE ON GITHUB ↗</span>
-            </a>
-            <span class="mono-label">REPRESENTATIVE ALGORITHMIC LOGIC</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ========================================================================
-       7. ONGOING PROJECTS — DEVELOPMENT JOURNAL
-       ======================================================================== -->
-  <section id="journal" class="section-wrapper">
-    <div class="site-container">
-      
-      <header class="editorial-section-header reveal-on-scroll">
-        <div class="section-meta">
-          <span class="index-pill">SECTION 05</span>
-          <span>RESEARCH & PIPELINES // ACTIVE EXPERIMENTATION</span>
-        </div>
-        <h2 class="section-title">DEVELOPMENT JOURNAL</h2>
-        <p class="section-subtitle">
-          Curated notes on ongoing technical explorations, architectural benchmarks, and active prototypes.
-        </p>
-      </header>
-
-      <div class="journal-entries-grid reveal-on-scroll">
-        
-        <!-- Journal Entry 01 -->
-        <div class="journal-card">
-          <div class="journal-top">
-            <span class="mono-label">LOG #084 // NOV 2026</span>
-            <span class="journal-status-tag">ACTIVE BENCHMARK</span>
-          </div>
-          <h3 class="journal-title">Spring Boot Virtual Threads vs. Reactive Streams</h3>
-          <p class="journal-notes">
-            Benchmarking throughput of Java 21 Project Loom virtual threads against Spring WebFlux reactive models for I/O-bound LLM token streaming. Observing significant reduction in thread context-switch overhead while retaining straightforward imperative syntax.
-          </p>
-          <div class="tech-stamp stamp-java">JVM 21 / Loom / Spring Boot 3</div>
-        </div>
-
-        <!-- Journal Entry 02 -->
-        <div class="journal-card">
-          <div class="journal-top">
-            <span class="mono-label">LOG #085 // NOV 2026</span>
-            <span class="journal-status-tag">PHASE II ARCHITECTURE</span>
-          </div>
-          <h3 class="journal-title">Repo City WebGL Instanced Mesh Optimization</h3>
-          <p class="journal-notes">
-            Refactoring Repo City's Three.js building geometry into GPU InstancedMesh buffers to render 10,000+ files in enterprise monorepos smoothly at 60 FPS. Mapping file commit frequency directly to custom fragment shader pulse rates.
-          </p>
-          <div class="tech-stamp">Three.js / GLSL / AST Walkers</div>
-        </div>
-
-        <!-- Journal Entry 03 -->
-        <div class="journal-card">
-          <div class="journal-top">
-            <span class="mono-label">LOG #086 // OCT 2026</span>
-            <span class="journal-status-tag">EXPLORATORY</span>
-          </div>
-          <h3 class="journal-title">Edge-Side Hand Gesture Physics in Canvas</h3>
-          <p class="journal-notes">
-            Exploring verlet integration for cloth-like shadow deformations in ShadowPlay. Calculating finger joint acceleration vectors directly in client WASM memory to allow tactile interaction with simulated stage curtains and movable props.
-          </p>
-          <div class="tech-stamp">WebAssembly / MediaPipe / Canvas</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ========================================================================
-       8. CERTIFICATES & ACCOLADES — DOCUMENT GALLERY
+       6. CERTIFICATES & ACCOLADES — GLASS CREDENTIAL GALLERY
        ======================================================================== -->
   <section id="certificates" class="section-wrapper">
     <div class="site-container">
       
       <header class="editorial-section-header reveal-on-scroll">
         <div class="section-meta">
-          <span class="index-pill">SECTION 06</span>
+          <span class="index-pill">SECTION 04</span>
           <span>VERIFIED CREDENTIALS // COMPETITIVE ACCOLADES</span>
         </div>
-        <h2 class="section-title">CERTIFICATES & ACHIEVEMENTS</h2>
+        <h2 class="section-title">CERTIFICATES &amp; ACHIEVEMENTS</h2>
         <p class="section-subtitle">
           National hackathon recognitions, Amazon Web Services technical credentials, and verified computer science accreditations.
         </p>
@@ -879,10 +863,9 @@ class DependencyGraph {
 
       <div class="certificates-grid reveal-on-scroll">
         
-        <!-- Plate 01: Smart India Hackathon -->
-        <div class="cert-document-plate">
+        <div class="cert-document-plate glass-sheen">
           <div class="cert-header">
-            <span class="cert-issuer">AICTE & GOVT. OF INDIA</span>
+            <span class="cert-issuer">AICTE &amp; GOVT. OF INDIA</span>
             <span class="cert-year">2025</span>
           </div>
           <h3 class="cert-title">Smart India Hackathon '25</h3>
@@ -894,13 +877,12 @@ class DependencyGraph {
           </button>
         </div>
 
-        <!-- Plate 02: Hack SRIT -->
-        <div class="cert-document-plate">
+        <div class="cert-document-plate glass-sheen">
           <div class="cert-header">
             <span class="cert-issuer">SRIT JABALPUR</span>
             <span class="cert-year">2024</span>
           </div>
-          <h3 class="cert-title">Hack SRIT '24 & Technogenesis '24</h3>
+          <h3 class="cert-title">Hack SRIT '24 &amp; Technogenesis '24</h3>
           <p class="cert-desc">
             Top 30 Finalist in regional multi-college hackathon, recognized for rapid prototyping and full-stack architecture design.
           </p>
@@ -909,8 +891,7 @@ class DependencyGraph {
           </button>
         </div>
 
-        <!-- Plate 03: AWS Academy ML Foundations -->
-        <div class="cert-document-plate">
+        <div class="cert-document-plate glass-sheen">
           <div class="cert-header">
             <span class="cert-issuer">AMAZON WEB SERVICES</span>
             <span class="cert-year">AUG 2026</span>
@@ -924,8 +905,7 @@ class DependencyGraph {
           </button>
         </div>
 
-        <!-- Plate 04: AWS Academy NLP -->
-        <div class="cert-document-plate">
+        <div class="cert-document-plate glass-sheen">
           <div class="cert-header">
             <span class="cert-issuer">AMAZON WEB SERVICES</span>
             <span class="cert-year">JUL 2026</span>
@@ -939,8 +919,7 @@ class DependencyGraph {
           </button>
         </div>
 
-        <!-- Plate 05: AWS Cloud Foundations -->
-        <div class="cert-document-plate">
+        <div class="cert-document-plate glass-sheen">
           <div class="cert-header">
             <span class="cert-issuer">AMAZON WEB SERVICES</span>
             <span class="cert-year">2025</span>
@@ -954,8 +933,7 @@ class DependencyGraph {
           </button>
         </div>
 
-        <!-- Plate 06: SoloLearn Java -->
-        <div class="cert-document-plate">
+        <div class="cert-document-plate glass-sheen">
           <div class="cert-header">
             <span class="cert-issuer">SOLOLEARN</span>
             <span class="cert-year">APR 2024</span>
@@ -973,77 +951,75 @@ class DependencyGraph {
     </div>
   </section>
 
-  <hr class="section-divider">
-
   <!-- ========================================================================
-       9. INQUIRIES & COLOPHON
+       7. INQUIRIES & COLOPHON
        ======================================================================== -->
   <section id="inquiries" class="inquiries-section">
     <div class="site-container">
-      <div class="inquiries-grid reveal-on-scroll">
-        
-        <!-- Contact Actions -->
-        <div class="contact-action-box">
-          <div class="section-meta">
-            <span class="index-pill">SECTION 07</span>
-            <span>DIRECT INQUIRIES // COLLABORATION</span>
-          </div>
+      <div class="inquiries-glass-panel glass-sheen reveal-on-scroll">
+        <div class="inquiries-grid">
           
-          <h2 class="display-title" style="font-size: clamp(2rem, 3.8vw, 3.25rem);">INITIATE DIALOGUE</h2>
-          
-          <p class="editorial-body">
-            Currently seeking Software Engineering Internships (SDE), full-stack development opportunities, and technical collaborations in the Java / Spring Boot and AI systems space.
-          </p>
-
-          <div class="contact-btn-row">
-            <button type="button" class="btn-primary-editorial" onclick="copyEmail()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>COPY EMAIL ADDRESS</span>
-            </button>
+          <div class="contact-action-box">
+            <div class="section-meta" style="display:flex; align-items:center; gap:12px;">
+              <span class="index-pill" style="display:inline-flex; padding:4px 12px; background:rgba(138,182,204,0.12); border:1px solid var(--glass-border-sky); border-radius:999px; font-family:var(--font-mono); font-size:0.72rem; color:var(--sky-mist);">SECTION 05</span>
+              <span class="mono-label">DIRECT INQUIRIES // COLLABORATION</span>
+            </div>
             
-            <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial">
-              <span>GITHUB PROFILE ↗</span>
-            </a>
+            <h2 class="display-title" style="font-size: clamp(2rem, 3.8vw, 3.1rem);">INITIATE DIALOGUE</h2>
+            
+            <p class="editorial-body">
+              Currently seeking Software Engineering Internships (SDE), full-stack development opportunities, and technical collaborations in the Java / Spring Boot and AI systems space.
+            </p>
 
-            <button type="button" class="btn-secondary-editorial" onclick="openResumeModal()">
-              <span>VIEW RESUME</span>
-            </button>
+            <div class="contact-btn-row">
+              <button type="button" class="btn-primary-editorial" onclick="copyEmail()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>COPY EMAIL ADDRESS</span>
+              </button>
+              
+              <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial">
+                <span>GITHUB PROFILE ↗</span>
+              </a>
 
-            <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-primary-editorial">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span>DOWNLOAD RESUME (.PDF)</span>
-            </a>
+              <button type="button" class="btn-secondary-editorial" onclick="openResumeModal()">
+                <span>VIEW RESUME</span>
+              </button>
+
+              <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-secondary-editorial" style="border-color: var(--glass-border-sky); color: var(--sky-mist);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>DOWNLOAD PDF</span>
+              </a>
+            </div>
+
+            <span id="copy-toast" class="copy-feedback-toast">COPIED TO CLIPBOARD</span>
           </div>
 
-          <span id="copy-toast" class="copy-feedback-toast">COPIED TO CLIPBOARD</span>
-        </div>
+          <div class="colophon-meta-box">
+            <span class="colophon-title">COLOPHON &amp; DESIGN ETHOS</span>
+            <p>
+              Art-directed as a tactile alpine glass personal website—pairing optical frosted layers and sculpted 3D geometry with natural mountain and high-altitude sky tones.
+            </p>
+            <p>
+              <strong>Typography:</strong> Space Grotesk (Display), Inter (Body), IBM Plex Mono (Technical Tags).<br>
+              <strong>Palette:</strong> Alpine Slate (#091015), Glacial Sky (#8AB6CC), Alpenglow (#D8A482), Snow Peak (#F1F4F6).<br>
+              <strong>Origin:</strong> Jabalpur, Madhya Pradesh, India.
+            </p>
+          </div>
 
-        <!-- Colophon & Design Manifesto -->
-        <div class="colophon-meta-box">
-          <span class="colophon-title">COLOPHON & DESIGN ETHOS</span>
-          <p>
-            Conceptualized and art-directed as an authentic creative developer's personal website. Built with zero generic templates, no AI UI kit cards, and no excessive gradient neon.
-          </p>
-          <p>
-            <strong>Typography:</strong> Space Grotesk (Editorial Display), Inter (Body Copy), IBM Plex Mono (Technical Annotations).<br>
-            <strong>Palette:</strong> Charcoal (#101510), Spring Green (#6DB33F), Java Orange (#F89820), Warm Off-White (#EAE9E1), Muted Grey (#858B83).<br>
-            <strong>Origin:</strong> Jabalpur, Madhya Pradesh, India.
-          </p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ========================================================================
-       10. SITE FOOTER
+       8. SITE FOOTER
        ======================================================================== -->
   <footer class="site-footer">
     <div class="site-container">
       <div class="footer-inner">
         <span>© 2026 VANSH KUMAR SONI // ALL RIGHTS RESERVED</span>
-        <span>DEPLOYED ON GITHUB PAGES // CONCISE STATIC ARCHITECTURE</span>
-        <a href="#hero" class="mono-accent-spring">BACK TO APEX ↑</a>
+        <span>DEPLOYED ON GITHUB PAGES // ALPINE GLASS ARCHITECTURE</span>
+        <a href="#hero" class="mono-accent-sky">BACK TO APEX ↑</a>
       </div>
     </div>
   </footer>
@@ -1062,7 +1038,7 @@ class DependencyGraph {
         <div>
           <span id="modal-project-tag" class="mono-label">SOLO / SYSTEMS ARCHITECTURE</span>
           <h2 id="modal-project-title" class="display-subtitle" style="font-size: 1.875rem; margin-top: 4px;">Repo City</h2>
-          <p id="modal-project-subtitle" class="editorial-lead" style="color: var(--accent-spring); font-size: 1.0625rem; margin-top: 4px;">3D Codebase Visualization</p>
+          <p id="modal-project-subtitle" class="editorial-lead" style="color: var(--sky-mist); font-size: 1.05rem; margin-top: 4px;">3D Codebase Visualization</p>
         </div>
 
         <div>
@@ -1076,7 +1052,11 @@ class DependencyGraph {
         </div>
 
         <div>
-          <span class="mono-label">ARCHITECTURAL IMPLEMENTATION</span>
+          <span class="mono-label">ARCHITECTURAL TOPOLOGY &amp; IMPLEMENTATION</span>
+          <div class="modal-arch-glass-chamber">
+            <canvas id="modal-arch-canvas" class="modal-arch-canvas"></canvas>
+            <span class="arch-chamber-legend">TOPOLOGY: ROTATABLE 3D LIQUID GLASS NODES</span>
+          </div>
           <ul id="modal-project-arch" class="timeline-bullets" style="margin-top: 8px;"></ul>
         </div>
 
@@ -1085,7 +1065,7 @@ class DependencyGraph {
           <p id="modal-project-outcome" class="editorial-body" style="margin-top: 6px;"></p>
         </div>
 
-        <div class="project-action-row" style="margin-top: 12px; border-top: 1px solid var(--border-hairline); padding-top: 16px;">
+        <div class="project-action-row" style="margin-top: 12px; border-top: 1px solid var(--glass-border); padding-top: 16px;">
           <a id="modal-project-github" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary-editorial">
             <span>VIEW REPOSITORY ON GITHUB ↗</span>
           </a>
@@ -1105,26 +1085,25 @@ class DependencyGraph {
       <div class="modal-header-bar">
         <div style="display: flex; align-items: center; gap: 10px;">
           <span class="modal-title-stamp" id="modal-resume-title">OFFICIAL RESUME // VANSH KUMAR SONI</span>
-          <span class="tech-stamp stamp-spring" style="font-size: 0.6875rem;">ORIGINAL PDF</span>
+          <span class="tech-stamp stamp-sky" style="font-size: 0.6875rem;">ORIGINAL PDF</span>
         </div>
         <div class="modal-header-actions">
-          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-primary-editorial" style="padding: 6px 14px; font-size: 0.75rem;">
+          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-primary-editorial" style="padding: 6px 14px; font-size: 0.72rem;">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             <span>DOWNLOAD RESUME (.PDF)</span>
           </a>
-          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial" style="padding: 6px 12px; font-size: 0.75rem;">
+          <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary-editorial" style="padding: 6px 12px; font-size: 0.72rem;">
             <span>OPEN FULLSCREEN ↗</span>
           </a>
           <button type="button" class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close Resume">✕</button>
         </div>
       </div>
 
-      <!-- Actual Embedded PDF Document Viewport -->
       <div class="resume-pdf-container">
         <object data="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1&navpanes=0&view=FitH" type="application/pdf" class="resume-pdf-object">
           <iframe src="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1" class="resume-pdf-iframe" title="Original Curriculum Vitae of Vansh Kumar Soni">
             <div class="resume-fallback-notice">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--accent-spring);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--sky-glacial);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               <h3 class="display-subtitle">Vansh Kumar Soni — Official Resume</h3>
               <p class="editorial-body">Your browser does not display direct PDF embeds. You can directly view or download the complete PDF below.</p>
               <a href="assets/resume/Vansh_Kumar_Soni_Resume.pdf" download="Vansh_Kumar_Soni_Resume.pdf" class="btn-primary-editorial">
@@ -1149,10 +1128,10 @@ class DependencyGraph {
 
       <div class="modal-body-content">
         <h3 id="modal-cert-title" class="display-subtitle">Certificate Title</h3>
-        <span id="modal-cert-date" class="mono-label" style="color: var(--accent-spring);">ISSUED: 2025</span>
+        <span id="modal-cert-date" class="mono-label" style="color: var(--sky-glacial);">ISSUED: 2025</span>
         <p id="modal-cert-desc" class="editorial-body"></p>
         
-        <div style="margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--border-hairline); display: flex; justify-content: space-between; align-items: center;">
+        <div style="margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center;">
           <span class="mono-label">DOCUMENT STATUS: VERIFIED</span>
           <button type="button" class="btn-secondary-editorial" onclick="closeCertModal()">CLOSE</button>
         </div>
@@ -1160,10 +1139,18 @@ class DependencyGraph {
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/canvas-graph.js"></script>
-  <script src="js/project-modal.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Three.js (WebGL 3D Engine for Interactive Cyber Car) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- GSAP & ScrollTrigger for Choreographed Scroll Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Portfolio Scripts -->
+  <script src="js/car-3d.js" defer></script>
+  <script src="js/liquid-glass.js" defer></script>
+  <script src="js/scroll-animations.js" defer></script>
+  <script src="js/project-modal.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
-

@@ -1,38 +1,83 @@
 /* ==========================================================================
-   DESIGN TOKENS & SYSTEM VARIABLES
-   Philosophy: Editorial Swiss Design + Java / Spring Technical Aesthetics
+   DESIGN TOKENS & ALPINE GLASS SYSTEM VARIABLES
+   Philosophy: Tactile Frosted Glass + Natural Green Mountain & High-Altitude Sky Palette
+   Restrained, Sophisticated, Human-Art-Directed (Zero Artificial / Irritating Neon)
    ========================================================================== */
 
 :root {
-  /* Color Palette — Restrained, Human-Art-Directed */
-  --bg-charcoal: #101510;
-  --bg-surface: #141a14;
-  --bg-surface-elevated: #1a221a;
-  --bg-surface-subtle: #121812;
-  
-  --accent-spring: #6DB33F;       /* Spring Green — highlights, active states, numbers */
-  --accent-spring-muted: rgba(109, 179, 63, 0.15);
-  --accent-spring-border: rgba(109, 179, 63, 0.35);
-  
-  --accent-java: #F89820;         /* Java Orange — technical JVM/Spring stamps */
-  --accent-java-muted: rgba(248, 152, 32, 0.12);
-  --accent-java-border: rgba(248, 152, 32, 0.3);
-  
-  --text-primary: #EAE9E1;        /* Warm Off-White */
-  --text-secondary: #858B83;      /* Muted Grey */
-  --text-tertiary: #575D55;       /* Darker Muted Grey for subtle coordinates */
-  
-  --border-hairline: rgba(234, 233, 225, 0.12);
-  --border-mid: rgba(234, 233, 225, 0.22);
-  --border-strong: rgba(234, 233, 225, 0.45);
-  
+  /* Natural Mountain Evergreen Slate & High-Altitude Sky Palette */
+  --bg-alpine-deep: #08120e;        /* Deep evergreen night granite */
+  --bg-alpine-slate: #0d1a15;       /* Shadowed pine valley slate */
+  --bg-ridge-pine: #14251e;         /* Mountain forest pine ridge */
+  --bg-lake-deep: #0e2025;          /* Glacial alpine tarn water */
+
+  /* Natural Mountain Greens (Pine, Moss, Spring Needle) */
+  --mountain-pine-deep: #162c20;    /* Dense coniferous forest */
+  --mountain-pine: #234734;         /* Rich mountain pine */
+  --mountain-moss: #3a684c;         /* High-altitude stone moss */
+  --mountain-spring: #578c66;       /* Fresh evergreen needle highlight */
+  --mountain-leaf: #79af88;         /* Sub-alpine meadow green */
+  --mountain-green-soft: rgba(87, 140, 102, 0.16);
+  --mountain-green-border: rgba(121, 175, 136, 0.32);
+
+  /* Glacial Sky & Mountain Atmosphere */
+  --sky-glacial: #7eaec7;           /* Crisp morning sky over peaks */
+  --sky-mist: #bdd9e7;              /* High-altitude cloud mist & snow glint */
+  --sky-horizon: #4f788e;           /* Distant haze blue-slate */
+  --sky-lake: #1f424f;              /* Deep mountain tarn blue */
+  --sky-soft: rgba(126, 174, 199, 0.15);
+  --sky-border: rgba(189, 217, 231, 0.32);
+
+  /* Subtle Warm Alpenglow Peak Accent (Restrained, Organic) */
+  --alpenglow: #d6a382;             /* Dawn light catching granite ridge */
+  --alpenglow-soft: rgba(214, 163, 130, 0.15);
+  --alpenglow-border: rgba(214, 163, 130, 0.32);
+
+  /* Editorial Contrast Neutrals */
+  --text-primary: #f2f6f3;          /* Snow peak crisp off-white */
+  --text-secondary: #9cb1a5;        /* Weathered pine granite stone */
+  --text-tertiary: #657d71;         /* Deep ridge shadow grey */
+
+  /* True Optical Frosted Glass Surfaces */
+  --glass-bg: rgba(15, 27, 22, 0.46);
+  --glass-bg-elevated: rgba(19, 34, 28, 0.64);
+  --glass-bg-modal: rgba(11, 20, 16, 0.88);
+  --glass-bg-subtle: rgba(242, 246, 243, 0.045);
+
+  --glass-blur: blur(28px) saturate(135%);
+  --glass-blur-heavy: blur(38px) saturate(145%);
+
+  --glass-border: rgba(242, 246, 243, 0.13);
+  --glass-border-strong: rgba(189, 217, 231, 0.26);
+  --glass-border-green: rgba(121, 175, 136, 0.36);
+  --glass-border-sky: rgba(126, 174, 199, 0.38);
+
+  --glass-specular: inset 0 1px 0 rgba(255, 255, 255, 0.20),
+                    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  --glass-shadow: 0 24px 64px rgba(3, 8, 6, 0.55);
+  --glass-shadow-hover: 0 32px 76px rgba(3, 8, 6, 0.72);
+
+  /* Natural Mountain-Sky Liquid Gradients */
+  --gradient-mountain-sky: linear-gradient(138deg, rgba(22, 44, 32, 0.48) 0%, rgba(18, 38, 44, 0.38) 52%, rgba(126, 174, 199, 0.24) 100%);
+  --gradient-sky-pine: linear-gradient(135deg, rgba(126, 174, 199, 0.28) 0%, rgba(35, 71, 52, 0.38) 100%);
+  --gradient-aurora-glow: radial-gradient(ellipse at 50% 30%, rgba(58, 104, 76, 0.26), rgba(31, 66, 79, 0.22) 48%, transparent 72%);
+
+  /* Liquid Glass & Caustics Tokens (Natural Mountain Water Optics) */
+  --liquid-caustic-sky: rgba(189, 217, 231, 0.28);
+  --liquid-caustic-green: rgba(121, 175, 136, 0.24);
+  --liquid-caustic-lake: rgba(79, 120, 142, 0.22);
+  --liquid-caustic-alpenglow: rgba(214, 163, 130, 0.18);
+  --liquid-specular-glow: rgba(255, 255, 255, 0.44);
+  --liquid-refraction-tint: rgba(126, 174, 199, 0.14);
+  --liquid-ripple-color: rgba(189, 217, 231, 0.30);
+  --liquid-lens-glow: 0 0 32px rgba(126, 174, 199, 0.28), 0 0 16px rgba(87, 140, 102, 0.22), inset 0 0 14px rgba(255, 255, 255, 0.25);
+
   /* Typography System */
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace;
-  
-  /* Editorial Spacing Units */
-  --space-unit: 8px;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+
+  /* Spacing Units */
   --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 16px;
@@ -41,18 +86,17 @@
   --space-xl: 48px;
   --space-2xl: 64px;
   --space-3xl: 96px;
-  --space-4xl: 128px;
-  
-  /* Grid & Layout System */
-  --max-content-width: 1400px;
-  --page-gutter: clamp(20px, 4vw, 56px);
-  --column-gap: clamp(16px, 2.5vw, 36px);
-  
-  /* Animation Timings — Restrained & Purposeful */
-  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
-  --duration-fast: 180ms;
-  --duration-normal: 320ms;
-  --duration-deliberate: 550ms;
-}
 
+  /* Layout & Radii */
+  --max-content-width: 1360px;
+  --page-gutter: clamp(18px, 4vw, 52px);
+  --radius-frame: 26px;
+  --radius-card: 20px;
+  --radius-inner: 14px;
+  --radius-pill: 999px;
+
+  /* Restrained Motion Curves */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 360ms;
+}

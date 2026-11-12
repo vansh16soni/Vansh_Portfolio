@@ -1,50 +1,47 @@
 /* ==========================================================================
    TYPOGRAPHY SYSTEM
-   Space Grotesk (Editorial Headings) + Inter (Crisp Body) + IBM Plex Mono
+   Space Grotesk (Sculptural Display) + Inter (Body) + IBM Plex Mono (Tags)
    ========================================================================== */
 
-/* Editorial Display Heading */
 .display-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  font-size: clamp(2.5rem, 6.5vw, 5.75rem);
   font-weight: 700;
   letter-spacing: -0.04em;
-  line-height: 0.95;
+  line-height: 0.96;
   color: var(--text-primary);
   text-transform: uppercase;
 }
 
 .display-subtitle {
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.2vw, 1.875rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.85rem);
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.25;
   color: var(--text-primary);
 }
 
-/* Monospace Technical Notation */
 .mono-label {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   color: var(--text-secondary);
   text-transform: uppercase;
 }
 
-.mono-accent-spring {
+.mono-accent-sky {
   font-family: var(--font-mono);
-  color: var(--accent-spring);
+  color: var(--sky-glacial);
 }
 
-.mono-accent-java {
+.mono-accent-alpenglow {
   font-family: var(--font-mono);
-  color: var(--accent-java);
+  color: var(--alpenglow);
 }
 
-/* Editorial Lead & Paragraphs */
 .editorial-lead {
-  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-size: clamp(1.0625rem, 1.5vw, 1.3rem);
   line-height: 1.55;
   color: var(--text-primary);
   font-weight: 400;
@@ -52,60 +49,49 @@
 }
 
 .editorial-body {
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.95rem;
+  line-height: 1.68;
   color: var(--text-secondary);
 }
 
-.editorial-statement {
-  font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
-  line-height: 1.35;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-  border-left: 2px solid var(--accent-spring);
-  padding-left: var(--space-md);
-  margin: var(--space-md) 0;
-}
-
-/* Technical JVM/Spring Badges & Annotation Stamps */
+/* Frosted Glass Technical Chips */
 .tech-stamp {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 3px 8px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
+  font-size: 0.72rem;
+  padding: 5px 11px;
+  background: rgba(241, 244, 246, 0.055);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
   color: var(--text-secondary);
-  border-radius: 2px;
+  border-radius: var(--radius-pill);
   letter-spacing: 0.02em;
   white-space: nowrap;
+  transition: border-color var(--duration-fast) ease, color var(--duration-fast) ease;
 }
 
-.tech-stamp.stamp-java {
-  border-color: var(--accent-java-border);
-  color: var(--accent-java);
-  background: var(--accent-java-muted);
-}
-
-.tech-stamp.stamp-spring {
-  border-color: var(--accent-spring-border);
-  color: var(--accent-spring);
-  background: var(--accent-spring-muted);
-}
-
-.tech-stamp.stamp-highlight {
-  border-color: var(--accent-spring-border);
+.tech-stamp:hover {
+  border-color: var(--glass-border-strong);
   color: var(--text-primary);
 }
 
-/* Coordinates & Index stamps */
-.coord-tag {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--text-tertiary);
-  letter-spacing: 0.1em;
+.tech-stamp.stamp-java {
+  border-color: var(--alpenglow-border);
+  color: var(--alpenglow);
+  background: var(--alpenglow-soft);
 }
 
+.tech-stamp.stamp-sky {
+  border-color: var(--glass-border-sky);
+  color: var(--sky-mist);
+  background: rgba(138, 182, 204, 0.14);
+}
+
+.tech-stamp.stamp-moss {
+  border-color: var(--moss-border);
+  color: #9CC8B6;
+  background: var(--moss-soft);
+}
