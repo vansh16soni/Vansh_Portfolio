@@ -3029,21 +3029,4 @@ body.scrubbing-tire .rolling-tire-assembly {
   box-shadow: 0 0 12px rgba(0, 229, 255, 0.4) !important;
 }
 
-/* Sequential Gearbox Nav Badges */
-.nav-gear-badge {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  color: var(--modena-yellow);
-  font-weight: 800;
-  margin-right: 4px;
-  background: rgba(252, 227, 0, 0.12);
-  border: 1px solid rgba(252, 227, 0, 0.35);
-  padding: 1px 4px;
-  border-radius: 3px;
-}
 
-.nav-link:hover .nav-gear-badge {
-  background: var(--racing-red);
-  color: #ffffff;
-  border-color: #ff3333;
-}
