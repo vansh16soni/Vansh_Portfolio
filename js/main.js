@@ -46,8 +46,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const certIssuerEl = document.getElementById('modal-cert-issuer');
   const certDescEl = document.getElementById('modal-cert-desc');
   const certDateEl = document.getElementById('modal-cert-date');
+  const certLinkEl = document.getElementById('modal-cert-link');
+  const certDemoEl = document.getElementById('modal-cert-demo');
+  const certGithubEl = document.getElementById('modal-cert-github');
 
   const CERT_DATA = {
+    cisco: {
+      title: "Cisco AI Engineering Internship Certificate",
+      issuer: "Cisco & AICTE",
+      date: "August 2026",
+      desc: "Verified certificate recognizing completion of the AI Engineering Internship at Cisco, culminating in NetSage AI for automated OSI root-cause analysis and network diagnostics.",
+      link: "https://drive.google.com/file/d/1Xeq-S6DqLiRhNI5TTC_y3o3d8kw4OUrL/view",
+      github: "https://github.com/vansh16soni/Cisco_NetSage_AI",
+      demo: "https://netsage-ai-c7rd.onrender.com/"
+    },
+    bsnl: {
+      title: "BSNL Telecom Data Analytics Internship Certificate",
+      issuer: "Bharat Sanchar Nigam Limited (BSNL)",
+      date: "February 2026",
+      desc: "Official government internship certificate issued by BSNL Telecom Factory for data engineering, QoS degradation modeling, and revenue vulnerability analysis across 10,000+ records.",
+      link: "https://drive.google.com/file/d/1P-cfeRcdcxjL4IIfexnz2sh1z4QVsK3I/view",
+      github: "https://github.com/vansh16soni/Telecom_project"
+    },
     sih: {
       title: "Smart India Hackathon '25 — National Runner-up",
       issuer: "Ministry of Education & AICTE",
@@ -64,25 +84,29 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "AWS Academy Machine Learning Foundations",
       issuer: "Amazon Web Services (AWS)",
       date: "August 2026",
-      desc: "Comprehensive certification covering machine learning pipelines on AWS, feature engineering, model training, evaluation metrics, and cloud inference architectures."
+      desc: "Comprehensive certification covering machine learning pipelines on AWS, feature engineering, model training, evaluation metrics, and cloud inference architectures.",
+      link: "https://drive.google.com/file/d/1hKHhN7QEajXOcE74O_6JSZe_GQzQqJTs/view"
     },
     aws_nlp: {
       title: "AWS Academy ML for Natural Language Processing",
       issuer: "Amazon Web Services (AWS)",
       date: "July 2026",
-      desc: "Specialized certification covering transformer architectures, tokenization, text embeddings, sentiment classifiers, and deep language processing workflows on cloud infrastructure."
+      desc: "Specialized certification covering transformer architectures, tokenization strategies, and deep language processing workflows on cloud infrastructure.",
+      link: "https://drive.google.com/file/d/1KzajLM5apFSwLYzYlHBK96jjtFDYxS9K/view"
     },
     aws_cloud: {
       title: "AWS Academy Cloud Foundations",
       issuer: "Amazon Web Services (AWS)",
       date: "2025",
-      desc: "Foundational mastery of cloud computing concepts, AWS core services, security compliance, network VPC peering, IAM role management, and pricing architecture."
+      desc: "Foundational mastery of cloud computing concepts, AWS core services, security compliance, network VPC peering, IAM role management, and pricing architecture.",
+      link: "https://drive.google.com/file/d/1WAcB__PuNzIYSvrQsGIjSS5aYOWmsy_g/view"
     },
     sololearn_java: {
       title: "Introduction to Java Certification",
       issuer: "SoloLearn",
       date: "April 2024",
-      desc: "Verified certification establishing core mastery in Java object-oriented programming, inheritance, polymorphism, abstract classes, collections framework, and multi-threading."
+      desc: "Verified certification establishing core mastery in Java object-oriented programming, inheritance, polymorphism, abstract classes, collections framework, and multi-threading.",
+      link: "https://www.sololearn.com/en/certificates/CC-EXLXARMG"
     }
   };
 
@@ -94,6 +118,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (certIssuerEl) certIssuerEl.textContent = cert.issuer;
     if (certDateEl) certDateEl.textContent = `ISSUED: ${cert.date}`;
     if (certDescEl) certDescEl.textContent = cert.desc;
+
+    if (certLinkEl) {
+      if (cert.link) {
+        certLinkEl.href = cert.link;
+        certLinkEl.style.display = 'inline-flex';
+      } else {
+        certLinkEl.style.display = 'none';
+      }
+    }
+    if (certDemoEl) {
+      if (cert.demo) {
+        certDemoEl.href = cert.demo;
+        certDemoEl.style.display = 'inline-flex';
+      } else {
+        certDemoEl.style.display = 'none';
+      }
+    }
+    if (certGithubEl) {
+      if (cert.github) {
+        certGithubEl.href = cert.github;
+        certGithubEl.style.display = 'inline-flex';
+      } else {
+        certGithubEl.style.display = 'none';
+      }
+    }
 
     if (certModalBackdrop) {
       certModalBackdrop.classList.add('active');
@@ -123,6 +172,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(() => {
       window.location.href = `mailto:${email}`;
     });
+  };
+
+  // 7. Project Screenshot Multi-View Gallery Switcher
+  window.switchProjectImage = function (projectId, imageSrc, btnEl) {
+    const imgEl = document.getElementById(`img-${projectId}`);
+    if (imgEl) {
+      imgEl.style.opacity = '0.35';
+      imgEl.src = imageSrc;
+      imgEl.onload = () => {
+        imgEl.style.opacity = '1';
+      };
+      setTimeout(() => {
+        imgEl.style.opacity = '1';
+      }, 250);
+    }
+    if (btnEl && btnEl.parentElement) {
+      btnEl.parentElement.querySelectorAll('.gallery-thumb-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      btnEl.classList.add('active');
+    }
   };
 
   // Close modals on clicking backdrop

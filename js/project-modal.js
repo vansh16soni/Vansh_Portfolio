@@ -12,7 +12,8 @@ const PROJECT_DOSSIERS = {
     tech: ["Three.js", "React.js", "Node.js", "Express.js", "MongoDB", "AST Parsing", "DAG Algorithms", "Gemini / OpenAI", "GitHub OAuth 2.0", "SSE"],
     role: "Lead Full-Stack & Graphics Developer",
     github: "https://github.com/vansh16soni/RepoCity",
-    demo: "#",
+    demo: "https://repo-city.onrender.com/",
+    image: "assets/projects/repocity.png",
     problem: "Understanding large, unfamiliar codebases typically involves traversing fragmented folder trees and disconnected documentation, making structural debt, tightly coupled modules, and cognitive bottlenecks hard to identify.",
     architecture: [
       "Engineered multi-language Abstract Syntax Tree (AST) parsers to analyze code structure, module imports, and function complexity metrics across repositories.",
@@ -31,7 +32,8 @@ const PROJECT_DOSSIERS = {
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Groq Cloud", "React Flow", "JWT Auth", "Canvas API"],
     role: "Full-Stack AI Engineer",
     github: "https://github.com/vansh16soni/GYAN.AI",
-    demo: "#",
+    demo: "https://gyan-ai-mbtq.onrender.com/",
+    image: "assets/projects/gyanai.png",
     problem: "Online technical lectures contain rich pedagogical value but lack structured searchability, forcing students to rewatch lengthy videos repeatedly to extract core architectural concepts.",
     architecture: [
       "Constructed a high-throughput pipeline that fetches, cleans, and chunks timestamped transcripts using contextual semantic boundary detection.",
@@ -50,7 +52,8 @@ const PROJECT_DOSSIERS = {
     tech: ["MediaPipe Hands", "WebAssembly (WASM)", "Canvas API", "Three.js", "React.js", "Node.js", "MongoDB"],
     role: "Creative Technologist & Frontend Engineer",
     github: "https://github.com/vansh16soni/ShadowPlay",
-    demo: "#",
+    demo: "https://shadowplay.onrender.com/",
+    image: "assets/projects/shadowplay.png",
     problem: "Real-time webcam interactions frequently suffer from high computational latency and invasive cloud video streaming, raising privacy concerns and ruining tactile responsiveness.",
     architecture: [
       "Integrated MediaPipe Hands compiled to WebAssembly for sub-20ms client-side inference across 21 3D hand landmark coordinates.",
@@ -68,8 +71,9 @@ const PROJECT_DOSSIERS = {
     subtitle: "Automated diagnostic synthesis for Cisco Packet Tracer topologies across the OSI stack",
     tech: ["Node.js", "Express.js", "Spring Boot", "Cisco Packet Tracer", "LLM Reasoning Chains", "OSI Layer Classifier", "REST APIs"],
     role: "AI Engineering Intern",
-    github: "https://github.com/vansh16soni",
-    demo: "#",
+    github: "https://github.com/vansh16soni/Cisco_NetSage_AI",
+    demo: "https://netsage-ai-c7rd.onrender.com/",
+    certificate: "https://drive.google.com/file/d/1Xeq-S6DqLiRhNI5TTC_y3o3d8kw4OUrL/view",
     problem: "Troubleshooting complex simulated network labs involves tedious manual inspection of CLI routing tables, VLAN tags, and ACL rules with high risk of human oversight.",
     architecture: [
       "Designed an automated parser to extract and normalize diagnostic command outputs (such as `show ip route`, `traceroute`, `show interfaces`) from Packet Tracer lab state dumps.",
@@ -87,8 +91,9 @@ const PROJECT_DOSSIERS = {
     subtitle: "Empirical correlation modeling of QoS degradation and ARPU attrition across 10,000+ records",
     tech: ["Node.js", "React.js", "Streaming Data Pipelines", "Power BI", "Linear Regression", "Statistical Modeling"],
     role: "Government Data Analytics Intern",
-    github: "https://github.com/vansh16soni",
+    github: "https://github.com/vansh16soni/Telecom_project",
     demo: "#",
+    certificate: "https://drive.google.com/file/d/1P-cfeRcdcxjL4IIfexnz2sh1z4QVsK3I/view",
     problem: "Identifying early churn drivers in regional telecom circles before customer departure requires correlating granular technical network telemetry with financial billing patterns.",
     architecture: [
       "Cleaned, normalized, and explored 10,000+ simulated telecom telemetry records encompassing latency, jitter, call drop rates, and billing cycles.",
@@ -144,6 +149,44 @@ window.openProjectModal = function (projectId) {
       demoLink.style.display = 'inline-flex';
     } else {
       demoLink.style.display = 'none';
+    }
+  }
+
+  const certLink = document.getElementById('modal-project-cert');
+  if (certLink) {
+    if (data.certificate) {
+      certLink.href = data.certificate;
+      certLink.style.display = 'inline-flex';
+    } else {
+      certLink.style.display = 'none';
+    }
+  }
+
+  const modalImgSection = document.getElementById('modal-visual-preview-section');
+  const modalImg = document.getElementById('modal-project-img');
+  const modalImgLink = document.getElementById('modal-project-img-link');
+  const modalExtLink = document.getElementById('modal-project-ext-link');
+  const modalUrlText = document.getElementById('modal-project-url-text');
+
+  if (modalImgSection && modalImg) {
+    if (data.image) {
+      modalImg.src = data.image;
+      modalImg.alt = data.title;
+      modalImgSection.style.display = 'block';
+      if (modalImgLink) {
+        modalImgLink.href = (data.demo && data.demo !== '#') ? data.demo : data.github;
+      }
+      if (modalExtLink && modalUrlText) {
+        if (data.demo && data.demo !== '#') {
+          modalExtLink.href = data.demo;
+          modalUrlText.textContent = data.demo.replace(/^https?:\/\//, '');
+          modalExtLink.style.display = 'inline-flex';
+        } else {
+          modalExtLink.style.display = 'none';
+        }
+      }
+    } else {
+      modalImgSection.style.display = 'none';
     }
   }
 

@@ -18,6 +18,8 @@ node_modules/
 # Environment & Secrets (Personal details protection)
 .env
 .env.*
+.env.local
+.env.*.local
 *.env
 *.pem
 *.key
@@ -28,13 +30,18 @@ secret*
 secrets/
 private/
 personal/
+personal-details.*
+personal_details.*
 *.private.*
 contacts.*
+contact_info.*
 personal_info.*
 *phone*
 *address*
 *id_rsa*
 *id_ed25519*
+*.token
+*.auth
 
 # Coverage directory
 coverage/
