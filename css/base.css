@@ -38,22 +38,31 @@ body {
   z-index: -2;
   overflow: hidden;
   pointer-events: none;
-  background: radial-gradient(130% 95% at 50% 0%, #152b22 0%, #0d1a15 48%, #08120e 100%);
+  background: radial-gradient(130% 95% at 50% 0%, #171a22 0%, #0d0f14 48%, #08090b 100%);
 }
 
-/* Soft Sky Atmosphere & Mountain Pine Diffusion (Scroll-animated via GSAP) */
+.alpine-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--carbon-pattern);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Aerodynamic Speed Blur & Cockpit Telemetry Diffusion */
 .sky-atmosphere {
   position: absolute;
   inset: -15%;
   background:
-    radial-gradient(54% 46% at 22% 16%, rgba(126, 174, 199, 0.28) 0%, transparent 72%),
-    radial-gradient(48% 42% at 76% 26%, rgba(87, 140, 102, 0.24) 0%, transparent 74%),
-    radial-gradient(58% 52% at 50% 68%, rgba(31, 66, 79, 0.26) 0%, transparent 76%);
+    radial-gradient(54% 46% at 20% 16%, rgba(225, 6, 0, 0.22) 0%, transparent 72%),
+    radial-gradient(48% 42% at 78% 24%, rgba(0, 229, 255, 0.20) 0%, transparent 74%),
+    radial-gradient(58% 52% at 50% 68%, rgba(252, 227, 0, 0.12) 0%, transparent 76%);
   filter: blur(52px);
   will-change: transform, opacity;
 }
 
-/* Ambient Liquid Aurora Fluid Underlay (Slow, Harmonic Morphing) */
+/* Ambient Speed Glow Aurora Fluid Underlay */
 .liquid-aurora-container {
   position: absolute;
   inset: 0;
@@ -66,7 +75,7 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(64px);
-  opacity: 0.65;
+  opacity: 0.70;
   will-change: transform;
   transform: translate3d(0, 0, 0);
   pointer-events: none;
@@ -77,8 +86,8 @@ body {
   height: clamp(340px, 45vw, 620px);
   top: 10%;
   left: 8%;
-  background: radial-gradient(circle, rgba(58, 104, 76, 0.36) 0%, rgba(35, 71, 52, 0.18) 60%, transparent 80%);
-  animation: aurora-drift-1 26s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(225, 6, 0, 0.32) 0%, rgba(158, 4, 0, 0.14) 60%, transparent 80%);
+  animation: aurora-drift-1 24s ease-in-out infinite alternate;
 }
 
 .blob-sky {
@@ -86,8 +95,8 @@ body {
   height: clamp(380px, 50vw, 700px);
   top: 22%;
   right: 5%;
-  background: radial-gradient(circle, rgba(126, 174, 199, 0.32) 0%, rgba(79, 120, 142, 0.16) 60%, transparent 80%);
-  animation: aurora-drift-2 32s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.28) 0%, rgba(2, 132, 199, 0.14) 60%, transparent 80%);
+  animation: aurora-drift-2 28s ease-in-out infinite alternate;
 }
 
 .blob-lake {
@@ -95,8 +104,8 @@ body {
   height: clamp(320px, 42vw, 580px);
   bottom: 12%;
   left: 32%;
-  background: radial-gradient(circle, rgba(31, 66, 79, 0.34) 0%, rgba(22, 44, 32, 0.20) 65%, transparent 80%);
-  animation: aurora-drift-3 30s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(252, 227, 0, 0.24) 0%, rgba(225, 6, 0, 0.12) 65%, transparent 80%);
+  animation: aurora-drift-3 26s ease-in-out infinite alternate;
 }
 
 @keyframes aurora-drift-1 {

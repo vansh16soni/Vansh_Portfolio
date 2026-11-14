@@ -11,34 +11,34 @@
   const CLUSTERS = {
     java: {
       id: 'java',
-      name: 'Java & Backend Ecosystem',
-      color: '#79af88',
-      glow: 'rgba(121, 175, 136, 0.55)',
-      fill: 'rgba(87, 140, 102, 0.22)',
+      name: 'Powertrain & Backend ECU',
+      color: '#ff2a2a',
+      glow: 'rgba(255, 42, 42, 0.65)',
+      fill: 'rgba(225, 6, 0, 0.25)',
       centerRatio: { x: 0.28, y: 0.38 }
     },
     mern: {
       id: 'mern',
-      name: 'Full-Stack & Spatial Web',
-      color: '#8ab6cc',
-      glow: 'rgba(138, 182, 204, 0.55)',
-      fill: 'rgba(53, 85, 102, 0.22)',
+      name: 'Aerodynamics & WebGL Chassis',
+      color: '#00e5ff',
+      glow: 'rgba(0, 229, 255, 0.65)',
+      fill: 'rgba(0, 180, 216, 0.25)',
       centerRatio: { x: 0.72, y: 0.36 }
     },
     ai: {
       id: 'ai',
-      name: 'Applied AI & Data Analytics',
-      color: '#d8a482',
-      glow: 'rgba(216, 164, 130, 0.55)',
-      fill: 'rgba(180, 110, 80, 0.22)',
+      name: 'Autonomous AI & Telemetry',
+      color: '#fce300',
+      glow: 'rgba(252, 227, 0, 0.65)',
+      fill: 'rgba(220, 180, 0, 0.25)',
       centerRatio: { x: 0.34, y: 0.72 }
     },
     core: {
       id: 'core',
-      name: 'Systems, Compilers & DevOps',
-      color: '#c2d4dd',
-      glow: 'rgba(194, 212, 221, 0.45)',
-      fill: 'rgba(100, 130, 145, 0.22)',
+      name: 'Transmission & Core Firmware',
+      color: '#e2ebf0',
+      glow: 'rgba(226, 235, 240, 0.55)',
+      fill: 'rgba(140, 160, 175, 0.25)',
       centerRatio: { x: 0.74, y: 0.72 }
     }
   };

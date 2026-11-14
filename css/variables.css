@@ -1,76 +1,100 @@
 /* ==========================================================================
-   DESIGN TOKENS & ALPINE GLASS SYSTEM VARIABLES
-   Philosophy: Tactile Frosted Glass + Natural Green Mountain & High-Altitude Sky Palette
-   Restrained, Sophisticated, Human-Art-Directed (Zero Artificial / Irritating Neon)
+   DESIGN TOKENS & MOTORSPORT / SUPERCAR SYSTEM VARIABLES
+   Philosophy: Matte Carbon Monocoque + Forged Titanium + Scuderia Rosso Corsa & Modena Giallo
+   High-Octane Telemetry, Cockpit HUD Instruments & Zero Fluff
    ========================================================================== */
 
 :root {
-  /* Natural Mountain Evergreen Slate & High-Altitude Sky Palette */
-  --bg-alpine-deep: #08120e;        /* Deep evergreen night granite */
-  --bg-alpine-slate: #0d1a15;       /* Shadowed pine valley slate */
-  --bg-ridge-pine: #14251e;         /* Mountain forest pine ridge */
-  --bg-lake-deep: #0e2025;          /* Glacial alpine tarn water */
+  /* Asphalt Circuit & Carbon Monocoque Dark Base */
+  --bg-alpine-deep: #08090b;        /* Midnight tarmac asphalt */
+  --bg-alpine-slate: #0d0f14;       /* Carbon monocoque chassis */
+  --bg-ridge-pine: #14171f;         /* Paddock pit garage slate */
+  --bg-lake-deep: #0a0c10;          /* Deep telemetry chamber navy */
 
-  /* Natural Mountain Greens (Pine, Moss, Spring Needle) */
-  --mountain-pine-deep: #162c20;    /* Dense coniferous forest */
-  --mountain-pine: #234734;         /* Rich mountain pine */
-  --mountain-moss: #3a684c;         /* High-altitude stone moss */
-  --mountain-spring: #578c66;       /* Fresh evergreen needle highlight */
-  --mountain-leaf: #79af88;         /* Sub-alpine meadow green */
-  --mountain-green-soft: rgba(87, 140, 102, 0.16);
-  --mountain-green-border: rgba(121, 175, 136, 0.32);
+  /* Scuderia Rosso Corsa (Ferrari Racing Red) */
+  --racing-red: #e10600;            /* Iconic Rosso Corsa */
+  --racing-red-bright: #ff1801;     /* Apex tachometer redline */
+  --racing-red-deep: #9e0400;       /* Brake caliper shadow red */
+  --racing-red-glow: rgba(225, 6, 0, 0.65);
+  --racing-red-soft: rgba(225, 6, 0, 0.14);
+  --racing-red-border: rgba(225, 6, 0, 0.42);
 
-  /* Glacial Sky & Mountain Atmosphere */
-  --sky-glacial: #7eaec7;           /* Crisp morning sky over peaks */
-  --sky-mist: #bdd9e7;              /* High-altitude cloud mist & snow glint */
-  --sky-horizon: #4f788e;           /* Distant haze blue-slate */
-  --sky-lake: #1f424f;              /* Deep mountain tarn blue */
-  --sky-soft: rgba(126, 174, 199, 0.15);
-  --sky-border: rgba(189, 217, 231, 0.32);
+  /* Modena Giallo (Ferrari Racing Yellow) */
+  --modena-yellow: #fce300;         /* Modena Shield Yellow */
+  --modena-yellow-glow: rgba(252, 227, 0, 0.65);
+  --modena-yellow-soft: rgba(252, 227, 0, 0.16);
+  --modena-yellow-border: rgba(252, 227, 0, 0.45);
 
-  /* Subtle Warm Alpenglow Peak Accent (Restrained, Organic) */
-  --alpenglow: #d6a382;             /* Dawn light catching granite ridge */
-  --alpenglow-soft: rgba(214, 163, 130, 0.15);
-  --alpenglow-border: rgba(214, 163, 130, 0.32);
+  /* Cockpit HUD & Telemetry Cyan */
+  --telemetry-cyan: #00e5ff;        /* Digital speedo & shift indicator cyan */
+  --telemetry-cyan-glow: rgba(0, 229, 255, 0.65);
+  --telemetry-cyan-soft: rgba(0, 229, 255, 0.14);
+  --telemetry-cyan-border: rgba(0, 229, 255, 0.38);
 
-  /* Editorial Contrast Neutrals */
-  --text-primary: #f2f6f3;          /* Snow peak crisp off-white */
-  --text-secondary: #9cb1a5;        /* Weathered pine granite stone */
-  --text-tertiary: #657d71;         /* Deep ridge shadow grey */
+  /* Backwards-compatible mappings for existing mountain tokens */
+  --mountain-pine-deep: #101217;    /* Matte carbon twill plate */
+  --mountain-pine: #181b23;         /* Forged carbon chassis */
+  --mountain-moss: #8b0400;         /* Deep caliper dark red */
+  --mountain-spring: #e10600;       /* Rosso Corsa highlight */
+  --mountain-leaf: #ff2a2a;         /* High-RPM shift indicator red */
+  --mountain-green-soft: rgba(225, 6, 0, 0.14);
+  --mountain-green-border: rgba(225, 6, 0, 0.40);
 
-  /* True Optical Frosted Glass Surfaces */
-  --glass-bg: rgba(15, 27, 22, 0.46);
-  --glass-bg-elevated: rgba(19, 34, 28, 0.64);
-  --glass-bg-modal: rgba(11, 20, 16, 0.88);
-  --glass-bg-subtle: rgba(242, 246, 243, 0.045);
+  /* Backwards-compatible mappings for sky tokens to HUD cyan */
+  --sky-glacial: #00e5ff;           /* Telemetry Cyan */
+  --sky-mist: #a5f3fc;              /* Instrument cluster bright */
+  --sky-horizon: #0284c7;           /* Pit channel blue */
+  --sky-lake: #082f49;              /* Deep cockpit navy */
+  --sky-soft: rgba(0, 229, 255, 0.14);
+  --sky-border: rgba(0, 229, 255, 0.35);
 
-  --glass-blur: blur(28px) saturate(135%);
-  --glass-blur-heavy: blur(38px) saturate(145%);
+  /* Alpenglow mapped to Modena Yellow */
+  --alpenglow: #fce300;             /* Modena Giallo */
+  --alpenglow-soft: rgba(252, 227, 0, 0.16);
+  --alpenglow-border: rgba(252, 227, 0, 0.42);
 
-  --glass-border: rgba(242, 246, 243, 0.13);
-  --glass-border-strong: rgba(189, 217, 231, 0.26);
-  --glass-border-green: rgba(121, 175, 136, 0.36);
-  --glass-border-sky: rgba(126, 174, 199, 0.38);
+  /* Billet Aluminum & High-Contrast Cockpit Neutrals */
+  --text-primary: #f4f6fa;          /* Brushed billet aluminum off-white */
+  --text-secondary: #9aa5b5;        /* Titanium grey body text */
+  --text-tertiary: #5d6878;         /* Shadow asphalt grey */
 
-  --glass-specular: inset 0 1px 0 rgba(255, 255, 255, 0.20),
-                    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
-  --glass-shadow: 0 24px 64px rgba(3, 8, 6, 0.55);
-  --glass-shadow-hover: 0 32px 76px rgba(3, 8, 6, 0.72);
+  /* Carbon Fiber & Anodized Monocoque Surfaces */
+  --glass-bg: rgba(14, 16, 22, 0.76);
+  --glass-bg-elevated: rgba(20, 23, 31, 0.90);
+  --glass-bg-modal: rgba(10, 11, 16, 0.96);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.035);
 
-  /* Natural Mountain-Sky Liquid Gradients */
-  --gradient-mountain-sky: linear-gradient(138deg, rgba(22, 44, 32, 0.48) 0%, rgba(18, 38, 44, 0.38) 52%, rgba(126, 174, 199, 0.24) 100%);
-  --gradient-sky-pine: linear-gradient(135deg, rgba(126, 174, 199, 0.28) 0%, rgba(35, 71, 52, 0.38) 100%);
-  --gradient-aurora-glow: radial-gradient(ellipse at 50% 30%, rgba(58, 104, 76, 0.26), rgba(31, 66, 79, 0.22) 48%, transparent 72%);
+  --glass-blur: blur(20px) saturate(160%);
+  --glass-blur-heavy: blur(32px) saturate(180%);
 
-  /* Liquid Glass & Caustics Tokens (Natural Mountain Water Optics) */
-  --liquid-caustic-sky: rgba(189, 217, 231, 0.28);
-  --liquid-caustic-green: rgba(121, 175, 136, 0.24);
-  --liquid-caustic-lake: rgba(79, 120, 142, 0.22);
-  --liquid-caustic-alpenglow: rgba(214, 163, 130, 0.18);
-  --liquid-specular-glow: rgba(255, 255, 255, 0.44);
-  --liquid-refraction-tint: rgba(126, 174, 199, 0.14);
-  --liquid-ripple-color: rgba(189, 217, 231, 0.30);
-  --liquid-lens-glow: 0 0 32px rgba(126, 174, 199, 0.28), 0 0 16px rgba(87, 140, 102, 0.22), inset 0 0 14px rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-strong: rgba(225, 6, 0, 0.42);
+  --glass-border-green: rgba(225, 6, 0, 0.48);
+  --glass-border-sky: rgba(0, 229, 255, 0.42);
+
+  --glass-specular: inset 0 1px 0 rgba(255, 255, 255, 0.22),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.7);
+  --glass-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+  --glass-shadow-hover: 0 32px 76px rgba(0, 0, 0, 0.95);
+
+  /* Authentic Carbon Fiber Weave Pattern */
+  --carbon-pattern: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.018) 0px, rgba(255, 255, 255, 0.018) 2px, transparent 2px, transparent 4px),
+                    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.45) 0px, rgba(0, 0, 0, 0.45) 2px, transparent 2px, transparent 4px);
+
+  /* Racing Gradients */
+  --gradient-mountain-sky: linear-gradient(138deg, rgba(225, 6, 0, 0.28) 0%, rgba(20, 23, 31, 0.75) 50%, rgba(0, 229, 255, 0.22) 100%);
+  --gradient-sky-pine: linear-gradient(135deg, rgba(0, 229, 255, 0.26) 0%, rgba(225, 6, 0, 0.32) 100%);
+  --gradient-aurora-glow: radial-gradient(ellipse at 50% 25%, rgba(225, 6, 0, 0.22), rgba(0, 229, 255, 0.16) 48%, transparent 72%);
+
+  /* Telemetry Optics & Neon Caustics */
+  --liquid-caustic-sky: rgba(0, 229, 255, 0.30);
+  --liquid-caustic-green: rgba(225, 6, 0, 0.28);
+  --liquid-caustic-lake: rgba(252, 227, 0, 0.22);
+  --liquid-caustic-alpenglow: rgba(252, 227, 0, 0.24);
+  --liquid-specular-glow: rgba(255, 255, 255, 0.55);
+  --liquid-refraction-tint: rgba(225, 6, 0, 0.12);
+  --liquid-ripple-color: rgba(225, 6, 0, 0.35);
+  --liquid-lens-glow: 0 0 32px rgba(225, 6, 0, 0.35), 0 0 16px rgba(0, 229, 255, 0.24), inset 0 0 14px rgba(255, 255, 255, 0.3);
 
   /* Typography System */
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -90,13 +114,14 @@
   /* Layout & Radii */
   --max-content-width: 1360px;
   --page-gutter: clamp(18px, 4vw, 52px);
-  --radius-frame: 26px;
-  --radius-card: 20px;
-  --radius-inner: 14px;
+  --radius-frame: 24px;
+  --radius-card: 16px;
+  --radius-inner: 10px;
   --radius-pill: 999px;
 
-  /* Restrained Motion Curves */
+  /* High-Performance Motion Curves */
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-fast: 200ms;
-  --duration-normal: 360ms;
+  --ease-acceleration: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 320ms;
 }
