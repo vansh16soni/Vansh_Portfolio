@@ -28,9 +28,7 @@
     }
   }
 
-  // ==========================================================================
-  // 1. THREE.JS HIGH-END 3D LEGO FERRARI RENDERER (WEBGL)
-  // ==========================================================================
+  // 1. Three.js 3D Lego Ferrari Renderer (WebGL)
   function initThreeJSLegoFerrari() {
     const parent = canvas.parentElement;
     let width = parent.clientWidth || 460;
@@ -137,9 +135,7 @@
     const underglowLight = new THREE.PointLight(LIVERY_PRESETS[currentLiveryIdx].underglow, 2.2, 5.5);
     underglowLight.position.set(0, 0.18, 0);
 
-    // ========================================================================
-    // BUILD LEGO FERRARI BRICK GEOMETRY
-    // ========================================================================
+    // Build Lego Ferrari Brick Geometry
     const carGroup = new THREE.Group();
     scene.add(carGroup);
     carGroup.add(leftHeadSpot);
@@ -376,9 +372,7 @@
     shadowPlane.position.y = 0.005;
     carGroup.add(shadowPlane);
 
-    // ========================================================================
-    // INTERACTION & ANIMATION LOOP
-    // ========================================================================
+    // Interaction & Animation Loop
     let isDragging = false;
     let dragStartX = 0;
     let dragStartY = 0;
@@ -535,9 +529,7 @@
     animate();
   }
 
-  // ==========================================================================
-  // 2. SELF-CONTAINED CANVAS FALLBACK (ZERO DEPENDENCIES)
-  // ==========================================================================
+  // 2. Canvas 2D Fallback Renderer
   function initCanvasFallbackLego() {
     const ctx = canvas.getContext('2d');
     let width = 0, height = 0;

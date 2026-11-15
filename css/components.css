@@ -1,7 +1,4 @@
-/* ==========================================================================
-   COMPONENTS & ALPINE GLASS LAYOUTS
-   Reference-inspired framed glass stage + sculptural typography + mountain UI
-   ========================================================================== */
+/* Components & Layouts */
 
 /* --------------------------------------------------------------------------
    1. Sticky Frosted Glass Masthead
@@ -280,11 +277,7 @@
   50% { opacity: 0.45; transform: scale(0.85); }
 }
 
-/* ==========================================================================
-   Main Hero Composition: 2-Column Asymmetric Recruiter-Focused Split
-   Left: Typographic Identity, Proof Signals & Resume Actions
-   Right: Dedicated 3D Liquid Glass Interactive Showcase Panel
-   ========================================================================== */
+/* Hero 2-Column Split: Identity & 3D Interactive Stage */
 .hero-stage-main {
   position: relative;
   z-index: 2;
@@ -2714,10 +2707,7 @@
   border: 1px solid rgba(121, 175, 136, 0.25);
 }
 
-/* ==========================================================================
-   MOTORSPORT & SUPERCAR TELEMETRY THEME EXTENSIONS
-   Matte Carbon, Racing Red (Rosso Corsa), Modena Giallo & Rolling Tire Controller
-   ========================================================================== */
+/* Motorsport & Supercar Telemetry Theme Extensions */
 
 /* --------------------------------------------------------------------------
    1. The Rolling Tire Scroll Track & Telemetry HUD

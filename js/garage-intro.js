@@ -18,9 +18,7 @@
 (function () {
   'use strict';
 
-  // ========================================================================
-  // 1. CINEMATIC GARAGE LAUNCH INTRO
-  // ========================================================================
+  // 1. Cinematic Garage Launch Intro
 
   let overlay = null;
   let shutterContainer = null;
@@ -275,9 +273,7 @@
   };
 
 
-  // ========================================================================
-  // 2. TINY BLUE CAR STEERING CURSOR WITH FADING TIRE SKID MARKS
-  // ========================================================================
+  // 2. Tiny Blue Car Steering Cursor with Fading Tire Skid Marks
 
   let cursorCanvas = null;
   let cursorCtx = null;

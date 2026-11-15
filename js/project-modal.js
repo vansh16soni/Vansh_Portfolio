@@ -206,9 +206,7 @@ window.closeProjectModal = function () {
   }
 };
 
-// ============================================================================
 // Interactive 3D Liquid Glass Component Topology Chamber
-// ============================================================================
 let archAnimationId = null;
 let archDragX = 0.25;
 let archDragY = 0.2;

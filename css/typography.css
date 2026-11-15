@@ -1,7 +1,4 @@
-/* ==========================================================================
-   TYPOGRAPHY SYSTEM
-   Space Grotesk (Sculptural Display) + Inter (Body) + IBM Plex Mono (Tags)
-   ========================================================================== */
+/* Typography System: Space Grotesk, Inter, and IBM Plex Mono */
 
 .display-title {
   font-family: var(--font-heading);

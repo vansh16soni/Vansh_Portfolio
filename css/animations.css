@@ -1,7 +1,4 @@
-/* ==========================================================================
-   ANIMATIONS & OPTICAL GLASS MOTION
-   Philosophy: Restrained, atmospheric, scroll-choreographed. Zero AI bounce.
-   ========================================================================== */
+/* Animations & Optical Glass Motion */
 
 /* Fallback / Base Reveal State (GSAP overrides smoothly when available) */
 .reveal-on-scroll {
