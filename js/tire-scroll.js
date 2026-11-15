@@ -27,10 +27,11 @@
   // Active section gear mapping
   const SECTIONS = [
     { id: 'hero', gear: 'N' },
-    { id: 'skills', gear: '1ST' },
-    { id: 'projects', gear: '2ND' },
-    { id: 'experience', gear: '3RD' },
-    { id: 'certificates', gear: '4TH' },
+    { id: 'about', gear: '1ST' },
+    { id: 'games', gear: '2ND' },
+    { id: 'projects', gear: '3RD' },
+    { id: 'experience', gear: '4TH' },
+    { id: 'certificates', gear: '5TH' },
     { id: 'cv', gear: '5TH' },
     { id: 'inquiries', gear: '6TH' }
   ];

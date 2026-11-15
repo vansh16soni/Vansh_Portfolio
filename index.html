@@ -18,11 +18,12 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/variables.css?v=2.2">
-  <link rel="stylesheet" href="css/base.css?v=2.2">
-  <link rel="stylesheet" href="css/typography.css?v=2.2">
-  <link rel="stylesheet" href="css/components.css?v=2.2">
-  <link rel="stylesheet" href="css/animations.css?v=2.2">
+  <link rel="stylesheet" href="css/variables.css?v=2.4">
+  <link rel="stylesheet" href="css/base.css?v=2.4">
+  <link rel="stylesheet" href="css/typography.css?v=2.4">
+  <link rel="stylesheet" href="css/components.css?v=2.4">
+  <link rel="stylesheet" href="css/animations.css?v=2.4">
+  <link rel="stylesheet" href="css/garage-intro.css?v=2.4">
 </head>
 <body>
 
@@ -42,6 +43,168 @@
 
   <!-- Scroll Progress Hairline -->
   <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       CINEMATIC GARAGE LAUNCH INTRO TEASER
+       Minimalist Roller Shutter, Idling Red Car, RPM Fill & Speed Streaks
+       ======================================================================== -->
+  <div id="garage-intro-overlay" class="garage-intro-overlay" aria-label="Cinematic Launch Teaser">
+    <!-- Ambient Studio Overhead Lights -->
+    <div class="studio-lighting" aria-hidden="true"></div>
+
+    <div class="cinema-stage-frame">
+      <!-- 1. Metallic Roller Shutter (Smooth Horizontal Slats) -->
+      <div class="garage-shutter-container" id="garage-shutter-door" aria-hidden="true">
+        <div class="shutter-housing-drum">
+          <span class="shutter-brand-plaque">SCUDERIA GARAGE // BAY 01</span>
+          <span class="shutter-brand-plaque" style="color: #e10600;">LAUNCH READY</span>
+        </div>
+        <div class="shutter-slats-layer" id="shutter-slats-wrap">
+          <!-- 18 horizontal metallic slats injected dynamically -->
+        </div>
+      </div>
+
+      <!-- 2. Studio Stage & Glossy Red Sports Car -->
+      <div class="teaser-car-stage" id="garage-car-stage">
+        <!-- Exhaust Smoke Puffs Canvas -->
+        <canvas id="exhaust-smoke-canvas" class="exhaust-smoke-canvas" aria-hidden="true"></canvas>
+
+        <!-- Twin Headlight Volumetric Beams -->
+        <div class="teaser-headlight-beams" aria-hidden="true">
+          <div class="beam-cone beam-left"></div>
+          <div class="beam-cone beam-right"></div>
+          <div class="headlight-corona corona-left"></div>
+          <div class="headlight-corona corona-right"></div>
+        </div>
+
+        <!-- Floor Shadow & Underbody Ambient Ground Reflection -->
+        <div class="car-floor-reflection" aria-hidden="true"></div>
+
+        <!-- Glossy Red Sports Car -->
+        <div class="teaser-car-wrapper idling" id="hero-teaser-car-wrapper" title="Rosso Corsa Supercar">
+          <svg class="teaser-car-svg" viewBox="0 0 460 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="rossoPaintGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ff3b30" />
+                <stop offset="35%" stop-color="#e10600" />
+                <stop offset="75%" stop-color="#b80400" />
+                <stop offset="100%" stop-color="#690200" />
+              </linearGradient>
+              <linearGradient id="windshieldGlassGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#141a24" />
+                <stop offset="40%" stop-color="#2a3545" />
+                <stop offset="70%" stop-color="#0d1117" />
+                <stop offset="100%" stop-color="#05070a" />
+              </linearGradient>
+              <linearGradient id="studioSpecularGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(255,255,255,0)" />
+                <stop offset="35%" stop-color="rgba(255,255,255,0.4)" />
+                <stop offset="50%" stop-color="rgba(255,255,255,0.85)" />
+                <stop offset="65%" stop-color="rgba(255,255,255,0.4)" />
+                <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+              </linearGradient>
+              <linearGradient id="carbonSplitterGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#222630" />
+                <stop offset="100%" stop-color="#0a0b0e" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="230" cy="235" rx="205" ry="12" fill="#000000" opacity="0.9" />
+            <rect x="25" y="165" width="45" height="65" rx="8" fill="#111317" stroke="#252932" stroke-width="1.5" />
+            <rect x="390" y="165" width="45" height="65" rx="8" fill="#111317" stroke="#252932" stroke-width="1.5" />
+            <path d="M40,225 L90,228 L370,228 L420,225 L430,232 L30,232 Z" fill="url(#carbonSplitterGrad)" stroke="#333844" stroke-width="1" />
+            <path d="M50,195 Q65,145 110,135 Q145,130 160,85 Q175,45 230,42 Q285,45 300,85 Q315,130 350,135 Q395,145 410,195 Q425,222 390,224 L70,224 Q35,222 50,195 Z" fill="url(#rossoPaintGrad)" />
+            <path d="M175,50 Q230,46 285,50 L275,80 Q230,78 185,80 Z" fill="url(#studioSpecularGrad)" opacity="0.65" />
+            <path d="M150,140 Q230,136 310,140 L300,185 Q230,180 160,185 Z" fill="url(#studioSpecularGrad)" opacity="0.35" />
+            <path d="M165,85 L295,85 L320,135 L140,135 Z" fill="url(#windshieldGlassGrad)" stroke="#1a1e28" stroke-width="1.5" />
+            <polygon points="168,88 220,88 185,132 145,132" fill="rgba(255,255,255,0.18)" />
+            <ellipse cx="125" cy="115" rx="16" ry="7" fill="#b80400" stroke="#ff3838" stroke-width="0.8" transform="rotate(-15 125 115)" />
+            <ellipse cx="335" cy="115" rx="16" ry="7" fill="#b80400" stroke="#ff3838" stroke-width="0.8" transform="rotate(15 335 115)" />
+            <path d="M185,148 L220,148 L215,160 L190,160 Z" fill="#141720" opacity="0.85" />
+            <path d="M240,148 L275,148 L270,160 L245,160 Z" fill="#141720" opacity="0.85" />
+            <path d="M115,200 L345,200 L335,222 L125,222 Z" fill="#0d0e12" stroke="#262a34" stroke-width="1.2" />
+            <path d="M85,152 Q125,145 130,165 Q115,182 80,175 Z" fill="#0c0e14" stroke="#00e5ff" stroke-width="1" />
+            <circle cx="108" cy="162" r="8" fill="#ffffff" />
+            <path d="M92,160 L124,156" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" />
+            <path d="M375,152 Q335,145 330,165 Q345,182 380,175 Z" fill="#0c0e14" stroke="#00e5ff" stroke-width="1" />
+            <circle cx="352" cy="162" r="8" fill="#ffffff" />
+            <path d="M368,160 L336,156" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" />
+            <polygon points="230,174 236,177 236,187 230,192 224,187 224,177" fill="#fce300" stroke="#b39800" stroke-width="0.8" />
+          </svg>
+        </div>
+
+        <!-- Launch Speed Streaks -->
+        <div class="launch-speed-streaks" id="launch-speed-streaks" aria-hidden="true">
+          <div class="speed-streak-line" style="left: 15%; animation-delay: 0s;"></div>
+          <div class="speed-streak-line" style="left: 32%; animation-delay: 0.12s;"></div>
+          <div class="speed-streak-line" style="left: 50%; animation-delay: 0.05s;"></div>
+          <div class="speed-streak-line" style="left: 68%; animation-delay: 0.18s;"></div>
+          <div class="speed-streak-line" style="left: 85%; animation-delay: 0.08s;"></div>
+        </div>
+      </div>
+
+      <!-- 3. Minimalist Telemetry HUD & Thin RPM Fill Bar -->
+      <div class="intro-telemetry-hud" id="intro-telemetry-hud">
+        <div class="telemetry-hud-top">
+          <div class="hud-status-badge">
+            <span class="status-dot-pulse"></span>
+            <span id="hud-status-text">INITIALIZING LAUNCH CONTROL</span>
+          </div>
+          <span class="hud-rpm-counter" id="hud-rpm-counter">1,200 RPM</span>
+        </div>
+        <div class="hud-rpm-track">
+          <div class="hud-rpm-fill" id="hud-rpm-fill"></div>
+        </div>
+        <div class="hud-shift-lights">
+          <span class="shift-light-pip"></span>
+          <span class="shift-light-pip"></span>
+          <span class="shift-light-pip"></span>
+          <span class="shift-light-pip"></span>
+          <span class="shift-light-pip"></span>
+          <span class="shift-light-pip"></span>
+        </div>
+        <div class="telemetry-hud-sub">
+          <span>TWIN-TURBO V8 // 3.9L</span>
+          <span>LAUNCH CONTROL: ARMED</span>
+          <span>60 FPS CINEMA</span>
+        </div>
+      </div>
+
+      <!-- Skip Button -->
+      <button type="button" class="btn-skip-intro" id="btn-skip-intro">
+        <span>SKIP INTRO [ESC]</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Tiny Blue Car Steering Cursor & Fading Tire Skid Canvas -->
+  <canvas id="cursor-tire-canvas" class="cursor-tire-canvas" aria-hidden="true"></canvas>
+  <div id="tiny-car-cursor" class="tiny-car-cursor" aria-hidden="true">
+    <svg viewBox="0 0 32 64" width="22" height="44" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="cursorCarBlue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#00c6ff" />
+          <stop offset="45%" stop-color="#0072ff" />
+          <stop offset="85%" stop-color="#0048ab" />
+          <stop offset="100%" stop-color="#002660" />
+        </linearGradient>
+        <linearGradient id="cursorGlass" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d1829" />
+          <stop offset="100%" stop-color="#04070d" />
+        </linearGradient>
+      </defs>
+      <rect x="1" y="10" width="5" height="12" rx="2" fill="#101217" />
+      <rect x="26" y="10" width="5" height="12" rx="2" fill="#101217" />
+      <rect x="1" y="42" width="6" height="14" rx="2" fill="#101217" />
+      <rect x="25" y="42" width="6" height="14" rx="2" fill="#101217" />
+      <path d="M16,2 Q24,6 25,18 L24,28 Q26,38 26,52 L23,58 L9,58 L6,52 Q6,38 8,28 L7,18 Q8,6 16,2 Z" fill="url(#cursorCarBlue)" stroke="#00e5ff" stroke-width="0.8" />
+      <path d="M16,14 Q21,17 21,28 L11,28 Q11,17 16,14 Z" fill="url(#cursorGlass)" stroke="#00c6ff" stroke-width="0.5" />
+      <path d="M12,32 L20,32 L19,45 L13,45 Z" fill="url(#cursorGlass)" />
+      <rect x="4" y="58" width="24" height="3" rx="1.5" fill="#0c1017" stroke="#00e5ff" stroke-width="0.6" />
+      <circle cx="11" cy="4" r="1.5" fill="#ffffff" />
+      <circle cx="21" cy="4" r="1.5" fill="#ffffff" />
+    </svg>
+  </div>
 
   <!-- High-Performance Motorsport Tire Scroll Controller (Vertical Pit-Lane Scrub Track) -->
   <aside id="tire-scroll-track" class="tire-scroll-track" aria-label="Interactive Tire Scroll Track" title="Drag tire or click track to navigate portfolio">
@@ -186,9 +349,10 @@
 
         <nav class="masthead-nav" aria-label="Primary Navigation">
           <a href="#about" class="nav-link">ABOUT</a>
-          <a href="#projects" class="nav-link">WORKS</a>
+          <a href="#games" class="nav-link">GAMES</a>
+          <a href="#projects" class="nav-link">WORK</a>
           <a href="#experience" class="nav-link">EXPERIENCE</a>
-          <a href="#certificates" class="nav-link">ACCOLADES</a>
+          <a href="#certificates" class="nav-link">CERTIFICATES</a>
           <a href="#inquiries" class="nav-link">CONTACT</a>
 
           <div class="nav-pill-group">
@@ -732,6 +896,178 @@
   <hr class="section-divider">
 
   <!-- ========================================================================
+       ARCADE & PHYSICS LAB (GAMES) — REAL-TIME CANVAS ENGINES
+       ======================================================================== -->
+  <section id="games" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 02</span>
+          <span>ARCADE &amp; PHYSICS LAB // REAL-TIME KINEMATICS</span>
+        </div>
+        <h2 class="section-title">GAMES &amp; INTERACTIVE SIMULATIONS</h2>
+        <p class="section-subtitle">
+          Real-time arcade simulations and physics experiments engineered with HTML5 Canvas, discrete state machines, dynamic friction vectors, and responsive 60 FPS game loops.
+        </p>
+      </header>
+
+      <div class="projects-editorial-list">
+
+        <!-- GAME 01: DRIFT KING -->
+        <article class="project-plate-full glass-sheen reveal-on-scroll">
+          <div class="project-info-column">
+            <div class="project-index-header">
+              <span class="project-num">GAME 01 // MOTORSPORT SIMULATION</span>
+              <span class="project-category-tag">CANVAS 2D &amp; KINEMATICS</span>
+            </div>
+
+            <div>
+              <h3 class="project-title">DRIFT KING</h3>
+              <p class="project-subtitle">2D Real-Time Vehicle Physics &amp; Drift Simulator</p>
+            </div>
+
+            <p class="project-narrative">
+              An interactive 2D motorsport simulation modeled with real-time vehicle kinematics, lateral tire friction vectors, centrifugal inertia, and dynamic smoke particle physics. Features responsive keyboard steering, progressive throttle response, and collision boundary mechanics rendered on high-DPI HTML5 Canvas.
+            </p>
+
+            <div class="project-spec-table">
+              <div class="spec-entry">
+                <span class="label">PHYSICS ENGINE</span>
+                <span class="value">Vector Kinematics &amp; Drift Inertia</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">GRAPHICS PIPELINE</span>
+                <span class="value">HTML5 Canvas 2D &amp; Particle Emitters</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">FRAME TIMING</span>
+                <span class="value">60 FPS Locked Delta-Time Loop</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">INPUT DISPATCH</span>
+                <span class="value">Sub-10ms Keyboard Vector Listener</span>
+              </div>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-stamp stamp-sky">JavaScript (ES6+)</span>
+              <span class="tech-stamp">HTML5 Canvas 2D</span>
+              <span class="tech-stamp">Vector Physics</span>
+              <span class="tech-stamp">Particle Emitters</span>
+              <span class="tech-stamp">Vehicle Kinematics</span>
+              <span class="tech-stamp">Game Loop</span>
+            </div>
+
+            <div class="project-action-row">
+              <a href="https://vansh16soni.github.io/Drift_King/" target="_blank" rel="noopener noreferrer" class="btn-live-preview">
+                <span class="pulse-dot-green"></span>
+                <span>LAUNCH ARCADE ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-visual-viewport">
+            <div class="viewport-mast">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <a href="https://vansh16soni.github.io/Drift_King/" target="_blank" rel="noopener noreferrer" class="viewport-url-badge" title="Launch Drift King">
+                vansh16soni.github.io/Drift_King ↗
+              </a>
+              <span class="viewport-stamp">GAMEPLAY DEMO // 60 FPS</span>
+            </div>
+            <div class="project-screenshot-frame game-video-frame">
+              <video class="game-demo-video" src="assets/video/drift.mp4" autoplay loop muted playsinline preload="metadata" title="Drift King Gameplay Demo Video"></video>
+              <div class="game-video-overlay-badge">
+                <span class="pulse-dot-green"></span>
+                <span>RECORDED DEMO</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- GAME 02: VANSH'S SNAKE -->
+        <article class="project-plate-full glass-sheen reveal-on-scroll">
+          <div class="project-info-column">
+            <div class="project-index-header">
+              <span class="project-num">GAME 02 // ARCADE CLASSIC</span>
+              <span class="project-category-tag">DISCRETE GRID &amp; STATE MACHINE</span>
+            </div>
+
+            <div>
+              <h3 class="project-title">VANSH'S SNAKE</h3>
+              <p class="project-subtitle">Real-Time Canvas Grid Engine &amp; State Controller</p>
+            </div>
+
+            <p class="project-narrative">
+              A precision recreation of the classic arcade snake built with modular state machines, sub-frame input queue buffering to eliminate turnaround self-collisions, dynamic score scaling, and fluid tail interpolation on an animated canvas grid.
+            </p>
+
+            <div class="project-spec-table">
+              <div class="spec-entry">
+                <span class="label">GRID ARCHITECTURE</span>
+                <span class="value">Spatial Matrix Coordinate Mapping</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">COLLISION ENGINE</span>
+                <span class="value">Discrete Axis-Aligned Boundary Detection</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">INPUT BUFFER</span>
+                <span class="value">Queued Key Buffer (Anti-Self-Collision)</span>
+              </div>
+              <div class="spec-entry">
+                <span class="label">STATE PATTERN</span>
+                <span class="value">Deterministic FSM (Active/Pause/Over)</span>
+              </div>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-stamp stamp-sky">JavaScript (ES6+)</span>
+              <span class="tech-stamp">HTML5 Canvas</span>
+              <span class="tech-stamp">Matrix Grid</span>
+              <span class="tech-stamp">State Machine Pattern</span>
+              <span class="tech-stamp">Event Timing</span>
+              <span class="tech-stamp">Retro UI</span>
+            </div>
+
+            <div class="project-action-row">
+              <a href="https://vansh16soni.github.io/Vansh-s_Snake/" target="_blank" rel="noopener noreferrer" class="btn-live-preview">
+                <span class="pulse-dot-green"></span>
+                <span>PLAY LIVE ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-visual-viewport">
+            <div class="viewport-mast">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <a href="https://vansh16soni.github.io/Vansh-s_Snake/" target="_blank" rel="noopener noreferrer" class="viewport-url-badge" title="Launch Snake Game">
+                vansh16soni.github.io/Vansh-s_Snake ↗
+              </a>
+              <span class="viewport-stamp">GAMEPLAY DEMO // 60 FPS</span>
+            </div>
+            <div class="project-screenshot-frame game-video-frame">
+              <video class="game-demo-video" src="assets/video/snake.mp4" autoplay loop muted playsinline preload="metadata" title="Vansh's Snake Gameplay Demo Video"></video>
+              <div class="game-video-overlay-badge">
+                <span class="pulse-dot-green"></span>
+                <span>RECORDED DEMO</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========================================================================
        3. SELECTED WORKS (PROJECTS) — FROSTED GLASS EXHIBITION PLATES
        ======================================================================== -->
   <section id="projects" class="section-wrapper">
@@ -739,7 +1075,7 @@
       
       <header class="editorial-section-header reveal-on-scroll">
         <div class="section-meta">
-          <span class="index-pill">SECTION 02</span>
+          <span class="index-pill">SECTION 03</span>
           <span>CURATED CASE STUDIES // CODEBASE ARCHITECTURE</span>
         </div>
         <h2 class="section-title">ENGINEERED PLATFORMS</h2>
@@ -1043,7 +1379,7 @@
       
       <header class="editorial-section-header reveal-on-scroll">
         <div class="section-meta">
-          <span class="index-pill">SECTION 03</span>
+          <span class="index-pill">SECTION 04</span>
           <span>PRACTICE RECORD // INDUSTRY &amp; GOVERNMENT INTERNSHIPS</span>
         </div>
         <h2 class="section-title">ENGINEERING EXPERIENCE</h2>
@@ -1158,7 +1494,7 @@
       
       <header class="editorial-section-header reveal-on-scroll">
         <div class="section-meta">
-          <span class="index-pill">SECTION 04</span>
+          <span class="index-pill">SECTION 05</span>
           <span>VERIFIED CREDENTIALS // COMPETITIVE ACCOLADES</span>
         </div>
         <h2 class="section-title">CERTIFICATES &amp; ACHIEVEMENTS</h2>
@@ -1295,7 +1631,7 @@
           
           <div class="contact-action-box">
             <div class="section-meta" style="display:flex; align-items:center; gap:12px;">
-              <span class="index-pill" style="display:inline-flex; padding:4px 12px; background:rgba(138,182,204,0.12); border:1px solid var(--glass-border-sky); border-radius:999px; font-family:var(--font-mono); font-size:0.72rem; color:var(--sky-mist);">SECTION 05</span>
+              <span class="index-pill" style="display:inline-flex; padding:4px 12px; background:rgba(138,182,204,0.12); border:1px solid var(--glass-border-sky); border-radius:999px; font-family:var(--font-mono); font-size:0.72rem; color:var(--sky-mist);">SECTION 06</span>
               <span class="mono-label">DIRECT INQUIRIES // COLLABORATION</span>
             </div>
             
@@ -1362,6 +1698,7 @@
         <div style="display: inline-flex; gap: 14px; align-items: center;">
           <a href="https://www.linkedin.com/in/vansh-soni-4b3689306/" target="_blank" rel="noopener noreferrer" class="mono-accent-sky" style="font-size: 0.72rem;">LINKEDIN ↗</a>
           <a href="https://github.com/vansh16soni" target="_blank" rel="noopener noreferrer" class="mono-accent-sky" style="font-size: 0.72rem;">GITHUB ↗</a>
+          <button type="button" class="replay-intro-pill" onclick="replayGarageIntro()" title="Replay Cinematic Launch Teaser">🎬 REPLAY INTRO</button>
         </div>
         <span>DEPLOYED ON GITHUB PAGES // ALPINE GLASS ARCHITECTURE</span>
         <a href="#hero" class="mono-accent-sky">BACK TO APEX ↑</a>
@@ -1523,12 +1860,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
   <!-- Portfolio Scripts -->
-  <script src="js/car-3d.js?v=2.2" defer></script>
-  <script src="js/liquid-glass.js?v=2.2" defer></script>
-  <script src="js/scroll-animations.js?v=2.2" defer></script>
-  <script src="js/project-modal.js?v=2.2" defer></script>
-  <script src="js/skills-constellation.js?v=2.2" defer></script>
-  <script src="js/tire-scroll.js?v=2.2" defer></script>
-  <script src="js/main.js?v=2.2" defer></script>
+  <script src="js/car-3d.js?v=2.4" defer></script>
+  <script src="js/liquid-glass.js?v=2.4" defer></script>
+  <script src="js/scroll-animations.js?v=2.4" defer></script>
+  <script src="js/project-modal.js?v=2.4" defer></script>
+  <script src="js/skills-constellation.js?v=2.4" defer></script>
+  <script src="js/tire-scroll.js?v=2.4" defer></script>
+  <script src="js/garage-intro.js?v=2.4" defer></script>
+  <script src="js/main.js?v=2.4" defer></script>
 </body>
 </html>
