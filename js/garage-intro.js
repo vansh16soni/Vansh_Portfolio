@@ -40,8 +40,89 @@
   let currentRpm = 1200;
   let targetRpm = 1200;
 
-  // Sound Synthesizer (Zero external audio files, pure Web Audio API oscillator)
-  let audioCtx = null;
+  // Entry animation audio player & sequence controller
+  let introAudio = null;
+  let isAudioPlaying = false;
+  let hasSequenceStarted = false;
+
+  function getIntroAudio() {
+    if (!introAudio) {
+      introAudio = document.getElementById('garage-intro-audio');
+      if (!introAudio) {
+        introAudio = new Audio();
+        introAudio.id = 'garage-intro-audio';
+        introAudio.preload = 'auto';
+        introAudio.src = 'sound/entry.mp3';
+        document.body.appendChild(introAudio);
+      }
+      introAudio.volume = 1.0;
+      introAudio.muted = false;
+    }
+    return introAudio;
+  }
+
+  function startGarageSequence() {
+    if (hasSequenceStarted || !isIntroActive) return;
+    hasSequenceStarted = true;
+
+    // 1. Update plaques on the shutter drum
+    const brandPlaque = document.getElementById('shutter-brand-plaque');
+    const statusPlaque = document.getElementById('shutter-status-plaque');
+    if (brandPlaque) {
+      brandPlaque.textContent = 'SCUDERIA GARAGE // BAY 01';
+      brandPlaque.classList.remove('start-cta');
+    }
+    if (statusPlaque) {
+      statusPlaque.textContent = 'LAUNCH CONTROL ACTIVE';
+    }
+
+    // 2. Play sound synchronously with entering animation on click
+    const audio = getIntroAudio();
+    if (audio) {
+      audio.volume = 1.0;
+      audio.muted = false;
+      try { audio.currentTime = 0; } catch (e) {}
+      const p = audio.play();
+      if (p !== undefined) {
+        p.then(() => {
+          isAudioPlaying = true;
+        }).catch(() => {});
+      }
+    }
+
+    // 3. Start exhaust smoke puffs
+    if (smokeCanvas && !smokeAnimId) {
+      animateSmoke();
+    }
+
+    // 4. Start entering animation of car at the exact same microsecond
+    introStartTime = performance.now();
+    requestAnimationFrame(introTimelineLoop);
+  }
+
+  function stopIntroSound(immediate) {
+    if (!introAudio) return;
+    try {
+      let vol = introAudio.volume;
+      const step = immediate ? 0.25 : 0.04;
+      const intervalMs = immediate ? 20 : 60;
+      const fadeTimer = setInterval(() => {
+        vol -= step;
+        if (vol <= 0.05) {
+          clearInterval(fadeTimer);
+          introAudio.pause();
+          introAudio.currentTime = 0;
+          introAudio.volume = 1.0;
+          isAudioPlaying = false;
+        } else {
+          introAudio.volume = Math.max(0, vol);
+        }
+      }, intervalMs);
+    } catch (e) {
+      introAudio.pause();
+      isAudioPlaying = false;
+    }
+  }
 
   function initIntro() {
     overlay = document.getElementById('garage-intro-overlay');
@@ -66,22 +147,40 @@
       smokeCtx = smokeCanvas.getContext('2d');
       setupSmokeCanvas();
       window.addEventListener('resize', setupSmokeCanvas);
-      animateSmoke();
     }
 
-    // Skip handlers
-    if (skipBtn) {
-      skipBtn.addEventListener('click', dismissIntro);
-    }
+    // Initialize HUD in Standby State awaiting user click
+    if (statusText) statusText.textContent = 'STANDBY // CLICK TO START';
+    if (rpmCounter) rpmCounter.textContent = '0 RPM';
+    if (rpmFill) rpmFill.style.width = '0%';
+    if (shiftLights) shiftLights.forEach((l) => { l.className = 'shift-light-pip'; });
+
+    // Click anywhere on garage overlay/shutter to start animation and sound synchronously
+    const handleStartClick = (e) => {
+      if (hasSequenceStarted) return;
+      if (e.target.closest('#btn-skip-intro')) return;
+      startGarageSequence();
+    };
+
+    overlay.addEventListener('click', handleStartClick);
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isIntroActive) {
-        dismissIntro();
+      if (!hasSequenceStarted && (e.key === ' ' || e.key === 'Enter')) {
+        startGarageSequence();
       }
     });
 
-    // Start Intro Choreography Timeline
-    introStartTime = performance.now();
-    requestAnimationFrame(introTimelineLoop);
+    // Skip handlers
+    if (skipBtn) {
+      skipBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dismissIntro(true);
+      });
+    }
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isIntroActive) {
+        dismissIntro(true);
+      }
+    });
   }
 
   function buildShutterSlats() {
@@ -238,9 +337,11 @@
     }
   }
 
-  function dismissIntro() {
+  function dismissIntro(isSkipped) {
     if (!isIntroActive) return;
     isIntroActive = false;
+
+    stopIntroSound(isSkipped === true);
 
     if (smokeAnimId) cancelAnimationFrame(smokeAnimId);
 
@@ -265,11 +366,9 @@
       carWrapper.className = 'teaser-car-wrapper idling';
     }
     if (speedStreaks) speedStreaks.classList.remove('active');
+    hasSequenceStarted = false;
     isIntroActive = true;
-    introStartTime = performance.now();
-    smokeParticles = [];
-    animateSmoke();
-    requestAnimationFrame(introTimelineLoop);
+    startGarageSequence();
   };
 
 
@@ -286,6 +385,7 @@
   let carAngle = 0;
   let skidTracks = [];
   let isCursorActive = false;
+  let isSkidCanvasClean = true;
 
   function initTinyCarCursor() {
     // Check if on touch screen
@@ -386,12 +486,18 @@
           alpha: 0.42,
           decay: 0.008
         });
+        isSkidCanvasClean = false;
       }
     }
 
     // Render & fade tire tracks on canvas
     if (cursorCtx && cursorCanvas) {
-      cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+      if (skidTracks.length > 0 || !isSkidCanvasClean) {
+        cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+        if (skidTracks.length === 0) {
+          isSkidCanvasClean = true;
+        }
+      }
 
       for (let i = skidTracks.length - 1; i >= 0; i--) {
         const t = skidTracks[i];

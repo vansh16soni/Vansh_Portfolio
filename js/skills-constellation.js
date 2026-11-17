@@ -141,6 +141,7 @@
   let draggedNode = null;
   let dragOffset = { x: 0, y: 0 };
   let mousePos = { x: -9999, y: -9999 };
+  let isCanvasVisible = true;
 
   // HUD elements
   let hudName = null;
@@ -169,6 +170,20 @@
     buildNodes();
     bindEvents();
     bindControls();
+
+    // Viewport Culling Observer (pauses 2D physics & filament rendering when offscreen)
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const was = isCanvasVisible;
+          isCanvasVisible = entry.isIntersecting;
+          if (isCanvasVisible && !was) {
+            animFrameId = requestAnimationFrame(renderLoop);
+          }
+        });
+      }, { rootMargin: '150px 0px 150px 0px', threshold: 0 });
+      observer.observe(canvas);
+    }
 
     // Start 60fps loop
     animFrameId = requestAnimationFrame(renderLoop);
@@ -317,7 +332,7 @@
 
   // --- 5. RENDER LOOP ---
   function renderLoop(time) {
-    if (!ctx) return;
+    if (!ctx || !isCanvasVisible) return;
 
     ctx.clearRect(0, 0, width, height);
 

@@ -12,6 +12,10 @@
   <meta property="og:description" content="Editorial alpine glass portfolio featuring 3D codebase visualizers, AI platforms, and Spring Boot systems engineering.">
   <meta property="og:type" content="website">
 
+  <!-- External CDNs Preconnect for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
   <!-- Google Typography: Space Grotesk, Inter, IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +48,12 @@
   <!-- Scroll Progress Hairline -->
   <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
+  <!-- Garage Launch Entrance Sound -->
+  <audio id="garage-intro-audio" preload="auto" playsinline>
+    <source src="sound/entry.mp3" type="audio/mpeg">
+    <source src="sound/entry.mpeg" type="audio/mpeg">
+  </audio>
+
   <!-- Cinematic Garage Launch Intro Teaser -->
   <div id="garage-intro-overlay" class="garage-intro-overlay" aria-label="Cinematic Launch Teaser">
     <!-- Ambient Studio Overhead Lights -->
@@ -52,9 +62,9 @@
     <div class="cinema-stage-frame">
       <!-- 1. Metallic Roller Shutter (Smooth Horizontal Slats) -->
       <div class="garage-shutter-container" id="garage-shutter-door" aria-hidden="true">
-        <div class="shutter-housing-drum">
-          <span class="shutter-brand-plaque">SCUDERIA GARAGE // BAY 01</span>
-          <span class="shutter-brand-plaque" style="color: #e10600;">LAUNCH READY</span>
+        <div class="shutter-housing-drum" id="shutter-housing-drum" title="Click to Start Engine & Launch">
+          <span class="shutter-brand-plaque start-cta" id="shutter-brand-plaque">SCUDERIA GARAGE // CLICK TO START</span>
+          <span class="shutter-brand-plaque" style="color: #e10600;" id="shutter-status-plaque">LAUNCH READY</span>
         </div>
         <div class="shutter-slats-layer" id="shutter-slats-wrap">
           <!-- 18 horizontal metallic slats injected dynamically -->
@@ -966,7 +976,7 @@
               <span class="viewport-stamp">GAMEPLAY DEMO // 60 FPS</span>
             </div>
             <div class="project-screenshot-frame game-video-frame">
-              <video class="game-demo-video" src="assets/video/drift.mp4" autoplay loop muted playsinline preload="metadata" title="Drift King Gameplay Demo Video"></video>
+              <video class="game-demo-video lazy-video" data-src="assets/video/drift.mp4" loop muted playsinline preload="none" title="Drift King Gameplay Demo Video"></video>
               <div class="game-video-overlay-badge">
                 <span class="pulse-dot-green"></span>
                 <span>RECORDED DEMO</span>
@@ -1039,7 +1049,7 @@
               <span class="viewport-stamp">GAMEPLAY DEMO // 60 FPS</span>
             </div>
             <div class="project-screenshot-frame game-video-frame">
-              <video class="game-demo-video" src="assets/video/snake.mp4" autoplay loop muted playsinline preload="metadata" title="Vansh's Snake Gameplay Demo Video"></video>
+              <video class="game-demo-video lazy-video" data-src="assets/video/snake.mp4" loop muted playsinline preload="none" title="Vansh's Snake Gameplay Demo Video"></video>
               <div class="game-video-overlay-badge">
                 <span class="pulse-dot-green"></span>
                 <span>RECORDED DEMO</span>
@@ -1144,7 +1154,7 @@
             </div>
             <div class="project-screenshot-frame">
               <a href="https://repo-city.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-media-link" title="Launch Repo City Live App">
-                <img id="img-repocity" src="assets/projects/repocity.png" alt="Repo City 3D Codebase Visualization Canvas" class="project-showcase-img" loading="lazy" />
+                <img id="img-repocity" src="assets/projects/repocity.png" alt="Repo City 3D Codebase Visualization Canvas" class="project-showcase-img" loading="lazy" decoding="async" />
                 <div class="project-media-overlay">
                   <span class="media-overlay-badge">
                     <span class="pulse-dot-green"></span>
@@ -1182,7 +1192,7 @@
             </div>
             <div class="project-screenshot-frame">
               <a href="https://gyan-ai-mbtq.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-media-link" title="Launch GYAN.AI Live App">
-                <img id="img-gyanai" src="assets/projects/gyanai.png" alt="GYAN.AI Neural Knowledge & Architecture Interface" class="project-showcase-img" loading="lazy" />
+                <img id="img-gyanai" src="assets/projects/gyanai.png" alt="GYAN.AI Neural Knowledge & Architecture Interface" class="project-showcase-img" loading="lazy" decoding="async" />
                 <div class="project-media-overlay">
                   <span class="media-overlay-badge">
                     <span class="pulse-dot-green"></span>
@@ -1325,7 +1335,7 @@
             </div>
             <div class="project-screenshot-frame">
               <a href="https://shadowplay.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-media-link" title="Launch ShadowPlay Live App">
-                <img id="img-shadowplay" src="assets/projects/shadowplay.png" alt="ShadowPlay Real-Time Hand Gesture & Shadow Puppet Studio" class="project-showcase-img" loading="lazy" />
+                <img id="img-shadowplay" src="assets/projects/shadowplay.png" alt="ShadowPlay Real-Time Hand Gesture & Shadow Puppet Studio" class="project-showcase-img" loading="lazy" decoding="async" />
                 <div class="project-media-overlay">
                   <span class="media-overlay-badge">
                     <span class="pulse-dot-green"></span>
@@ -1800,7 +1810,7 @@
           </div>
           <div class="modal-screenshot-frame glass-sheen">
             <a id="modal-project-img-link" href="#" target="_blank" rel="noopener noreferrer" title="Launch live production app in new tab">
-              <img id="modal-project-img" src="" alt="Project Visual Preview" class="modal-preview-img" />
+              <img id="modal-project-img" src="" alt="Project Visual Preview" class="modal-preview-img" decoding="async" />
             </a>
           </div>
         </div>
@@ -1848,8 +1858,8 @@
       </div>
 
       <div class="resume-pdf-container">
-        <object data="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1&navpanes=0&view=FitH" type="application/pdf" class="resume-pdf-object">
-          <iframe src="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1" class="resume-pdf-iframe" title="Original Curriculum Vitae of Vansh Kumar Soni">
+        <object id="resume-pdf-object" data="" data-src="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1&navpanes=0&view=FitH" type="application/pdf" class="resume-pdf-object">
+          <iframe id="resume-pdf-iframe" src="" data-src="assets/resume/Vansh_Kumar_Soni_Resume.pdf#toolbar=1" class="resume-pdf-iframe" title="Original Curriculum Vitae of Vansh Kumar Soni">
             <div class="resume-fallback-notice">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--sky-glacial);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               <h3 class="display-subtitle">Vansh Kumar Soni — Official Resume</h3>

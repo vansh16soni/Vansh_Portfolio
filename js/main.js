@@ -23,9 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   updateClock();
   setInterval(updateClock, 1000);
 
-  // 2. Interactive Resume Modal
+  // 2. Interactive Resume Modal (On-demand PDF engine initialization)
   window.openResumeModal = function () {
     const backdrop = document.getElementById('resume-modal-backdrop');
+    const pdfObject = document.getElementById('resume-pdf-object');
+    const pdfIframe = document.getElementById('resume-pdf-iframe');
+
+    if (pdfObject && !pdfObject.getAttribute('data') && pdfObject.dataset.src) {
+      pdfObject.setAttribute('data', pdfObject.dataset.src);
+    }
+    if (pdfIframe && !pdfIframe.getAttribute('src') && pdfIframe.dataset.src) {
+      pdfIframe.setAttribute('src', pdfIframe.dataset.src);
+    }
+
     if (backdrop) {
       backdrop.classList.add('active');
       document.body.style.overflow = 'hidden';

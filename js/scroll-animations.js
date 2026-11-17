@@ -8,11 +8,20 @@
   const progressBar = document.getElementById('scroll-progress');
   const masthead = document.querySelector('.site-masthead');
 
-  // 1. Scroll Progress Hairline & Masthead Depth State
-  function updateScrollChrome() {
+  // 1. Scroll Progress Hairline & Masthead Depth State (RAF Throttled)
+  let isChromeTicking = false;
+  let cachedDocHeight = 1;
+
+  function cacheChromeMetrics() {
+    cachedDocHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  }
+  cacheChromeMetrics();
+  window.addEventListener('resize', cacheChromeMetrics, { passive: true });
+
+  function applyScrollChrome() {
+    isChromeTicking = false;
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+    const pct = cachedDocHeight > 0 ? Math.min(100, (scrollTop / cachedDocHeight) * 100) : 0;
 
     if (progressBar) {
       progressBar.style.width = `${pct.toFixed(2)}%`;
@@ -26,8 +35,15 @@
     }
   }
 
+  function updateScrollChrome() {
+    if (!isChromeTicking) {
+      isChromeTicking = true;
+      requestAnimationFrame(applyScrollChrome);
+    }
+  }
+
   window.addEventListener('scroll', updateScrollChrome, { passive: true });
-  updateScrollChrome();
+  applyScrollChrome();
 
   // 2. Active Navigation Link Observer
   const sections = document.querySelectorAll('section[id]');
@@ -49,6 +65,38 @@
     });
 
     sections.forEach((sec) => navObserver.observe(sec));
+  }
+
+  // 2b. High-Performance Lazy-Load for Gameplay Demo Videos (Zero load penalty)
+  const lazyVideos = document.querySelectorAll('video.lazy-video');
+  if ('IntersectionObserver' in window && lazyVideos.length) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          if (!video.src && video.dataset.src) {
+            video.src = video.dataset.src;
+            video.load();
+          }
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
+        } else {
+          if (video.src) {
+            video.pause();
+          }
+        }
+      });
+    }, { rootMargin: '250px 0px 250px 0px', threshold: 0 });
+    lazyVideos.forEach((v) => videoObserver.observe(v));
+  } else {
+    lazyVideos.forEach((v) => {
+      if (v.dataset.src) {
+        v.src = v.dataset.src;
+        v.play().catch(() => {});
+      }
+    });
   }
 
   if (prefersReducedMotion) {

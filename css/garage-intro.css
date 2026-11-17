@@ -13,6 +13,7 @@
   justify-content: center;
   overflow: hidden;
   user-select: none;
+  cursor: pointer;
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s ease;
   will-change: opacity, transform;
 }
@@ -92,6 +93,42 @@
   color: #8b96a5;
   text-transform: uppercase;
   font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+/* Pulsing Start CTA Plaque on Shutter Drum */
+.shutter-brand-plaque.start-cta {
+  color: #ff3b30;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-shadow: 0 0 12px rgba(255, 59, 48, 0.7);
+  animation: plaque-cta-pulse 1.6s infinite ease-in-out;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(225, 6, 0, 0.12);
+  border: 1px solid rgba(225, 6, 0, 0.35);
+}
+
+.shutter-brand-plaque.start-cta:hover {
+  background: rgba(225, 6, 0, 0.28);
+  border-color: rgba(255, 59, 48, 0.9);
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255, 59, 48, 1);
+  transform: scale(1.02);
+}
+
+@keyframes plaque-cta-pulse {
+  0%, 100% {
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(225, 6, 0, 0.2);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.55);
+    color: #ff6b62;
+  }
 }
 
 .shutter-slats-layer {

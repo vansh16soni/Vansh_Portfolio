@@ -489,10 +489,26 @@
     }
     window.addEventListener('resize', onResize);
 
-    // Animation Loop
+    // Animation Loop with Viewport Culling (pauses when off-screen to preserve 60 FPS scroll)
     let clock = new THREE.Clock();
+    let isVisible = true;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const wasVisible = isVisible;
+          isVisible = entry.isIntersecting;
+          if (isVisible && !wasVisible) {
+            clock.getDelta(); // flush delta so idle time is not accumulated
+            animate();
+          }
+        });
+      }, { rootMargin: '120px 0px 120px 0px', threshold: 0 });
+      observer.observe(canvas);
+    }
 
     function animate() {
+      if (!isVisible) return;
       requestAnimationFrame(animate);
       const delta = clock.getDelta();
 
@@ -563,7 +579,20 @@
 
     window.addEventListener('mouseup', () => { isDragging = false; });
 
+    let isFallbackVisible = true;
+    if ('IntersectionObserver' in window) {
+      const fallbackObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const was = isFallbackVisible;
+          isFallbackVisible = entry.isIntersecting;
+          if (isFallbackVisible && !was) renderFallback();
+        });
+      }, { rootMargin: '120px 0px 120px 0px', threshold: 0 });
+      fallbackObserver.observe(canvas);
+    }
+
     function renderFallback() {
+      if (!isFallbackVisible) return;
       if (!isDragging) angleY += 0.01;
 
       ctx.clearRect(0, 0, width, height);

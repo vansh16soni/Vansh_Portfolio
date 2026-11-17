@@ -6,6 +6,7 @@
  * - Rubber skid mark & thermal heat trail
  * - Live speed (KM/H) & sequential gear shift telemetry HUD
  * - Click & drag scrubbable pit-lane track
+ * - Zero-layout-thrashing architecture: cached metrics & RAF-scheduled updates
  */
 
 (function () {
@@ -23,6 +24,14 @@
   let currentSpeed = 0;
   let isDragging = false;
   let rafId = null;
+  let isTicking = false;
+
+  // Cached layout metrics to prevent layout thrashing on scroll
+  let cachedDocHeight = 1;
+  let cachedTrackHeight = 0;
+  let cachedTireHeight = 46;
+  let cachedMaxTravel = 0;
+  let cachedSections = [];
 
   // Active section gear mapping
   const SECTIONS = [
@@ -37,6 +46,28 @@
     { id: 'inquiries', gear: '7TH' }
   ];
 
+  function cacheMetrics() {
+    if (!track || !tireAssembly) return;
+
+    cachedDocHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    cachedTrackHeight = track.clientHeight || 0;
+    cachedTireHeight = tireAssembly.clientHeight || 46;
+    cachedMaxTravel = Math.max(0, cachedTrackHeight - cachedTireHeight);
+
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    cachedSections = SECTIONS.map((s) => {
+      const el = document.getElementById(s.id);
+      if (!el) return null;
+      const rect = el.getBoundingClientRect();
+      const top = rect.top + scrollTop;
+      return {
+        gear: s.gear,
+        top: top,
+        bottom: top + (el.offsetHeight || 0)
+      };
+    }).filter(Boolean);
+  }
+
   function init() {
     track = document.getElementById('tire-scroll-track');
     tireAssembly = document.getElementById('rolling-tire-assembly');
@@ -47,62 +78,63 @@
 
     if (!track || !tireAssembly || !tireWheel) return;
 
+    // Compute initial cached geometry
+    cacheMetrics();
+
     // Initial position & bind events
-    updateTire();
+    applyTireUpdate();
     bindEvents();
 
     // Start telemetry velocity decay loop
     rafId = requestAnimationFrame(telemetryLoop);
   }
 
-  function getScrollProgress() {
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (docHeight <= 0) return 0;
-    return Math.min(1, Math.max(0, window.scrollY / docHeight));
+  function getScrollProgress(scrollY) {
+    if (cachedDocHeight <= 0) return 0;
+    return Math.min(1, Math.max(0, scrollY / cachedDocHeight));
   }
 
-  function getActiveGear() {
-    const scrollMiddle = window.scrollY + window.innerHeight * 0.35;
-    let activeGear = 'N';
-
-    for (let i = 0; i < SECTIONS.length; i++) {
-      const el = document.getElementById(SECTIONS[i].id);
-      if (el) {
-        const top = el.offsetTop;
-        const height = el.offsetHeight;
-        if (scrollMiddle >= top && scrollMiddle < top + height) {
-          activeGear = SECTIONS[i].gear;
-          break;
-        }
+  function getActiveGear(scrollY) {
+    const scrollMiddle = scrollY + window.innerHeight * 0.35;
+    for (let i = 0; i < cachedSections.length; i++) {
+      const sec = cachedSections[i];
+      if (scrollMiddle >= sec.top && scrollMiddle < sec.bottom) {
+        return sec.gear;
       }
     }
-    return activeGear;
+    return 'N';
   }
 
-  function updateTire() {
+  function applyTireUpdate() {
+    isTicking = false;
     if (!track || !tireAssembly || !tireWheel) return;
 
-    const progress = getScrollProgress();
-    const trackHeight = track.clientHeight;
-    const tireHeight = tireAssembly.clientHeight || 46;
-    const maxTravel = Math.max(0, trackHeight - tireHeight);
-    const currentY = progress * maxTravel;
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const progress = getScrollProgress(scrollY);
+    const currentY = progress * cachedMaxTravel;
 
     // Move tire down the track
-    tireAssembly.style.transform = `translate3d(0, ${currentY}px, 0)`;
+    tireAssembly.style.transform = `translate3d(0, ${currentY.toFixed(1)}px, 0)`;
 
     // Rotate wheel proportional to scroll
-    const rotationDeg = (window.scrollY * 0.85) % 360;
-    tireWheel.style.transform = `rotate(${rotationDeg}deg)`;
+    const rotationDeg = (scrollY * 0.85) % 360;
+    tireWheel.style.transform = `rotate(${rotationDeg.toFixed(1)}deg)`;
 
     // Extend rubber trail
     if (rubberTrail) {
-      rubberTrail.style.height = `${currentY + (tireHeight / 2)}px`;
+      rubberTrail.style.height = `${(currentY + (cachedTireHeight / 2)).toFixed(1)}px`;
     }
 
     // Update active gear
     if (gearVal) {
-      gearVal.textContent = getActiveGear();
+      gearVal.textContent = getActiveGear(scrollY);
+    }
+  }
+
+  function requestTireTick() {
+    if (!isTicking) {
+      isTicking = true;
+      requestAnimationFrame(applyTireUpdate);
     }
   }
 
@@ -110,7 +142,7 @@
     const dt = Math.max(1, now - lastTime);
     lastTime = now;
 
-    const currentScroll = window.scrollY;
+    const currentScroll = window.scrollY || document.documentElement.scrollTop;
     const scrollDelta = Math.abs(currentScroll - lastScrollY);
     lastScrollY = currentScroll;
 
@@ -134,9 +166,18 @@
     rafId = requestAnimationFrame(telemetryLoop);
   }
 
+  let resizeTimer = null;
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      cacheMetrics();
+      requestTireTick();
+    }, 80);
+  }
+
   function bindEvents() {
-    window.addEventListener('scroll', updateTire, { passive: true });
-    window.addEventListener('resize', updateTire, { passive: true });
+    window.addEventListener('scroll', requestTireTick, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
 
     // Track click to scrub
     track.addEventListener('click', (e) => {
