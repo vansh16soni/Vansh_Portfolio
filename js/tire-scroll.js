@@ -30,10 +30,11 @@
     { id: 'about', gear: '1ST' },
     { id: 'games', gear: '2ND' },
     { id: 'projects', gear: '3RD' },
-    { id: 'experience', gear: '4TH' },
-    { id: 'certificates', gear: '5TH' },
-    { id: 'cv', gear: '5TH' },
-    { id: 'inquiries', gear: '6TH' }
+    { id: 'more-to-know', gear: '4TH' },
+    { id: 'experience', gear: '5TH' },
+    { id: 'certificates', gear: '6TH' },
+    { id: 'cv', gear: '6TH' },
+    { id: 'inquiries', gear: '7TH' }
   ];
 
   function init() {

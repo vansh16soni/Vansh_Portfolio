@@ -18,12 +18,12 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/variables.css?v=2.4">
-  <link rel="stylesheet" href="css/base.css?v=2.4">
-  <link rel="stylesheet" href="css/typography.css?v=2.4">
-  <link rel="stylesheet" href="css/components.css?v=2.4">
-  <link rel="stylesheet" href="css/animations.css?v=2.4">
-  <link rel="stylesheet" href="css/garage-intro.css?v=2.4">
+  <link rel="stylesheet" href="css/variables.css?v=2.5">
+  <link rel="stylesheet" href="css/base.css?v=2.5">
+  <link rel="stylesheet" href="css/typography.css?v=2.5">
+  <link rel="stylesheet" href="css/components.css?v=2.5">
+  <link rel="stylesheet" href="css/animations.css?v=2.5">
+  <link rel="stylesheet" href="css/garage-intro.css?v=2.5">
 </head>
 <body>
 
@@ -344,6 +344,7 @@
           <a href="#about" class="nav-link">ABOUT</a>
           <a href="#games" class="nav-link">GAMES</a>
           <a href="#projects" class="nav-link">WORK</a>
+          <a href="#more-to-know" class="nav-link">MORE TO KNOW</a>
           <a href="#experience" class="nav-link">EXPERIENCE</a>
           <a href="#certificates" class="nav-link">CERTIFICATES</a>
           <a href="#inquiries" class="nav-link">CONTACT</a>
@@ -1354,15 +1355,88 @@
 
   <hr class="section-divider">
 
-
-
-  <!-- Section 04: Engineering Experience Timeline -->
-  <section id="experience" class="section-wrapper">
+  <!-- Section 04: More to Know (Interactive Developer Terminal) -->
+  <section id="more-to-know" class="section-wrapper">
     <div class="site-container">
       
       <header class="editorial-section-header reveal-on-scroll">
         <div class="section-meta">
           <span class="index-pill">SECTION 04</span>
+          <span>EXTENDED CODEBASE // REPOSITORIES &amp; PRACTICE LABS</span>
+        </div>
+        <h2 class="section-title">MORE TO KNOW</h2>
+        <p class="section-subtitle">
+          An interactive developer console cataloging 10 open-source repositories across full-stack applications, Spring Boot architectures, competitive algorithms, and creative web experiments.
+        </p>
+      </header>
+
+      <!-- Interactive Developer Terminal Cockpit Frame -->
+      <div class="terminal-cockpit-frame reveal-on-scroll" aria-label="Interactive Developer Terminal">
+        <!-- Terminal Header / Interactive Command Bar -->
+        <div class="terminal-masthead">
+          <div class="terminal-masthead-left">
+            <div class="terminal-window-controls" aria-hidden="true">
+              <span class="t-dot t-dot-red"></span>
+              <span class="t-dot t-dot-yellow"></span>
+              <span class="t-dot t-dot-green"></span>
+            </div>
+
+            <div class="terminal-prompt-inline">
+              <span class="t-user">vansh@portfolio</span>
+              <span class="t-colon">:</span>
+              <span class="cli-prompt-path" id="terminal-prompt-path">~/more-to-know$</span>
+            </div>
+          </div>
+
+          <!-- Top Interactive Command Input Field -->
+          <div class="terminal-command-box">
+            <span class="t-cmd-chevron">&gt;</span>
+            <input type="text" id="terminal-cli-input" class="cli-input-field" placeholder="Type command here: ls, cd fullstack-apps, cat King-Theif, help..." aria-label="Terminal Command Input" autocomplete="off" spellcheck="false" />
+            <button type="button" class="btn-terminal-exec" onclick="window.submitTerminalInput()" title="Execute command (or press Enter)">EXEC ↵</button>
+          </div>
+
+          <div class="terminal-masthead-right">
+            <span class="t-branch" id="terminal-branch-badge">git:(main)</span>
+            <button type="button" class="t-quick-pill" onclick="window.runTerminalCommand('help')" title="View supported commands">help</button>
+            <button type="button" class="t-quick-pill" onclick="window.runTerminalCommand('clear')" title="Clear console screen">clear</button>
+          </div>
+        </div>
+
+        <!-- Split View: Directory Tree + Terminal Console & Inspector -->
+        <div class="terminal-split-view">
+          <!-- Left: Repository Directory Explorer -->
+          <aside class="terminal-tree-panel" aria-label="Repository Directory Tree">
+            <div class="terminal-tree-header">
+              <span>EXPLORER // CODEBASE TREE</span>
+            </div>
+            <div class="terminal-tree-content" id="terminal-tree-wrap">
+              <!-- Dynamically populated tree by js/terminal-lab.js -->
+            </div>
+          </aside>
+
+          <!-- Right: Terminal Screen (Console History & Inspector Dossier) -->
+          <div class="terminal-screen-panel" id="terminal-screen" aria-live="polite">
+            <div class="terminal-output-scroll" id="terminal-output-scroll">
+              <div id="terminal-history" class="terminal-history">
+                <!-- Terminal outputs and inspections rendered here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Section 05: Engineering Experience Timeline -->
+  <section id="experience" class="section-wrapper">
+    <div class="site-container">
+      
+      <header class="editorial-section-header reveal-on-scroll">
+        <div class="section-meta">
+          <span class="index-pill">SECTION 05</span>
           <span>PRACTICE RECORD // INDUSTRY &amp; GOVERNMENT INTERNSHIPS</span>
         </div>
         <h2 class="section-title">ENGINEERING EXPERIENCE</h2>
@@ -1469,13 +1543,13 @@
 
   <hr class="section-divider">
 
-  <!-- Section 05: Certificates & Accolades -->
+  <!-- Section 06: Certificates & Accolades -->
   <section id="certificates" class="section-wrapper">
     <div class="site-container">
       
       <header class="editorial-section-header reveal-on-scroll">
         <div class="section-meta">
-          <span class="index-pill">SECTION 05</span>
+          <span class="index-pill">SECTION 06</span>
           <span>VERIFIED CREDENTIALS // COMPETITIVE ACCOLADES</span>
         </div>
         <h2 class="section-title">CERTIFICATES &amp; ACHIEVEMENTS</h2>
@@ -1602,7 +1676,7 @@
     </div>
   </section>
 
-  <!-- Section 06: Contact & Inquiries -->
+  <!-- Section 07: Contact & Inquiries -->
   <section id="inquiries" class="inquiries-section">
     <div class="site-container">
       <div class="inquiries-glass-panel glass-sheen reveal-on-scroll">
@@ -1610,7 +1684,7 @@
           
           <div class="contact-action-box">
             <div class="section-meta" style="display:flex; align-items:center; gap:12px;">
-              <span class="index-pill" style="display:inline-flex; padding:4px 12px; background:rgba(138,182,204,0.12); border:1px solid var(--glass-border-sky); border-radius:999px; font-family:var(--font-mono); font-size:0.72rem; color:var(--sky-mist);">SECTION 06</span>
+              <span class="index-pill" style="display:inline-flex; padding:4px 12px; background:rgba(138,182,204,0.12); border:1px solid var(--glass-border-sky); border-radius:999px; font-family:var(--font-mono); font-size:0.72rem; color:var(--sky-mist);">SECTION 07</span>
               <span class="mono-label">DIRECT INQUIRIES // COLLABORATION</span>
             </div>
             
@@ -1831,13 +1905,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
   <!-- Portfolio Scripts -->
-  <script src="js/car-3d.js?v=2.4" defer></script>
-  <script src="js/liquid-glass.js?v=2.4" defer></script>
-  <script src="js/scroll-animations.js?v=2.4" defer></script>
-  <script src="js/project-modal.js?v=2.4" defer></script>
-  <script src="js/skills-constellation.js?v=2.4" defer></script>
-  <script src="js/tire-scroll.js?v=2.4" defer></script>
-  <script src="js/garage-intro.js?v=2.4" defer></script>
-  <script src="js/main.js?v=2.4" defer></script>
+  <script src="js/car-3d.js?v=2.5" defer></script>
+  <script src="js/liquid-glass.js?v=2.5" defer></script>
+  <script src="js/scroll-animations.js?v=2.5" defer></script>
+  <script src="js/project-modal.js?v=2.5" defer></script>
+  <script src="js/skills-constellation.js?v=2.5" defer></script>
+  <script src="js/tire-scroll.js?v=2.5" defer></script>
+  <script src="js/garage-intro.js?v=2.5" defer></script>
+  <script src="js/terminal-lab.js?v=2.5" defer></script>
+  <script src="js/main.js?v=2.5" defer></script>
 </body>
 </html>
