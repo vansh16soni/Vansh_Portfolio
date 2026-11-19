@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hour12: false
     };
     const timeStr = new Intl.DateTimeFormat('en-GB', options).format(now);
-    clockEl.textContent = `JABALPUR, IN // ${timeStr} IST`;
+    clockEl.textContent = `JABALPUR, IN — ${timeStr} IST`;
   }
   updateClock();
   setInterval(updateClock, 1000);

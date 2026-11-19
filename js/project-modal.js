@@ -123,7 +123,7 @@ window.openProjectModal = function (projectId) {
 
   if (titleEl) titleEl.textContent = data.title;
   if (tagEl) tagEl.textContent = data.tag;
-  if (numEl) numEl.textContent = `CASE STUDY // ${data.num}`;
+  if (numEl) numEl.textContent = 'CASE STUDY';
   if (subtitleEl) subtitleEl.textContent = data.subtitle;
   if (problemEl) problemEl.textContent = data.problem;
   if (outcomeEl) outcomeEl.textContent = data.outcomes;

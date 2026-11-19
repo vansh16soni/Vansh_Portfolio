@@ -97,58 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // 4. Floating Liquid Glass Lens Cursor Follower (Desktop Only)
-  if (!window.matchMedia('(pointer: coarse)').matches) {
-    const lens = document.createElement('div');
-    lens.className = 'liquid-glass-lens';
-    lens.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(lens);
-
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let lensX = mouseX;
-    let lensY = mouseY;
-    let isLensActive = false;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      if (!isLensActive) {
-        isLensActive = true;
-        lens.classList.add('active');
-      }
-    }, { passive: true });
-
-    document.addEventListener('mouseleave', () => {
-      isLensActive = false;
-      lens.classList.remove('active');
-    });
-
-    // Expand lens when hovering interactive elements
-    const interactiveSelectors = 'a, button, canvas, .project-visual-viewport, .nav-pill-group, .hero-vertical-year, .project-spec-table';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(interactiveSelectors)) {
-        lens.classList.add('lens-expanded');
-      }
-    });
-
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(interactiveSelectors)) {
-        lens.classList.remove('lens-expanded');
-      }
-    });
-
-    function updateLens() {
-      if (!prefersReducedMotion) {
-        lensX += (mouseX - lensX) * 0.18;
-        lensY += (mouseY - lensY) * 0.18;
-        lens.style.transform = `translate3d(${lensX.toFixed(1)}px, ${lensY.toFixed(1)}px, 0) translate(-50%, -50%)`;
-      }
-      requestAnimationFrame(updateLens);
-    }
-    requestAnimationFrame(updateLens);
-  }
-
   // 5. Dynamic Background Liquid Aurora Parallax
   const blob1 = document.getElementById('aurora-blob-1');
   const blob2 = document.getElementById('aurora-blob-2');

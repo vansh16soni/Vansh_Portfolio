@@ -1205,7 +1205,7 @@ public class DeadlockFreeTransfer {
           <span class="t-prompt">${getPromptText()}</span> <span class="t-cursor-blink">▌</span>
         </div>
         <div class="t-standby-card">
-          <div class="t-standby-badge">STANDBY // CLI SESSION INITIALIZED</div>
+          <div class="t-standby-badge">STANDBY — CLI SESSION INITIALIZED</div>
           <p class="t-standby-desc">
             Terminal awaiting input. Type a command in the input bar above or click any repository / code file in the Explorer to inspect.
           </p>
@@ -1371,7 +1371,7 @@ public class DeadlockFreeTransfer {
         </div>
 
         <div class="inspect-block">
-          <span class="inspect-subhead">ENGINEERED HIGHLIGHTS // README ARCHITECTURE</span>
+          <span class="inspect-subhead">ENGINEERED HIGHLIGHTS — README ARCHITECTURE</span>
           <ul class="inspect-bullets">${archBullets}</ul>
         </div>
 
@@ -1809,7 +1809,7 @@ public class DeadlockFreeTransfer {
   function executeHelp() {
     return `
       <div class="t-help-box">
-        <span class="t-help-title">🏎️ APEX DEVELOPER COMMAND LINE // REFERENCE GUIDE</span>
+        <span class="t-help-title">🏎️ APEX DEVELOPER COMMAND LINE — REFERENCE GUIDE</span>
         <table class="t-help-table">
           <tr><td class="cmd-cell">ls / dir</td><td>List repositories, modules, or codes in current folder</td></tr>
           <tr><td class="cmd-cell">cd &lt;dir&gt;</td><td>Change directory (<code class="t-cmd-inline">cd fullstack-apps</code>, <code class="t-cmd-inline">cd java-spring</code>, <code class="t-cmd-inline">cd Java_Practice_Code</code>)</td></tr>

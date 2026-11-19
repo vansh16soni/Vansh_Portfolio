@@ -69,7 +69,7 @@
     const brandPlaque = document.getElementById('shutter-brand-plaque');
     const statusPlaque = document.getElementById('shutter-status-plaque');
     if (brandPlaque) {
-      brandPlaque.textContent = 'SCUDERIA GARAGE // BAY 01';
+      brandPlaque.textContent = 'SCUDERIA GARAGE — BAY 01';
       brandPlaque.classList.remove('start-cta');
     }
     if (statusPlaque) {
@@ -150,7 +150,7 @@
     }
 
     // Initialize HUD in Standby State awaiting user click
-    if (statusText) statusText.textContent = 'STANDBY // CLICK TO START';
+    if (statusText) statusText.textContent = 'STANDBY — CLICK TO START';
     if (rpmCounter) rpmCounter.textContent = '0 RPM';
     if (rpmFill) rpmFill.style.width = '0%';
     if (shiftLights) shiftLights.forEach((l) => { l.className = 'shift-light-pip'; });
@@ -265,7 +265,7 @@
     if (elapsed < 1.8) {
       targetRpm = 1200 + Math.sin(now * 0.015) * 80;
       if (Math.random() < 0.25) createSmokeParticle(false);
-      if (statusText) statusText.textContent = 'SYSTEMS CHECK // IDLE';
+      if (statusText) statusText.textContent = 'SYSTEMS CHECK — IDLE';
     }
     // Stage 2: Throttle Blip & Climbing to Redline (1.8s - 3.6s)
     else if (elapsed < 3.6) {
@@ -276,7 +276,7 @@
         carWrapper.classList.add('launch-ready');
       }
       if (Math.random() < 0.65) createSmokeParticle(true);
-      if (statusText) statusText.textContent = 'THROTTLE ENGAGED // SPOOLING TURBOS';
+      if (statusText) statusText.textContent = 'THROTTLE ENGAGED — SPOOLING TURBOS';
     }
     // Stage 3: Shutter Rolls Up & Headlights Flash (3.6s - 5.2s)
     else if (elapsed < 5.2) {
@@ -287,7 +287,7 @@
       if (shutterContainer && !shutterContainer.classList.contains('rolled-up')) {
         shutterContainer.classList.add('rolled-up');
       }
-      if (statusText) statusText.textContent = 'LAUNCH CONTROL ARMED // SHUTTER OPEN';
+      if (statusText) statusText.textContent = 'LAUNCH CONTROL ARMED — SHUTTER OPEN';
       if (Math.random() < 0.8) createSmokeParticle(true);
     }
     // Stage 4: High-Speed Launch Out of Frame (5.2s - 6.6s)
@@ -300,7 +300,7 @@
       if (speedStreaks && !speedStreaks.classList.contains('active')) {
         speedStreaks.classList.add('active');
       }
-      if (statusText) statusText.textContent = 'LAUNCH COMPLETE // ACCELERATING';
+      if (statusText) statusText.textContent = 'LAUNCH COMPLETE — ACCELERATING';
     }
     // Stage 5: Reveal Portfolio & Fade Out Overlay (6.6s+)
     else {
